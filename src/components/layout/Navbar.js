@@ -4,6 +4,8 @@ import Logo from "./Logo"
 import styled from "styled-components"
 
 const Navigation = styled.nav`
+  padding-left: 4px;
+  padding-right: 4px;
   height: 8vh;
   display: flex;
   background-color: #fff;

@@ -19,13 +19,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: lightblue;
+    background: #5E8BF2;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: lightblue;
+    color: #5E8BF2;
     ::after {
       width: 100%;
     }
@@ -41,10 +41,10 @@ const NavbarLinks = () => {
   return (
     <>
       <NavItem to="/our-story">Our Story</NavItem>
-      <NavItem to="/">Things To Do</NavItem>
-      <NavItem to="/">Travel & Stay</NavItem>
-      <NavItem to="/">Photos</NavItem>
-      <NavItem to="/">Schedule</NavItem>
+      <NavItem to="/things-to-do">Things To Do</NavItem>
+      <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
+      <NavItem to="/photos">Photos</NavItem>
+      <NavItem to="/schedule">Schedule</NavItem>
     </>
   )
 }

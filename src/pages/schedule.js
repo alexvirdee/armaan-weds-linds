@@ -12,6 +12,9 @@ const schedule = () => {
         <>
         <Navbar />
         <Title>Schedule</Title>
+        <div>
+            Wedding planning is in the works. Please continue to refer to this website periodically for updates!
+        </div>
         </>
     )
 }

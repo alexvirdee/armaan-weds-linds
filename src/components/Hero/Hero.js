@@ -18,7 +18,7 @@ const Title = styled.h1`
 const Hero = () => {
     return (
         <HeroContainer>
-            <StaticImage layout={"fullWidth"} src="../../images/hero-test-2.jpg" alt="hero" />
+            <StaticImage layout={"fullWidth"} src="../../images/hero-test.jpg" alt="hero" />
             <WeddingCountdown countdownTimeStampMs={1666281600000} />
             <Title>Armaan & Lindsay</Title>
         </HeroContainer>

@@ -16,7 +16,7 @@ const Tab = styled.button`
   ${({ active }) =>
     active &&
     `
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #B0D5C0;
     opacity: 1;
   `}
 `;
@@ -43,7 +43,7 @@ const Tabs = () => {
         ))}
       </ButtonGroup>
       <p />
-      <p> Selected: {active === 'Groomsmen' ? <Groomsmen /> : <Bridesmaids /> } </p>
+      <div> {active === 'Groomsmen' ? <Groomsmen /> : <Bridesmaids /> } </div>
     </>
   );
 }

@@ -12,15 +12,10 @@ const CountdownRow = styled.div`
 
 const TimeContainer = styled.div`
   padding: 20px 20px 20px 20px;
-  border: 2px solid #FCB2A9;
+  background-color: #fff;
   margin-right: 25px;
   font-family: "Open Sans";
   font-size: 1.1rem;
-  box-shadow: 8px 8px 5px #ccc;
-  -moz-box-shadow: 8px 8px 5px #ccc;
-  -webkit-box-shadow: 10px 8px 5px #ccc;
-  -khtml-box-shadow: 8px 8px 5px #ccc;
-  border-radius: 15px;
 
   @media (max-width: 768px) {
     margin-right: 10px;
@@ -28,7 +23,7 @@ const TimeContainer = styled.div`
 `
 
 const TimeText = styled.div`
-  color: #989CA0;
+  color: #FCB2A9;
   font-weight: bold;
   font-size: 1.25rem;
 `

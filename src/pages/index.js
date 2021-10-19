@@ -19,7 +19,7 @@ export default function Home() {
       <GlobalStyle />
       <Navbar />
       <Hero />
-      <Divider />
+      {/* <Divider /> */}
       <BestFriends />
       {/* <RSVPForm /> */}
     </>

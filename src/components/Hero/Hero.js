@@ -8,6 +8,8 @@ const HeroContainer = styled.div`
   height: 100vh;
   text-align: center;
   margin-bottom: 25px;
+  background-color: #F7F7F7;
+  padding-bottom: 45px;
 `
 
 const ImageWrapper = styled.div`
@@ -51,7 +53,7 @@ const Hero = () => {
       <Title>Armaan & Lindsay</Title>
       <WeddingCountdown countdownTimeStampMs={1666281600000} />
       <TopTitle>We're Getting Married</TopTitle>
-      <SubTitle>In October 2022</SubTitle>
+      <SubTitle>On October 22, 2022</SubTitle>
     </HeroContainer>
   )
 }

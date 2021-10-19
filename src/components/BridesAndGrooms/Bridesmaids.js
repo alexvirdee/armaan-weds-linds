@@ -1,37 +1,37 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 let bridesMaidsList = [
-    {
-        name: "Bridesmaid 1"
-    },
-    {
-        name: "Bridesmaid 2"
-    },
-    {
-        name: "Bridesmaid 3"
-    },
-    {
-        name: "Bridesmaid 4"
-    },
-    {
-        name: "Bridesmaid 5"
-    },
-    {
-        name: "Bridesmaid 6"
-    },
-    {
-        name: "Bridesmaid 7"
-    },
-    {
-        name: "Bridesmaid 8"
-    },
+  {
+    name: "Bridesmaid 1",
+  },
+  {
+    name: "Bridesmaid 2",
+  },
+  {
+    name: "Bridesmaid 3",
+  },
+  {
+    name: "Bridesmaid 4",
+  },
+  {
+    name: "Bridesmaid 5",
+  },
+  {
+    name: "Bridesmaid 6",
+  },
+  {
+    name: "Bridesmaid 7",
+  },
+  {
+    name: "Bridesmaid 8",
+  },
 ]
 
 const BridesMaidsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
 `
 
 const BridesMaid = styled.div`
@@ -45,13 +45,13 @@ const BridesMaid = styled.div`
 `
 
 const Bridesmaids = () => {
-    return (
-        <BridesMaidsContainer>
+  return (
+    <BridesMaidsContainer>
       {bridesMaidsList.map(person => {
         return <BridesMaid>{person.name}</BridesMaid>
       })}
     </BridesMaidsContainer>
-    )
+  )
 }
 
-export default Bridesmaids;
+export default Bridesmaids

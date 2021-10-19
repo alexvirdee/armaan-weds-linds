@@ -32,7 +32,11 @@ const Title = styled.h1`
   width: 100%;
 
   @media (max-width: 768px) {
-    top: 25px;
+    top: 45px;
+  }
+
+  @media (max-width: 1200px) {
+    top: 80px;
   }
 `
 

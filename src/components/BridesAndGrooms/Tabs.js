@@ -25,7 +25,7 @@ const ButtonGroup = styled.div`
   display: flex;
 `;
 
-const types = [<Groomsmen />, <Bridesmaids />];
+const types = ['Groomsmen', 'Bridesmaids'];
 
 const Tabs = () => {
   const [active, setActive] = useState(types[0]);
@@ -43,7 +43,7 @@ const Tabs = () => {
         ))}
       </ButtonGroup>
       <p />
-      <p> Selected: {active} </p>
+      <p> Selected: {active === 'Groomsmen' ? <Groomsmen /> : <Bridesmaids /> } </p>
     </>
   );
 }

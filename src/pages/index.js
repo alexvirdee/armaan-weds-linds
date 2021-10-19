@@ -1,8 +1,9 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import Hero from "../components/Hero/Hero";
-import Bridesmaids from "../components/BridesAndGrooms/Bridesmaids";
-import Groomsmen from "../components/BridesAndGrooms/Groomsmen";
+import Divider from "../components/layout/Divider";
+import RSVPForm from "../components/RSVP/RSVPForm";
+import BestFriends from "../components/BridesAndGrooms/BestFriends";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -18,8 +19,9 @@ export default function Home() {
       <GlobalStyle />
       <Navbar />
       <Hero />
-      <Bridesmaids />
-      <Groomsmen />
+      <Divider />
+      <BestFriends />
+      {/* <RSVPForm /> */}
     </>
   )
 }

@@ -1,28 +1,59 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import WeddingCountdown from "./WeddingCountdown";
-import "@fontsource/great-vibes";
+import WeddingCountdown from "./WeddingCountdown"
+import "@fontsource/great-vibes"
 
 const HeroContainer = styled.div`
-    height: 80vh;
-    text-align: center;
-    margin-bottom: 45px;
+  height: 100vh;
+  text-align: center;
+  margin-bottom: 25px;
+`
+
+const ImageWrapper = styled.div`
+  position: relative;
+`
+
+const TopTitle = styled.h3`
+  font-family: "Great Vibes";
+  font-size: 32px;
 `
 
 const Title = styled.h1`
-    font-family: "Great Vibes";
-    font-size: 64px;
+  font-family: "Great Vibes";
+  font-size: 64px;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  color: #fff;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    top: 25px;
+  }
+`
+
+const SubTitle = styled.h3`
+  font-size: 24px;
 `
 
 const Hero = () => {
-    return (
-        <HeroContainer>
-            <StaticImage layout={"fullWidth"} src="../../images/hero-test.jpg" alt="hero" />
-            <WeddingCountdown countdownTimeStampMs={1666281600000} />
-            <Title>Armaan & Lindsay</Title>
-        </HeroContainer>
-    )
+  return (
+    <HeroContainer>
+      <ImageWrapper>
+        <StaticImage
+          layout={"fullWidth"}
+          src="../../images/hero-test.jpg"
+          alt="hero"
+        />
+      </ImageWrapper>
+      <Title>Armaan & Lindsay</Title>
+      <WeddingCountdown countdownTimeStampMs={1666281600000} />
+      <TopTitle>We're Getting Married</TopTitle>
+      <SubTitle>In October 2022</SubTitle>
+    </HeroContainer>
+  )
 }
 
-export default Hero;
+export default Hero

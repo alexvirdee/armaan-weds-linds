@@ -28,6 +28,7 @@ const StoryText = styled.div`
   font-family: "Open Sans";
   padding: 35px;
   width: 80%;
+  color: #989CA0;
   animation: fade 1s ease-in;
 
   @keyframes fade {

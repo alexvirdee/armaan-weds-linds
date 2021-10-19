@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getRemainingTimeUntilMsTimestamp } from "../Utils/CountdownTimerUtils"
 import styled from "styled-components"
+import "@fontsource/open-sans"
 
 const CountdownRow = styled.div`
   display: flex;
@@ -11,13 +12,27 @@ const CountdownRow = styled.div`
 
 const TimeContainer = styled.div`
   padding: 20px 20px 20px 20px;
-  border: 2px solid #000;
-  margin-right: 4px;
-  box-shadow: 10px 10px 5px #ccc;
-  -moz-box-shadow: 10px 10px 5px #ccc;
-  -webkit-box-shadow: 10px 10px 5px #ccc;
-  -khtml-box-shadow: 10px 10px 5px #ccc;
+  border: 2px solid #FCB2A9;
+  margin-right: 25px;
+  font-family: "Open Sans";
+  font-size: 1.1rem;
+  box-shadow: 8px 8px 5px #ccc;
+  -moz-box-shadow: 8px 8px 5px #ccc;
+  -webkit-box-shadow: 10px 8px 5px #ccc;
+  -khtml-box-shadow: 8px 8px 5px #ccc;
+  border-radius: 15px;
+
+  @media (max-width: 768px) {
+    margin-right: 10px;
+  }
 `
+
+const TimeText = styled.div`
+  color: #989CA0;
+  font-weight: bold;
+  font-size: 1.25rem;
+`
+
 
 const defaultRemainingTime = {
   seconds: "00",
@@ -51,19 +66,19 @@ const WeddingCountdown = ({ countdownTimeStampMs }) => {
   return (
     <CountdownRow>
       <TimeContainer>
-        <div>{remainingTime.days}</div>
+        <TimeText>{remainingTime.days}</TimeText>
         <div>Days</div>
       </TimeContainer>
       <TimeContainer>
-        <div>{remainingTime.hours}</div>
+        <TimeText>{remainingTime.hours}</TimeText>
         <div>Hours</div>
       </TimeContainer>
       <TimeContainer>
-        <div>{remainingTime.minutes}</div>
+        <TimeText>{remainingTime.minutes}</TimeText>
         <div>Minutes</div>
       </TimeContainer>
       <TimeContainer>
-        <div>{remainingTime.seconds}</div>
+        <TimeText>{remainingTime.seconds}</TimeText>
         <div>Seconds</div>
       </TimeContainer>
     </CountdownRow>

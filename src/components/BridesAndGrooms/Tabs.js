@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Groomsmen from "./Groomsmen";
 import Bridesmaids from './Bridesmaids';
-import "@fontsource/open-sans"
+import "@fontsource/barlow-condensed"
 
 const Tab = styled.button`
-  font-size: 20px;
-  font-family: "Open Sans";
+  font-size: 24px;
+  font-family: "Barlow Condensed";
   padding: 10px 60px;
   cursor: pointer;
   opacity: 0.6;

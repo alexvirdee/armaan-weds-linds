@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { getRemainingTimeUntilMsTimestamp } from "../Utils/CountdownTimerUtils"
 import styled from "styled-components"
-import "@fontsource/open-sans"
+import "@fontsource/barlow-condensed"
 
 const CountdownRow = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const TimeContainer = styled.div`
   padding: 20px 20px 20px 20px;
   background-color: #fff;
   margin-right: 25px;
-  font-family: "Open Sans";
+  font-family: "Barlow Condensed";
   font-size: 1.1rem;
 
   @media (max-width: 768px) {

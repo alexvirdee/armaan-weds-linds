@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components"
 import Tabs from "./Tabs";
-import "@fontsource/great-vibes"
+import "@fontsource/alex-brush"
 
 const FriendsWrapper = styled.div`
     display: flex;
@@ -11,7 +11,7 @@ const FriendsWrapper = styled.div`
 `
 
 const Title = styled.h1`
-    font-family: "Great Vibes";
+    font-family: "Alex Brush";
     text-align: center;
 `
 

@@ -1,8 +1,8 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
-import "@fontsource/great-vibes"
-import "@fontsource/open-sans"
+import "@fontsource/alex-brush"
+import "@fontsource/barlow-condensed"
 import { createGlobalStyle } from "styled-components"
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -21,11 +21,11 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-family: "Great Vibes";
+  font-family: "Alex Brush";
 `
 
 const StoryText = styled.div`
-  font-family: "Open Sans";
+  font-family: "Barlow Condensed";
   padding: 35px;
   width: 80%;
   color: #989CA0;

@@ -14,8 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@fontsource/great-vibes": "^4.5.1",
-    "@fontsource/open-sans": "^4.5.1",
+    "@fontsource/alex-brush": "^4.5.0",
+    "@fontsource/barlow-condensed": "^4.5.0",
+    "@fontsource/playfair-display": "^4.5.0",
     "babel-plugin-styled-components": "^1.13.2",
     "dayjs": "^1.10.7",
     "gatsby": "^3.14.2",

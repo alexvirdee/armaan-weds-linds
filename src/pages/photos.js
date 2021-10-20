@@ -3,10 +3,6 @@ import Navbar from "../components/layout/Navbar";
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 
-const Title = styled.h1`
-    font-family: "Alex Brush";
-`
-
 const photos = () => {
     return (
         <>
@@ -15,5 +11,9 @@ const photos = () => {
         </>
     )
 }
+
+const Title = styled.h1`
+    font-family: "Alex Brush";
+`
 
 export default photos;

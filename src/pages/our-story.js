@@ -13,31 +13,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`
-
-const Title = styled.h1`
-  font-family: "Alex Brush";
-`
-
-const StoryText = styled.div`
-  font-family: "Barlow Condensed";
-  padding: 35px;
-  width: 80%;
-  color: #989CA0;
-  animation: fade 1s ease-in;
-
-  @keyframes fade {
-      0% {
-          opacity: 0;
-      }
-  }
-`
-
 const ourStory = () => {
   return (
     <>
@@ -95,5 +70,30 @@ const ourStory = () => {
     </>
   )
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Title = styled.h1`
+  font-family: "Alex Brush";
+`
+
+const StoryText = styled.div`
+  font-family: "Barlow Condensed";
+  padding: 35px;
+  width: 80%;
+  color: #989CA0;
+  animation: fade 1s ease-in;
+
+  @keyframes fade {
+      0% {
+          opacity: 0;
+      }
+  }
+`
 
 export default ourStory

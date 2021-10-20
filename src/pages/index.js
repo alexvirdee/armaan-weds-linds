@@ -2,6 +2,7 @@ import React from "react"
 import Navbar from "../components/layout/Navbar"
 import Hero from "../components/Hero/Hero";
 import Divider from "../components/layout/Divider";
+import Banner from "../components/layout/Banner";
 import RSVPForm from "../components/RSVP/RSVPForm";
 import BestFriends from "../components/BridesAndGrooms/BestFriends";
 import { createGlobalStyle } from "styled-components";
@@ -19,7 +20,7 @@ export default function Home() {
       <GlobalStyle />
       <Navbar />
       <Hero />
-      {/* <Divider /> */}
+      <Divider />
       <BestFriends />
       {/* <RSVPForm /> */}
     </>

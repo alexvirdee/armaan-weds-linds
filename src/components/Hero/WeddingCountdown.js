@@ -3,31 +3,6 @@ import { getRemainingTimeUntilMsTimestamp } from "../Utils/CountdownTimerUtils"
 import styled from "styled-components"
 import "@fontsource/barlow-condensed"
 
-const CountdownRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
-`
-
-const TimeContainer = styled.div`
-  padding: 20px 20px 20px 20px;
-  background-color: #fff;
-  margin-right: 25px;
-  font-family: "Barlow Condensed";
-  font-size: 1.1rem;
-
-  @media (max-width: 768px) {
-    margin-right: 10px;
-  }
-`
-
-const TimeText = styled.div`
-  color: #FCB2A9;
-  font-weight: bold;
-  font-size: 1.25rem;
-`
-
 
 const defaultRemainingTime = {
   seconds: "00",
@@ -79,5 +54,30 @@ const WeddingCountdown = ({ countdownTimeStampMs }) => {
     </CountdownRow>
   )
 }
+
+const CountdownRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+`
+
+const TimeContainer = styled.div`
+  padding: 20px 20px 20px 20px;
+  background-color: #fff;
+  margin-right: 25px;
+  font-family: "Barlow Condensed";
+  font-size: 1.1rem;
+
+  @media (max-width: 768px) {
+    margin-right: 10px;
+  }
+`
+
+const TimeText = styled.div`
+  color: #FCB2A9;
+  font-weight: bold;
+  font-size: 1.45rem;
+`
 
 export default WeddingCountdown

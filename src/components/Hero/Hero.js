@@ -57,9 +57,10 @@ const Hero = () => {
         />
       </ImageWrapper>
       <Title>Armaan & Lindsay</Title>
-      <WeddingCountdown countdownTimeStampMs={1666281600000} />
+      <WeddingCountdown countdownTimeStampMs={1666454400000} />
       <TopTitle>We're Getting Married</TopTitle>
       <SubTitle>On October 22, 2022</SubTitle>
+      <SubTitle>Cheeca Lodge 81801 Overseas Highway Islamorada, FL 33036</SubTitle>
     </HeroContainer>
   )
 }

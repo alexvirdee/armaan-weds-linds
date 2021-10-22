@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const ourStory = () => {
+const OurStory = () => {
   return (
     <>
       <GlobalStyle />
@@ -73,4 +73,4 @@ const StoryText = styled.div`
   }
 `
 
-export default ourStory
+export default OurStory

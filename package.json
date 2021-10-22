@@ -29,6 +29,7 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "slash": "^4.0.0",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {

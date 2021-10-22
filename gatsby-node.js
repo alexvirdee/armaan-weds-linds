@@ -1,10 +1,10 @@
 const path = require("path")
-const slash = require("slash")
+// const slash = require("slash")
 
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
 
-    return graphql([
+    return graphql(
         `
          {
             allContentfulGalleryPost {
@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
          }
         `
-    ]).then((result) => {
+    ).then((result) => {
         if (result.errors) {
             console.log("Error with contentful data", result.errors)
         }
@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allContentfulGalleryPost.edges.forEach(photo => {
             createPage({
                 path: `/photos/${photo.node.slug}/`,
-                component: slash(GalleryTemplate),
+                component: GalleryTemplate,
                 context: {
                     slug: photo.node.slug
                 }

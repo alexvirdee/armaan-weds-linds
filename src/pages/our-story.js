@@ -20,7 +20,7 @@ const OurStory = () => {
       <Navbar />
       <Container>
         <Title>Our Story</Title>
-        <StaticImage width={300} src="../images/leaf-divider.png" />
+        {/* <StaticImage width={300} src="../images/leaf-divider.png" alt="leaf divider" /> */}
         <StoryText>
           It all began on a flight to NYC. Lindsay sat next to Brooke who
           happened to be one of Armaan’s childhood friends. The two sparked

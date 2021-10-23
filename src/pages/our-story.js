@@ -21,6 +21,15 @@ const OurStory = () => {
       <Container>
         <Title>Our Story</Title>
         {/* <StaticImage width={300} src="../images/leaf-divider.png" alt="leaf divider" /> */}
+        <Card>
+        <CardLeft>
+          <StaticImage
+            layout={"fullWidth"}
+            src="../images/plane-heart.svg"
+            alt="Plane Heart"
+          />
+        </CardLeft>
+        <CardRight>
         <StoryText>
           It all began on a flight to NYC. Lindsay sat next to Brooke who
           happened to be one of Armaan’s childhood friends. The two sparked
@@ -42,6 +51,8 @@ const OurStory = () => {
           become husband and wife and cannot wait to have their nearest and
           dearest celebrate with them! (ROUGH DRAFT, NOT DONE)
         </StoryText>
+        </CardRight>
+        </Card>
       </Container>
     </>
   )
@@ -50,20 +61,25 @@ const OurStory = () => {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 `
 
 const Title = styled.h1`
   font-family: "Alex Brush";
 `
 
-const StoryText = styled.div`
-  font-family: "Barlow Condensed";
-  padding: 35px;
-  width: 65%;
-  color: #989ca0;
-  text-align: center;
+const Card = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-gap: 0.2rem;
+  transition: all 0.25s ease-in-out;
+  width: 75%;
+  margin-bottom: 25px;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.35);
   animation: fade 1s ease-in;
 
   @keyframes fade {
@@ -71,6 +87,38 @@ const StoryText = styled.div`
       opacity: 0;
     }
   }
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    width: 70%
+  }
+`
+
+const CardLeft = styled.div`
+  border-right: 2px solid lightgray;
+  width: 100%;
+  height: auto;
+
+  @media (max-width: 1200px) {
+    border: none;
+    margin: 0;
+  }
+`
+
+const CardRight = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const StoryText = styled.div`
+  font-family: "Barlow Condensed";
+  font-size: 1.2rem;
+  padding: 35px;
+  color: #989ca0;
+  text-align: center;
+  
 `
 
 export default OurStory

@@ -73,7 +73,6 @@ const Card = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0.2rem;
-  transition: all 0.25s ease-in-out;
   width: 75%;
   margin-bottom: 25px;
   border-radius:10px;
@@ -97,8 +96,13 @@ const Card = styled.div`
 
 const CardLeft = styled.div`
   border-right: 2px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  height: 100%;
   height: auto;
+  background-color: #A5DDF0;
 
   @media (max-width: 1200px) {
     border: none;

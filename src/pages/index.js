@@ -21,7 +21,7 @@ export default function Home() {
       <FlowerVector />
       <Navbar />
       <Hero />
-      <Divider />
+      {/* <Divider /> */}
       {/* <BestFriends /> */}
       {/* <RSVPForm /> */}
     </>

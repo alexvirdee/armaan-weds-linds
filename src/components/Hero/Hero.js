@@ -46,7 +46,7 @@ const Title = styled.h1`
   left: 0;
   position: absolute;
   text-align: center;
-  top: 15%;
+  top: 25%;
   width: 100%;
   animation: fade 1s ease-in;
 
@@ -56,13 +56,21 @@ const Title = styled.h1`
     }
   }
 
-  @media (max-width: 768px) {
-    top: 45px;
-    font-size: 48px;
+
+  @media (max-width: 1300px) {
+    top: 40%;
   }
 
-  @media (max-width: 1200px) {
-    top: 80px;
+  @media (max-width: 768px) {
+    top: 20%;
+    font-size: 48px;
+    color: #fff;
+  }
+
+  @media (max-width: 500px) {
+    top: 12%;
+    font-size: 48px;
+    color: #fff;
   }
 `
 

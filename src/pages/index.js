@@ -1,4 +1,5 @@
 import React from "react"
+import FlowerVector from "../components/layout/Flower-vector";
 import Navbar from "../components/layout/Navbar"
 import Hero from "../components/Hero/Hero";
 import Divider from "../components/layout/Divider";
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <>
       <GlobalStyle />
+      <FlowerVector />
       <Navbar />
       <Hero />
       <Divider />

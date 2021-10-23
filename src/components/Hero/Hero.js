@@ -46,9 +46,15 @@ const Title = styled.h1`
   left: 0;
   position: absolute;
   text-align: center;
-  top: 35%;
-  color: #fff;
+  top: 15%;
   width: 100%;
+  animation: fade 1s ease-in;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  }
 
   @media (max-width: 768px) {
     top: 45px;

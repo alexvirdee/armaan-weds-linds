@@ -41,6 +41,7 @@ const NavbarLinks = () => {
   return (
     <>
       <NavItem to="/our-story">Our Story</NavItem>
+      <NavItem to="/our-story">Registry</NavItem>
       <NavItem to="/things-to-do">Things To Do</NavItem>
       <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
       <NavItem to="/photos">Photos</NavItem>

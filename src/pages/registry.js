@@ -52,7 +52,7 @@ text-decoration: none;
   background-color: #fcb2a9;
   color: #fff;
   border-radius: 45px;
-  padding: 8px;
+  padding: 10px;
   width: 10%;
   cursor: pointer;
 
@@ -65,19 +65,22 @@ text-decoration: none;
     transition: all 10ms ease;
   }
 
-  @media (max-width: 1200px) {
-      font-size: 1.4rem;
-      padding: 4px;
-      border-radius: 25px;
-      width: 20%;
-  }
 
   @media (max-width: 1400px) {
-    font-size: 1.6rem;
-    padding: 6px;
+    font-size: 1.8rem;
+    padding: 8px;
     border-radius: 25px;
     width: 20%;
 }
+
+  @media (max-width: 1200px) {
+      font-size: 1.6rem;
+  }
+
+  @media (max-width: 768px) {
+      font-size: 1.2rem;
+      width: 25%;
+  }
 `
 
 export default Registry

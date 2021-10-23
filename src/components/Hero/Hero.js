@@ -56,7 +56,6 @@ const Title = styled.h1`
     }
   }
 
-
   @media (max-width: 1300px) {
     top: 40%;
   }

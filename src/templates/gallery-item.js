@@ -6,10 +6,6 @@ import "@fontsource/barlow-condensed"
 import { graphql } from "gatsby"
 
 const GalleryItem = ({ data }) => {
-  useEffect(() => {
-    console.log("DATA: ", data)
-  }, [])
-  //
   return (
     <>
       <Navbar />

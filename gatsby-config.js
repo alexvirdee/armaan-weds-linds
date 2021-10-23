@@ -10,7 +10,7 @@ const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
 
 if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
   throw new Error(
-    "Contentful spaceId and access token need to be provided."
+    "Contentful spaceId and access token needs to be provided."
   )
 }
 

@@ -5,10 +5,6 @@ import "@fontsource/alex-brush"
 import { graphql, Link } from "gatsby"
 
 const Photos = ({ data }) => {
-  useEffect(() => {
-    console.log("DATA: ", data)
-  }, [data])
-
   return (
     <>
       <Navbar />

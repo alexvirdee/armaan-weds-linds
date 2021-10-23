@@ -17,6 +17,7 @@
     "@fontsource/alex-brush": "^4.5.0",
     "@fontsource/barlow-condensed": "^4.5.0",
     "@fontsource/playfair-display": "^4.5.0",
+    "@react-google-maps/api": "^2.5.0",
     "babel-plugin-styled-components": "^1.13.2",
     "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",

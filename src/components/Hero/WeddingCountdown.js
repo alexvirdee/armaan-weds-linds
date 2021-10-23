@@ -67,7 +67,7 @@ const TimeContainer = styled.div`
   background-color: #fff;
   margin-right: 25px;
   font-family: "Barlow Condensed";
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 
   @media (max-width: 768px) {
     margin-right: 10px;
@@ -77,7 +77,7 @@ const TimeContainer = styled.div`
 const TimeText = styled.div`
   color: #FCB2A9;
   font-weight: bold;
-  font-size: 1.45rem;
+  font-size: 2rem;
 `
 
 export default WeddingCountdown

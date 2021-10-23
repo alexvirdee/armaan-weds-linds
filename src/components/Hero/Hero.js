@@ -28,7 +28,7 @@ const Hero = () => {
 const HeroContainer = styled.div`
   text-align: center;
   margin-bottom: 10px;
-  background-color: #FFFFF8;
+  // background-color: #FFFFF8;
 `
 
 const ImageWrapper = styled.div`
@@ -37,12 +37,12 @@ const ImageWrapper = styled.div`
 
 const TopTitle = styled.h3`
   font-family: "Alex Brush";
-  font-size: 32px;
+  font-size: 3.2rem;
 `
 
 const Title = styled.h1`
   font-family: "Alex Brush";
-  font-size: 64px;
+  font-size: 4.5rem;
   left: 0;
   position: absolute;
   text-align: center;

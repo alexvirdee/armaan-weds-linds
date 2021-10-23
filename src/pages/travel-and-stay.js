@@ -8,10 +8,17 @@ const travelAndStay = () => {
     return (
         <>
         <Navbar />
+        <MainContainer>
         <Title>Travel & Stay</Title>
+        </MainContainer>
         </>
     )
 }
+
+const MainContainer = styled.div`
+    display: flex;
+    justify-content: center;
+`
 
 const Title = styled.h1`
     font-family: "Alex Brush";

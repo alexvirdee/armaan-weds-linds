@@ -28,6 +28,7 @@ const Photos = ({ data }) => {
 
 const Title = styled.h1`
   font-family: "Alex Brush";
+  padding-left: 15px;
 `
 
 const Gallery = styled.div`
@@ -36,7 +37,7 @@ const Gallery = styled.div`
 `
 
 const GalleryImg = styled.img`
-  width: 325px;
+  width:  325px;
   height: auto;
   margin: 25px;
   box-sizing: border-box;
@@ -46,6 +47,16 @@ const GalleryImg = styled.img`
   border: 8px solid #333;
   box-shadow: 0 0 0 50px rgba(232, 236, 241, 1) inset;
   animation: fade 1s ease-in;
+
+
+  :hover {
+    -webkit-filter: brightness(85%);
+    -webkit-transition: all 10ms ease;
+    -moz-transition: all 10ms ease;
+    -o-transition: all 10ms ease;
+    -ms-transition: all 10ms ease;
+    transition: all 10ms ease;
+  }
 
   @keyframes fade {
     0% {

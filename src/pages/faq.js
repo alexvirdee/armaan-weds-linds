@@ -22,31 +22,28 @@ const data = [
     question: "What is the dress code?",
     answers: [
       {
-        id: "a.",
+        id: "a. Sangeet",
         answer: [
           {
-            id: "i.",
-            event: "Sangeet",
+            id: 1,
             innerAnswer: "Indian Formal",
           },
         ],
       },
       {
-        id: "b.",
+        id: "b. Ceremony",
         answer: [
           {
-            id: "i.",
-            event: "Ceremony",
+            id: 2,
             innerAnswer: "Indian",
           },
         ],
       },
       {
-        id: "c.",
+        id: "c. Reception",
         answer: [
           {
-            id: "i.",
-            event: "Reception",
+            id: 3,
             innerAnswer: "Beach Formal",
           },
         ],
@@ -58,10 +55,7 @@ const data = [
     question: "Can I bring a date?",
     answers: [
       {
-        id: "a.",
-        answer: [
-          "We want close family and friends on our special day, please refer to your invite….",
-        ],
+        id: "a. We want close family and friends on our special day, please refer to your invite….",
       },
     ],
   },
@@ -70,17 +64,13 @@ const data = [
     question: "Are kids invited?",
     answers: [
       {
-        id: "a.",
-        answer: [
-          "While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us",
-        ],
+        id: "a. While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us",
       },
     ],
   },
 ]
 
 const FAQ = () => {
-  //   console.log("faq json response ====> ", data)
   return (
     <>
       <Navbar />
@@ -97,18 +87,35 @@ const FAQ = () => {
           </p>
         </CollapsibleSection> */}
         {data.map(item => {
-          // console.log(item)
           return (
-            <CollapsibleSection key={item.id} trigger={item.question} triggerStyle={{ display: "block" }} >
-              {item.answers.map(answer => {
-                console.log(answer)
-                return (
-                  <>
-                    <CollapsibleAnswers>{answer.id}</CollapsibleAnswers>
-                  </>
-                )
-              })}
-            </CollapsibleSection>
+            <>
+              <CollapsibleSection
+                key={item.id}
+                trigger={item.question}
+                triggerStyle={{ display: "block", cursor: "pointer" }}
+              >
+                {item.answers.map(answer => {
+                  console.log(answer.answer)
+                  return (
+                    <>
+                      {answer.answer !== undefined ? (
+                        <>
+                          <CollapsibleSection trigger={answer.id}>
+                            <CollapsibleAnswers>
+                              {answer.answer.map(target => {
+                                return <span key={target.id}>{target.innerAnswer}</span>
+                              })}
+                            </CollapsibleAnswers>
+                          </CollapsibleSection>
+                        </>
+                      ) : (
+                        <CollapsibleAnswers>{answer.id}</CollapsibleAnswers>
+                      )}
+                    </>
+                  )
+                })}
+              </CollapsibleSection>
+            </>
           )
         })}
       </Accordion>
@@ -127,7 +134,6 @@ const CollapsibleSection = styled(Collapsible)`
   border: 2px solid magenta;
   padding: 8px;
   background-color: lightgray;
-  cursor: pointer;
 `
 
 const CollapsibleAnswers = styled.p`

@@ -35,7 +35,7 @@ const ItemContainer = styled.div`
 `
 
 const TextDisplay = styled.div`
-    align-self: center;
+  align-self: center;
 `
 
 const Title = styled.h1`
@@ -61,9 +61,7 @@ const FramedImg = styled.img`
   box-sizing: border-box;
   display: block;
   padding: 2%;
-  background: #f4f0ec;
-  border: 8px solid #333;
-  box-shadow: 0 0 0 50px rgba(232, 236, 241, 1) inset;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   @media (max-width: 768px) {
     width: 80%;

@@ -33,17 +33,14 @@ const Gallery = styled.div`
 `
 
 const GalleryImg = styled.img`
-  width:  325px;
+  width: 325px;
   height: auto;
   margin: 25px;
   box-sizing: border-box;
   display: block;
-  padding: 10%;
-  background: #f4f0ec;
-  border: 8px solid #333;
-  box-shadow: 0 0 0 50px rgba(232, 236, 241, 1) inset;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   animation: fade 1s ease-in;
-
 
   :hover {
     -webkit-filter: brightness(85%);

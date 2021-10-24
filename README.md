@@ -1,3 +1,6 @@
+## Contentful Webhook
+**These can be generated on Netlify and copied over to contentful for when photographer starts adding to the site**
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

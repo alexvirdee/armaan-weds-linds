@@ -26,7 +26,7 @@ const data = [
         answer: [
           {
             id: 1,
-            innerAnswer: "Indian Formal",
+            innerAnswer: "i. Indian Formal",
           },
         ],
       },
@@ -35,7 +35,7 @@ const data = [
         answer: [
           {
             id: 2,
-            innerAnswer: "Indian",
+            innerAnswer: "i. Indian",
           },
         ],
       },
@@ -44,7 +44,7 @@ const data = [
         answer: [
           {
             id: 3,
-            innerAnswer: "Beach Formal",
+            innerAnswer: "i. Beach Formal",
           },
         ],
       },
@@ -70,55 +70,79 @@ const data = [
   },
 ]
 
+const Trigger = props => {
+  return (
+    <MainTriggerStyle>
+      <div>{props.text}</div>
+      <Chevron>&#8250;</Chevron>
+    </MainTriggerStyle>
+  )
+}
+
+const TriggerOpen = props => {
+  return (
+    <MainTriggerStyle>
+      <div>{props.text}</div>
+      <Chevron>&#8964;</Chevron>
+    </MainTriggerStyle>
+  )
+}
+
 const FAQ = () => {
   return (
     <>
       <Navbar />
       <Title>FAQ</Title>
-      <Accordion>
-        {/* <CollapsibleSection trigger="Start here">
-          <p>
-            This is the collapsible content. It can be any element or React
-            component you like.
-          </p>
-          <p>
-            It can even be another Collapsible component. Check out the next
-            section!
-          </p>
-        </CollapsibleSection> */}
-        {data.map(item => {
-          return (
-            <>
-              <CollapsibleSection
-                key={item.id}
-                trigger={item.question}
-                triggerStyle={{ display: "block", cursor: "pointer" }}
-              >
-                {item.answers.map(answer => {
-                  console.log(answer.answer)
-                  return (
-                    <>
-                      {answer.answer !== undefined ? (
-                        <>
-                          <CollapsibleSection trigger={answer.id}>
-                            <CollapsibleAnswers>
-                              {answer.answer.map(target => {
-                                return <span key={target.id}>{target.innerAnswer}</span>
-                              })}
-                            </CollapsibleAnswers>
-                          </CollapsibleSection>
-                        </>
-                      ) : (
-                        <CollapsibleAnswers>{answer.id}</CollapsibleAnswers>
-                      )}
-                    </>
-                  )
-                })}
-              </CollapsibleSection>
-            </>
-          )
-        })}
-      </Accordion>
+      <FAQContainer>
+        <Accordion>
+          {data.map(item => {
+            return (
+              <>
+                <CollapsibleSection
+                  key={item.id}
+                  trigger={<Trigger text={item.question} />}
+                  triggerStyle={{ display: "block", cursor: "pointer" }}
+                  triggerWhenOpen={<TriggerOpen text={item.question} />}
+                >
+                  {item.answers.map(answer => {
+                    console.log(answer.answer)
+                    return (
+                      <>
+                        {answer.answer !== undefined ? (
+                          <>
+                            <CollapsibleSection
+                              trigger={<Trigger text={answer.id} />}
+                              triggerStyle={{
+                                display: "block",
+                                cursor: "pointer",
+                                paddingLeft: "25px",
+                                paddingRight: "15px"
+                              }}
+                              triggerWhenOpen={<TriggerOpen text={answer.id} />}
+                            >
+                              <CollapsibleAnswers>
+                                {answer.answer.map(target => {
+                                  return (
+                                    <InnerAnswer key={target.id}>
+                                      {target.innerAnswer}
+                                    </InnerAnswer>
+                                  )
+                                })}
+                              </CollapsibleAnswers>
+                            </CollapsibleSection>
+                          </>
+                        ) : (
+                          <CollapsibleAnswers>{answer.id}</CollapsibleAnswers>
+                        )}
+                      </>
+                    )
+                  })}
+                </CollapsibleSection>
+              </>
+            )
+          })}
+        </Accordion>
+      </FAQContainer>
     </>
   )
 }
@@ -128,17 +152,51 @@ const Title = styled.h1`
   text-align: center;
 `
 
-const Accordion = styled.div``
+const FAQContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const MainTriggerStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const Chevron = styled.div`
+  font-family: "Barlow Condensed";
+  font-size: 1.2rem;
+`
+
+const Accordion = styled.div`
+  width: 60vw;
+  padding: 15px;
+  font-family: "Barlow Condensed";
+`
 
 const CollapsibleSection = styled(Collapsible)`
-  border: 2px solid magenta;
+  border: 1px solid lightgray;
   padding: 8px;
-  background-color: lightgray;
+
+  &:hover {
+    background-color: lightgray;
+  }
+`
+
+const OpenedTrigger = styled.div`
+  border: 1px solid lightgray;
+  padding: 8px;
+  background-color: #fffff8;
 `
 
 const CollapsibleAnswers = styled.p`
-  border: 2px solid magenta;
-  padding: 8px;
+  padding-left: 25px;
+`
+
+const InnerAnswer = styled.p`
+  padding-left: 35px;
 `
 
 export default FAQ

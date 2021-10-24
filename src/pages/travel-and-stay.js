@@ -12,16 +12,16 @@ const travelAndStay = () => {
       <Navbar />
       <MainContainer>
         <LocationInfo>
-
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
-            <Accomodation />
-            <AccomodationImg />
-            <AccomodationSecond />
-            <AccomodationSecondImg />
-            <AccomodationThird />
-            <AccomodationThirdImg />
+          <Accomodation />
+          <AccomodationImg />
+          <AccomodationSecond />
+          <AccomodationSecondImg />
+          <AccomodationThird />
+          <AccomodationThirdImg />
+          <AirportInfo />
         </LocationInfo>
         <Heading>
           <Title>Travel & Stay</Title>
@@ -56,57 +56,66 @@ const LocationInfo = styled.div`
   grid-template-rows: 1.2fr 0.8fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    ". Map"
+    "Airport-Info Map"
     "Accomodation Accomodation-img"
     "Accomodation-2 Accomodation-2-img"
     "Accomodation-3 Accomodation-3-img";
   grid-area: Location-info;
 `
 
-
 const MapDisplay = styled.div`
-    grid-area: Map;
-    border: 4px solid #000;
+  grid-area: Map;
+  border: 4px solid #000;
 `
 
 const Accomodation = styled.div`
-    grid-area: Accomodation;
-    border: 2px dashed magenta;
+  grid-area: Accomodation;
+  border: 2px dashed magenta;
 `
 
-const AccomodationImg  = styled.div`
-    grid-area: Accomodation-img
-    border: 2px solid green;
+const AccomodationImg = styled.div`
+  grid-area: Accomodation-img;
+  border: 2px solid green;
 `
 
 const AccomodationSecond = styled.div`
-    grid-area: Accomodation-2;
-    border: 6px dashed lightblue;
+  grid-area: Accomodation-2;
+  border: 6px dashed lightblue;
 `
 
 const AccomodationSecondImg = styled.div`
-    grid-area: Accomodation-2-img;
-    border: 6px dashed yellow;
+  grid-area: Accomodation-2-img;
+  border: 6px dashed indigo;
 `
 
 const AccomodationThird = styled.div`
-    grid-area: Accomodation-3;
-    border: 6px dashed purple;
+  grid-area: Accomodation-3;
+  border: 6px dashed purple;
 `
 
 const AccomodationThirdImg = styled.div`
-    grid-area: Accomodation-3-img;
-    border: 6px dashed lightgreen;
+  grid-area: Accomodation-3-img;
+  border: 6px dashed lightgreen;
+`
+
+const AirportInfo = styled.div`
+  grid-area: Airport-Info;
+  border: 4px dashed teal;
 `
 
 const Heading = styled.div`
   grid-area: Heading;
   border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.h1`
   font-family: "Alex Brush";
   text-align: center;
+  padding: 8px;
   border: 4px dashed peru;
 `
 
@@ -114,6 +123,5 @@ const ImageCaption = styled.figcaption`
     // text-align: center;
     font-family: "Barlow Condensed;
 `
-
 
 export default travelAndStay

@@ -163,6 +163,7 @@ const MainTriggerStyle = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 8px;
 `
 
 const Chevron = styled.div`
@@ -181,7 +182,7 @@ const CollapsibleSection = styled(Collapsible)`
   padding: 8px;
 
   &:hover {
-    background-color: lightgray;
+    background-color: #B0D5C0;
   }
 `
 

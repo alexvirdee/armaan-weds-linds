@@ -1,15 +1,31 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
+import "@fontsource/barlow-condensed"
 
 const travelAndStay = () => {
   return (
     <>
       <Navbar />
       <MainContainer>
-        <Title>Travel & Stay</Title>
+        <div>
+          <Title>Travel & Stay</Title>
+          <StaticImage
+            width={600}
+            height={350}
+            layout={"constrained"}
+            src="../images/cheeca-lodge.jpg"
+            alt="Cheeca Lodge Panorama"
+          />
+          <ImageCaption>Cheeca Lodge Resort Panorama at Sunrise</ImageCaption>
+        </div>
+        <h1>INFORMATION HERE</h1>
+        <h1>INFORMATION HERE</h1>
+        <h1>INFORMATION HERE</h1>
+        <h1>INFORMATION HERE</h1>
         <MapDisplay>
           <WeddingMap />
         </MapDisplay>
@@ -31,7 +47,11 @@ const Title = styled.h1`
   text-align: center;
 `
 
-const MapDisplay = styled.div`
+const ImageCaption = styled.figcaption`
+    text-align: center;
+    font-family: "Barlow Condensed;
 `
+
+const MapDisplay = styled.div``
 
 export default travelAndStay

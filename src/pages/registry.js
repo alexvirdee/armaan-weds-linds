@@ -1,7 +1,6 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
-import { Link } from "gatsby"
 import "@fontsource/alex-brush"
 
 const Registry = () => {
@@ -34,7 +33,7 @@ const Title = styled.h1`
 `
 
 const MainText = styled.p`
-    width: 80%;
+    width: 50%;
     padding: 25px;
     font-size: 1.2rem;
     text-align: center;

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useCallback } from "react"
+import React, { useState, useCallback } from "react"
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
 import styled from "styled-components"
 
 const containerStyle = {
-  width: "80vw",
+  width: "95vw",
   height: "250px",
 }
 

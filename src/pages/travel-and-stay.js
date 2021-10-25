@@ -15,13 +15,13 @@ const travelAndStay = () => {
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
-          <Accomodation />
-          <AccomodationImg />
-          <AccomodationSecond />
-          <AccomodationSecondImg />
-          <AccomodationThird />
-          <AccomodationThirdImg />
-          <AirportInfo />
+          <Accomodation style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</Accomodation>
+          <AccomodationImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationImg>
+          <AccomodationSecond style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</AccomodationSecond>
+          <AccomodationSecondImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationSecondImg>
+          <AccomodationThird style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</AccomodationThird>
+          <AccomodationThirdImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationThirdImg>
+          <AirportInfo style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Airport Info</AirportInfo>
         </LocationInfo>
         <Heading>
           <Title>Travel & Stay</Title>

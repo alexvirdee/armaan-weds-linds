@@ -98,9 +98,8 @@ const CardLeft = styled.div`
   border-right: 2px solid lightgray;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-  height: 100%;
   height: auto;
   background-color: #A5DDF0;
 

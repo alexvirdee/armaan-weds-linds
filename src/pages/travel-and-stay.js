@@ -15,13 +15,76 @@ const travelAndStay = () => {
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
-          <Accomodation style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</Accomodation>
-          <AccomodationImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationImg>
-          <AccomodationSecond style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</AccomodationSecond>
-          <AccomodationSecondImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationSecondImg>
-          <AccomodationThird style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation</AccomodationThird>
-          <AccomodationThirdImg style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Accomodation Img</AccomodationThirdImg>
-          <AirportInfo style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "18px" }}>Airport Info</AirportInfo>
+          <Accomodation
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation
+          </Accomodation>
+          <AccomodationImg
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation Img
+          </AccomodationImg>
+          <AccomodationSecond
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation
+          </AccomodationSecond>
+          <AccomodationSecondImg
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation Img
+          </AccomodationSecondImg>
+          <AccomodationThird
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation
+          </AccomodationThird>
+          <AccomodationThirdImg
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Accomodation Img
+          </AccomodationThirdImg>
+          <AirportInfo
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "18px",
+            }}
+          >
+            Airport Info
+          </AirportInfo>
         </LocationInfo>
         <Heading>
           <Title>Travel & Stay</Title>
@@ -61,6 +124,24 @@ const LocationInfo = styled.div`
     "Accomodation-2 Accomodation-2-img"
     "Accomodation-3 Accomodation-3-img";
   grid-area: Location-info;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+    
+    grid-template-areas:
+    "Map ."
+    "Airport-Info ."
+    "Accomodation ."
+    "Accomodation-img ."
+    "Accomodation-2 ."
+    "Accomodation-2-img ."
+    "Accomodation-3 ."
+    "Accomodation-3-img .";
+  grid-area: Location-info;
+  }
 `
 
 const MapDisplay = styled.div`
@@ -116,7 +197,7 @@ const Title = styled.h1`
   font-family: "Alex Brush";
   text-align: center;
   padding: 8px;
-  border: 4px dashed peru;
+  border: 4px dashed orange;
 `
 
 const ImageCaption = styled.figcaption`

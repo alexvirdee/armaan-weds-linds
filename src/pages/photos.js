@@ -28,16 +28,18 @@ const Title = styled.h1`
 `
 
 const Gallery = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 0px;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
 `
 
 const GalleryImg = styled.img`
-  width: 325px;
+  max-width: 75%;
   height: auto;
-  margin: 25px;
-  box-sizing: border-box;
-  display: block;
+  margin: 10px;
   padding: 2%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   animation: fade 1s ease-in;

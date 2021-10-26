@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react"
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api"
+import { GoogleMap, useJsApiLoader, Marker, OverlayView } from "@react-google-maps/api"
 import styled from "styled-components"
 
 const containerStyle = {
@@ -8,8 +8,8 @@ const containerStyle = {
 }
 
 const center = {
-  lat: 24.924294,
-  lng: -80.627836,
+  lat: 24.9166,
+  lng: -80.6339,
 }
 
 let key = process.env.GATSBY_GOOGLE_MAPS_KEY;
@@ -39,7 +39,11 @@ const WeddingMap = () => {
       zoom={15}
       // onLoad={onLoad}
       onUnmount={onUnmount}
-    />
+    >
+        <Marker
+            position={center}
+        />
+    </GoogleMap>
   ) : (
     <></>
   )

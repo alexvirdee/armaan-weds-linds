@@ -15,7 +15,12 @@ const Registry = () => {
           for gift ideas we have created our registry through Zola. Please
           follow the button below thank you!
         </MainText>
-        <ZolaBtn href="https://www.zola.com/registry/lindsayandarmaan" target="_blank" >View Registry</ZolaBtn>
+        <ZolaBtn
+          href="https://www.zola.com/registry/lindsayandarmaan"
+          target="_blank"
+        >
+          View Registry
+        </ZolaBtn>
       </RegistryContainer>
     </>
   )
@@ -33,20 +38,20 @@ const Title = styled.h1`
 `
 
 const MainText = styled.p`
-    width: 50%;
-    padding: 25px;
-    font-size: 1.2rem;
-    text-align: center;
+  width: 50%;
+  padding: 25px;
+  font-size: 1.2rem;
+  text-align: center;
 `
 
 const ZolaBtn = styled.a`
-text-decoration: none;
+  text-decoration: none;
   font-family: "Alex Brush";
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
   text-align: center;
-  border: 1px solid #000;
+  border: 1px solid lightgray;
   font-size: 2rem;
   background-color: #fcb2a9;
   color: #fff;
@@ -64,21 +69,20 @@ text-decoration: none;
     transition: all 10ms ease;
   }
 
-
   @media (max-width: 1400px) {
     font-size: 1.8rem;
     padding: 8px;
     border-radius: 25px;
     width: 20%;
-}
+  }
 
   @media (max-width: 1200px) {
-      font-size: 1.6rem;
+    font-size: 1.6rem;
   }
 
   @media (max-width: 768px) {
-      font-size: 1.2rem;
-      width: 25%;
+    font-size: 1.2rem;
+    width: 25%;
   }
 `
 

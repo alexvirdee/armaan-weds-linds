@@ -15,36 +15,11 @@ const travelAndStay = () => {
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
-          <Accomodation
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            Accomodation
-          </Accomodation>
-          <AccomodationImg
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            Accomodation Img
+          <Accomodation>Cheeca Lodge & Spa</Accomodation>
+          <AccomodationImg>
+            <StaticImage src={"../images/cheeca.jpg"} />
           </AccomodationImg>
-          <AccomodationSecond
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            Accomodation
-          </AccomodationSecond>
+          <AccomodationSecond>Playa Largo Resort & Spa</AccomodationSecond>
           <AccomodationSecondImg
             style={{
               display: "flex",
@@ -53,7 +28,7 @@ const travelAndStay = () => {
               fontSize: "18px",
             }}
           >
-            Accomodation Img
+            <StaticImage src={"../images/playa-largo.jpg"} />
           </AccomodationSecondImg>
           <AccomodationThird
             style={{
@@ -63,7 +38,7 @@ const travelAndStay = () => {
               fontSize: "18px",
             }}
           >
-            Accomodation
+            Baker's Cay Resort Key Largo
           </AccomodationThird>
           <AccomodationThirdImg
             style={{
@@ -73,7 +48,7 @@ const travelAndStay = () => {
               fontSize: "18px",
             }}
           >
-            Accomodation Img
+            <StaticImage src={"../images/bakers-cay.jpg"} />
           </AccomodationThirdImg>
           <AirportInfo
             style={{
@@ -83,7 +58,11 @@ const travelAndStay = () => {
               fontSize: "18px",
             }}
           >
-            Airport Info
+            We are so excited to have you all travel from afar to join us during
+            our wedding weekend. The nearest airport is MIA, however there are
+            others if you plan on exploring South Florida or the Keys! There are
+            plenty of shuttles and car rentals to choose from. If you do decide
+            to take the shuttle, consider booking in advance.
           </AirportInfo>
         </LocationInfo>
         <Heading>
@@ -95,8 +74,11 @@ const travelAndStay = () => {
             src="../images/cheeca-lodge.jpg"
             alt="Cheeca Lodge Panorama"
           />
-          <ImageCaption>Cheeca Lodge Resort Panorama at Sunrise</ImageCaption>
-          <HeadingText>We are so excited to have you all travel from afar to join us during our wedding weekend. The nearest airport is MIA, however there are others if you plan on exploring South Florida or the Keys! There are plenty of shuttles and car rentals to choose from. If you do decide to take the shuttle, consider booking in advance.</HeadingText>
+          <ImageCaption
+            style={{ paddingTop: "15px", fontFamily: "Barlow Condensed" }}
+          >
+            Cheeca Lodge Resort Panorama at Sunrise
+          </ImageCaption>
         </Heading>
       </MainContainer>
     </>
@@ -107,7 +89,7 @@ const MainContainer = styled.div`
   display: grid;
   grid-auto-rows: 1fr;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 2fr;
+  grid-template-rows: 0.5fr 2.5fr;
   gap: 0px 0px;
   grid-template-areas:
     "Heading"
@@ -119,6 +101,7 @@ const LocationInfo = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1.2fr 0.8fr 1fr 1fr;
   gap: 0px 0px;
+  padding-top: 45px;
   grid-template-areas:
     "Airport-Info Map"
     "Accomodation Accomodation-img"
@@ -130,64 +113,76 @@ const LocationInfo = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    
-    
+
     grid-template-areas:
-    "Map ."
-    "Airport-Info ."
-    "Accomodation ."
-    "Accomodation-img ."
-    "Accomodation-2 ."
-    "Accomodation-2-img ."
-    "Accomodation-3 ."
-    "Accomodation-3-img .";
-  grid-area: Location-info;
+      "Map ."
+      "Airport-Info ."
+      "Accomodation ."
+      "Accomodation-img ."
+      "Accomodation-2 ."
+      "Accomodation-2-img ."
+      "Accomodation-3 ."
+      "Accomodation-3-img .";
+    grid-area: Location-info;
   }
 `
 
 const MapDisplay = styled.div`
   grid-area: Map;
-  border: 4px solid #000;
+  // border: 4px solid #000;
 `
 
 const Accomodation = styled.div`
   grid-area: Accomodation;
-  border: 2px dashed magenta;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 `
 
 const AccomodationImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 25px;
+
   grid-area: Accomodation-img;
-  border: 2px solid green;
 `
 
 const AccomodationSecond = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+
   grid-area: Accomodation-2;
-  border: 6px dashed lightblue;
 `
 
 const AccomodationSecondImg = styled.div`
+  margin-top: 25px;
+
   grid-area: Accomodation-2-img;
-  border: 6px dashed indigo;
 `
 
 const AccomodationThird = styled.div`
   grid-area: Accomodation-3;
-  border: 6px dashed purple;
 `
 
 const AccomodationThirdImg = styled.div`
+  margin-top: 25px;
+
   grid-area: Accomodation-3-img;
-  border: 6px dashed lightgreen;
 `
 
 const AirportInfo = styled.div`
   grid-area: Airport-Info;
-  border: 4px dashed teal;
+  padding: 25px;
+  font-family: "Barlow Condensed";
 `
 
 const Heading = styled.div`
   grid-area: Heading;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,17 +193,8 @@ const Title = styled.h1`
   font-family: "Alex Brush";
   text-align: center;
   padding: 8px;
-  border: 4px dashed orange;
 `
 
-const ImageCaption = styled.figcaption`
-    text-align: center;
-    font-family: "Barlow Condensed;
-`
-
-const HeadingText = styled.p`
-  color: red;
-  font-family: "Alex Brush";
-`
+const ImageCaption = styled.figcaption``
 
 export default travelAndStay

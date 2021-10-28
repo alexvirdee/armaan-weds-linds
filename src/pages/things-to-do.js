@@ -7,16 +7,13 @@ const thingsTodo = () => {
   return (
     <>
       <Navbar />
-        <Heading>
-          <Title>Things to Do</Title>
-        </Heading>
-        <InformationWrap>
-          
-        </InformationWrap>
+      <Heading>
+        <Title>Things to Do</Title>
+      </Heading>
+      <InformationWrap></InformationWrap>
     </>
   )
 }
-
 
 const Heading = styled.div`
   grid-area: Heading;
@@ -28,11 +25,9 @@ const Title = styled.h1`
 `
 
 const InformationWrap = styled.div`
-    display: flex;
-    height: 100vh;
-    border: 4px dashed lightblue;
+  display: flex;
+  height: 100vh;
+  border: 4px dashed lightblue;
 `
-
-
 
 export default thingsTodo

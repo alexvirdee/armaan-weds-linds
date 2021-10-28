@@ -96,6 +96,7 @@ const travelAndStay = () => {
             alt="Cheeca Lodge Panorama"
           />
           <ImageCaption>Cheeca Lodge Resort Panorama at Sunrise</ImageCaption>
+          <HeadingText>We are so excited to have you all travel from afar to join us during our wedding weekend. The nearest airport is MIA, however there are others if you plan on exploring South Florida or the Keys! There are plenty of shuttles and car rentals to choose from. If you do decide to take the shuttle, consider booking in advance.</HeadingText>
         </Heading>
       </MainContainer>
     </>
@@ -201,8 +202,13 @@ const Title = styled.h1`
 `
 
 const ImageCaption = styled.figcaption`
-    // text-align: center;
+    text-align: center;
     font-family: "Barlow Condensed;
+`
+
+const HeadingText = styled.p`
+  color: red;
+  font-family: "Alex Brush";
 `
 
 export default travelAndStay

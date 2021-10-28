@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const containerStyle = {
   width: "100%",
-  height: "250px",
+  height: "100%",
 }
 
 const center = {

@@ -171,8 +171,10 @@ const Heading = styled.div`
   grid-area: Heading;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #FFFFF8;
 `
 
 const Title = styled.h1`

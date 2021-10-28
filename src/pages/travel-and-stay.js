@@ -17,47 +17,17 @@ const travelAndStay = () => {
           </MapDisplay>
           <Accomodation>Cheeca Lodge & Spa</Accomodation>
           <AccomodationImg>
-            <StaticImage src={"../images/cheeca.jpg"} />
+            <StaticImage layout={"constrained"} src={"../images/cheeca.jpg"} />
           </AccomodationImg>
           <AccomodationSecond>Playa Largo Resort & Spa</AccomodationSecond>
-          <AccomodationSecondImg
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            <StaticImage src={"../images/playa-largo.jpg"} />
+          <AccomodationSecondImg>
+            <StaticImage layout={"constrained"}  src={"../images/playa-largo.jpg"} />
           </AccomodationSecondImg>
-          <AccomodationThird
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            Baker's Cay Resort Key Largo
-          </AccomodationThird>
-          <AccomodationThirdImg
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
-            <StaticImage src={"../images/bakers-cay.jpg"} />
+          <AccomodationThird>Baker's Cay Resort Key Largo</AccomodationThird>
+          <AccomodationThirdImg>
+            <StaticImage layout={"constrained"}  src={"../images/bakers-cay.jpg"} />
           </AccomodationThirdImg>
-          <AirportInfo
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontSize: "18px",
-            }}
-          >
+          <AirportInfo>
             We are so excited to have you all travel from afar to join us during
             our wedding weekend. The nearest airport is MIA, however there are
             others if you plan on exploring South Florida or the Keys! There are
@@ -160,22 +130,38 @@ const AccomodationSecond = styled.div`
 `
 
 const AccomodationSecondImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   margin-top: 25px;
 
   grid-area: Accomodation-2-img;
 `
 
 const AccomodationThird = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   grid-area: Accomodation-3;
 `
 
 const AccomodationThirdImg = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   margin-top: 25px;
 
   grid-area: Accomodation-3-img;
 `
 
 const AirportInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
   grid-area: Airport-Info;
   padding: 25px;
   font-family: "Barlow Condensed";

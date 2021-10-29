@@ -32,8 +32,6 @@ const Gallery = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 0px;
   justify-items: center;
-  margin: 0;
-  padding: 0;
 `
 
 const GalleryImg = styled.img`

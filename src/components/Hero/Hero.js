@@ -33,6 +33,14 @@ const HeroContainer = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
+
+  animation: fade 2s ease-in;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  }
 `
 
 const TopTitle = styled.h3`
@@ -48,7 +56,7 @@ const Title = styled.h1`
   text-align: center;
   top: 25%;
   width: 100%;
-  animation: fade 1s ease-in;
+  animation: fade 4.8s ease-in;
 
   @keyframes fade {
     0% {

@@ -94,7 +94,7 @@ const Navbar = () => {
 
   return (
     <>
-      <Navigation>
+      <Navigation sticky="top">
         <Logo />
         <Toggle
           navbarOpen={navbarOpen}

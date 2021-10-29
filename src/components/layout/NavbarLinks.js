@@ -2,6 +2,20 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+const NavbarLinks = () => {
+  return (
+    <>
+      <NavItem to="/our-story">Our Story</NavItem>
+      <NavItem to="/registry">Registry</NavItem>
+      <NavItem to="/things-to-do">Things To Do</NavItem>
+      <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
+      <NavItem to="/photos">Photos</NavItem>
+      <NavItem to="/schedule">Schedule</NavItem>
+      <NavItem to="/faq">FAQ</NavItem>
+    </>
+  )
+}
+
 const NavItem = styled(Link)`
   text-decoration: none;
   color: #111;
@@ -37,18 +51,5 @@ const NavItem = styled(Link)`
     z-index: 6;
   }
 `
-const NavbarLinks = () => {
-  return (
-    <>
-      <NavItem to="/our-story">Our Story</NavItem>
-      <NavItem to="/registry">Registry</NavItem>
-      <NavItem to="/things-to-do">Things To Do</NavItem>
-      <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
-      <NavItem to="/photos">Photos</NavItem>
-      <NavItem to="/schedule">Schedule</NavItem>
-      <NavItem to="/faq">FAQ</NavItem>
-    </>
-  )
-}
 
 export default NavbarLinks

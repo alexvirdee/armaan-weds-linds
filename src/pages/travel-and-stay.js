@@ -7,47 +7,17 @@ import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
 const TravelAndStay = () => {
+  const locationRef = useRef(null)
 
-  const locationRef = useRef(null);
-  
-  const handleScroll = () => locationRef.current.scrollIntoView({ behavior: "smooth" })
+  const handleScroll = () =>
+    locationRef.current.scrollIntoView({ behavior: "smooth" })
 
   return (
     <>
       <Navbar />
+      <Title>Travel & Stay</Title>
       <MainContainer>
-        <LocationInfo ref={locationRef}>
-          <MapDisplay>
-            <WeddingMap />
-          </MapDisplay>
-          <Accomodation>Cheeca Lodge & Spa</Accomodation>
-          <AccomodationImg>
-            <StaticImage layout={"constrained"} src={"../images/cheeca.jpg"} />
-          </AccomodationImg>
-          <AccomodationSecond>Playa Largo Resort & Spa</AccomodationSecond>
-          <AccomodationSecondImg>
-            <StaticImage
-              layout={"constrained"}
-              src={"../images/playa-largo.jpg"}
-            />
-          </AccomodationSecondImg>
-          <AccomodationThird>Baker's Cay Resort Key Largo</AccomodationThird>
-          <AccomodationThirdImg>
-            <StaticImage
-              layout={"constrained"}
-              src={"../images/bakers-cay.jpg"}
-            />
-          </AccomodationThirdImg>
-          <AirportInfo>
-            We are so excited to have you all travel from afar to join us during
-            our wedding weekend. The nearest airport is MIA, however there are
-            others if you plan on exploring South Florida or the Keys! There are
-            plenty of shuttles and car rentals to choose from. If you do decide
-            to take the shuttle, consider booking in advance.
-          </AirportInfo>
-        </LocationInfo>
         <Heading>
-          <Title>Travel & Stay</Title>
           <StaticImage
             width={600}
             height={300}
@@ -60,10 +30,146 @@ const TravelAndStay = () => {
           >
             Cheeca Lodge Resort Panorama at Sunrise
           </ImageCaption>
+          <HeadingText>
+            We are so excited to have you all travel from afar to join us during
+            our wedding weekend. The nearest airport is MIA, however there are
+            others if you plan on exploring South Florida or the Keys! There are
+            plenty of shuttles and car rentals to choose from. If you do decide
+            to take the shuttle, consider booking in advance.
+          </HeadingText>
           <ScrollDownContainer onClick={handleScroll}>
-            <Chevron>&#8964;</Chevron>
+            <Chevron>❤️</Chevron>
           </ScrollDownContainer>
         </Heading>
+        <LocationInfo ref={locationRef}>
+          <MapDisplay>
+            <WeddingMap />
+          </MapDisplay>
+          <Accomodation>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  fontSize: "2rem",
+                  fontFamily: "Alex Brush",
+                  paddingBottom: "35px",
+                  textAlign: "center",
+                }}
+              >
+                Cheeca Lodge & Spa
+              </div>
+              <div
+                style={{
+                  fontSize: "1.2rem",
+                  fontFamily: "Barlow Condensed",
+                  padding: "15px",
+                }}
+              >
+                Our wedding will take place here at Cheeca Lodge. We would love
+                for you to stay with us so please try to book as soon as
+                possible. Cheeca Lodge & Spa is set on a beautiful 27 acre
+                private oceanfront in Islamorada. It includes traditional
+                Florida Keys architecture and we are incredibly excited to get
+                married there.
+              </div>
+            </div>
+          </Accomodation>
+          <AccomodationImg>
+            <StaticImage layout={"constrained"} src={"../images/cheeca.jpg"} />
+          </AccomodationImg>
+          <AccomodationSecond>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  fontSize: "2rem",
+                  fontFamily: "Alex Brush",
+                  paddingBottom: "35px",
+                  textAlign: "center",
+                }}
+              >
+                Playa Largo Resort & Spa
+              </div>
+              <div
+                style={{
+                  fontSize: "1.2rem",
+                  fontFamily: "Barlow Condensed",
+                  padding: "15px",
+                }}
+              >
+                Add information about Playa Largo
+              </div>
+            </div>
+          </AccomodationSecond>
+          <AccomodationSecondImg>
+            <StaticImage
+              layout={"constrained"}
+              src={"../images/playa-largo.jpg"}
+            />
+          </AccomodationSecondImg>
+          <AccomodationThird>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  fontSize: "2rem",
+                  fontFamily: "Alex Brush",
+                  paddingBottom: "35px",
+                  textAlign: "center",
+                }}
+              >
+                Baker's Cay Resort Key Largo
+              </div>
+              <div
+                style={{
+                  fontSize: "1.2rem",
+                  fontFamily: "Barlow Condensed",
+                  padding: "15px",
+                }}
+              >
+                Add information about Baker's Cay
+              </div>
+            </div>
+          </AccomodationThird>
+          <AccomodationThirdImg>
+            <StaticImage
+              layout={"constrained"}
+              src={"../images/bakers-cay.jpg"}
+            />
+          </AccomodationThirdImg>
+          <AirportInfo>
+            <AirportList>
+              <Airport>
+                Miami International (64.4 miles)
+                <ul>
+                  <li>1 Hour and 55 minute drive</li>
+                  <li>
+                    Take LeJeune Road south to 836 West. Take the Florida
+                    Turnpike south toward Key West. The Turnpike ends at US 1 in
+                    Florida City. Follow U.S. 1 south to the Keys.
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Key West (EYW) (75.7 miles)
+                <ul>
+                  <li>1 Hour and 42 minute drive</li>
+                  <li>
+                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
+                <ul>
+                  <li>1 Hour and 58 minute drive</li>
+                  <li>
+                    Exit the airport and follow the signs for 595 West. Take 595
+                    to the Florida Turnpike and follow the signs for the Florida
+                    Keys.
+                  </li>
+                </ul>
+              </Airport>
+            </AirportList>
+          </AirportInfo>
+        </LocationInfo>
       </MainContainer>
     </>
   )
@@ -78,6 +184,65 @@ const MainContainer = styled.div`
   grid-template-areas:
     "Heading"
     "Location-info";
+`
+
+const Heading = styled.div`
+  grid-area: Heading;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #fffff8;
+  border-bottom: 1px solid lightgrey;
+`
+
+const Title = styled.h1`
+  font-family: "Alex Brush";
+  text-align: center;
+  padding-top: 8px;
+`
+
+const ImageCaption = styled.figcaption``
+
+const HeadingText = styled.div`
+  font-family: "Barlow Condensed";
+  width: 45%;
+  padding-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+`
+
+const ScrollDownContainer = styled.div`
+  padding: 15px;
+  cursor: pointer;
+`
+
+const Chevron = styled.div`
+  font-size: 1.8rem;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+
+  @keyframes bounce {
+    0%,
+    10%,
+    15%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-25px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
 `
 
 const LocationInfo = styled.div`
@@ -120,8 +285,7 @@ const Accomodation = styled.div`
   grid-area: Accomodation;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  padding-top: 35px;
 `
 
 const AccomodationImg = styled.div`
@@ -171,6 +335,11 @@ const AccomodationThirdImg = styled.div`
   grid-area: Accomodation-3-img;
 `
 
+const Airport = styled.li`
+  padding-left: 12px;
+  margin-bottom: 25px;
+`
+
 const AirportInfo = styled.div`
   display: flex;
   justify-content: center;
@@ -181,53 +350,13 @@ const AirportInfo = styled.div`
   font-family: "Barlow Condensed";
 `
 
-const Heading = styled.div`
-  grid-area: Heading;
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fffff8;
-`
+const AirportList = styled.ul`
+  list-style-type: repeating-emoji;
 
-const Title = styled.h1`
-  font-family: "Alex Brush";
-  text-align: center;
-  padding: 8px;
-`
-
-const ImageCaption = styled.figcaption``
-
-const ScrollDownContainer = styled.div`
-  margin-top: 45px;
-  padding: 15px;
-  
-  cursor: pointer;
-`
-
-const Chevron = styled.div`
-font-size: 1.8rem;
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
-
-  @keyframes bounce {
-    0%,
-    10%,
-    15%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-    60% {
-      transform: translateY(-15px);
-    }
+  @counter-style repeating-emoji {
+    system: cyclic;
+    symbols: "✈️"; // unicode code point
+    suffix: " ";
   }
 `
 

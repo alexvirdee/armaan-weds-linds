@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
@@ -6,12 +6,17 @@ import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
-const travelAndStay = () => {
+const TravelAndStay = () => {
+
+  const locationRef = useRef(null);
+  
+  const handleScroll = () => locationRef.current.scrollIntoView({ behavior: "smooth" })
+
   return (
     <>
       <Navbar />
       <MainContainer>
-        <LocationInfo>
+        <LocationInfo ref={locationRef}>
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
@@ -21,11 +26,17 @@ const travelAndStay = () => {
           </AccomodationImg>
           <AccomodationSecond>Playa Largo Resort & Spa</AccomodationSecond>
           <AccomodationSecondImg>
-            <StaticImage layout={"constrained"}  src={"../images/playa-largo.jpg"} />
+            <StaticImage
+              layout={"constrained"}
+              src={"../images/playa-largo.jpg"}
+            />
           </AccomodationSecondImg>
           <AccomodationThird>Baker's Cay Resort Key Largo</AccomodationThird>
           <AccomodationThirdImg>
-            <StaticImage layout={"constrained"}  src={"../images/bakers-cay.jpg"} />
+            <StaticImage
+              layout={"constrained"}
+              src={"../images/bakers-cay.jpg"}
+            />
           </AccomodationThirdImg>
           <AirportInfo>
             We are so excited to have you all travel from afar to join us during
@@ -49,6 +60,9 @@ const travelAndStay = () => {
           >
             Cheeca Lodge Resort Panorama at Sunrise
           </ImageCaption>
+          <ScrollDownContainer onClick={handleScroll}>
+            <Chevron>&#8964;</Chevron>
+          </ScrollDownContainer>
         </Heading>
       </MainContainer>
     </>
@@ -174,7 +188,7 @@ const Heading = styled.div`
   // justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #FFFFF8;
+  background-color: #fffff8;
 `
 
 const Title = styled.h1`
@@ -185,4 +199,36 @@ const Title = styled.h1`
 
 const ImageCaption = styled.figcaption``
 
-export default travelAndStay
+const ScrollDownContainer = styled.div`
+  margin-top: 45px;
+  padding: 15px;
+  
+  cursor: pointer;
+`
+
+const Chevron = styled.div`
+font-size: 1.8rem;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+
+  @keyframes bounce {
+    0%,
+    10%,
+    15%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+`
+
+export default TravelAndStay

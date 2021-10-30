@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React from "react"
 import Navbar from "../components/layout/Navbar"
-import { getSrc } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
+import "@fontsource/barlow-condensed"
 
 const dataList = [
   {
@@ -23,6 +23,7 @@ const dataList = [
     infoText:
       "Soak in the sun and dine here for lunch/dinner. Make sure to get your sandwich extra lazy for a fun surprise. ",
     website: "https://www.lazydaysislamorada.com/",
+    image: "../images/lazy-days.png",
   },
   {
     id: 3,
@@ -31,6 +32,7 @@ const dataList = [
     infoText:
       "Now if you want the best stone crab you have to check this place out. Sanita sends Lindsay a batch of crabs from here every year because she loves them so much!",
     website: "https://www.keylargofisheries.com/",
+    image: "../images/keylargo-fisheries.png",
   },
   {
     id: 4,
@@ -38,6 +40,7 @@ const dataList = [
     place: "Fishing",
     infoText:
       "Islamorada is the sport fishing capital of the world! Lindsay grew up coming to the keys yearly and exploring the seas with the rest of the Virdee fam on the water fishing. We definitely recommend carving out sometime to explore the waters.",
+    image: "../images/dad-fishing.jpg",
   },
   {
     id: 5,
@@ -46,6 +49,7 @@ const dataList = [
     infoText:
       "Sitting offshore is a beautiful lighthouse with a diverse array of marine life. Armaan and Lindsay love taking the boat out and snorkeling near alligator reef lighthouse, it’s a must do!",
     website: "https://www.atlasobscura.com/places/alligator-reef-lighthouse",
+    image: "../images/alligator-reef-2.jpg",
   },
   {
     id: 6,
@@ -53,6 +57,7 @@ const dataList = [
     place: "Islamorada Sandbar",
     infoText:
       "Located off of mile marker 84 is Islamorada’s sandbar where you will see many boats join together! If you are lucky you may even catch the boat truck with delicious food. If venturing into the sea give the sandbar a pit stop!",
+    image: "../images/couple-sandbar.jpg",
   },
   {
     id: 7,
@@ -60,6 +65,7 @@ const dataList = [
     place: "Islamorada Brewery & Distillery ",
     infoText: "Relax and enjoy some craft beers. ",
     website: "https://www.islamoradabeerco.com/",
+    image: "../images/islamorada-beer.png",
   },
   {
     id: 8,
@@ -68,6 +74,7 @@ const dataList = [
     infoText:
       "Have some fun and feed the tarpon. Robbie’s has a great restaurant and offers an abundance of activities which include: snorkeling, boat tours, kayaking, sunset cruises, jet skiing etc.",
     website: "https://www.robbies.com/",
+    image: "../images/robbies.jpg",
   },
 ]
 
@@ -83,22 +90,32 @@ const ThingsTodo = ({ data }) => {
           return (
             <Card key={item.id}>
               <CardLeft>
-                <h3 style={{ paddingTop: "12px", color: "#FCB2A9" }}>
+                <h3 style={{ paddingTop: "12px", paddingRight: "4px", color: "#FCB2A9", fontFamily: "Barlow Condensed", fontSize: "1.4rem" }}>
                   {item.place}
                 </h3>
-                {
-                  data.allFile.edges.map((img, index) => {
-                    if (item.image !== undefined && item.image.includes(img.node.relativePath)) {
-                      return <div key={index}>
-                        <GatsbyImage image={img.node.childImageSharp.gatsbyImageData} alt="" />
+                {data.allFile.edges.map((img, index) => {
+                  if (
+                    item.image !== undefined &&
+                    item.image.includes(img.node.relativePath)
+                  ) {
+                    return (
+                      <div key={index}>
+                        <GatsbyImage
+                          image={img.node.childImageSharp.gatsbyImageData}
+                          alt=""
+                        />
                       </div>
-                    }
-                  })
-                }
+                    )
+                  } else {
+                    return (
+                      <></>
+                    )
+                  }
+                })}
               </CardLeft>
               <CardRight>
                 <div>
-                  <p> {item.infoText} </p>
+                  <p style={{ fontFamily: "Barlow Condensed" }}> {item.infoText} </p>
                 </div>
                 <div>
                   {item.website !== undefined ? (
@@ -124,7 +141,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 150)
+            gatsbyImageData(layout: FIXED, width: 165)
           }
           relativePath
         }
@@ -167,10 +184,6 @@ const Card = styled.div`
       opacity: 0;
     }
   }
-`
-
-const CardTop = styled.div`
-  border: 2px solid #000;
 `
 
 const CardLeft = styled.div`

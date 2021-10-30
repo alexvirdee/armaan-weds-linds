@@ -186,12 +186,6 @@ const CollapsibleSection = styled(Collapsible)`
   }
 `
 
-const OpenedTrigger = styled.div`
-  border: 1px solid lightgray;
-  padding: 8px;
-  background-color: #fffff8;
-`
-
 const CollapsibleAnswers = styled.p`
   padding-left: 25px;
 `

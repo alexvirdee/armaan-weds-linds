@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from "react"
-import { GoogleMap, useJsApiLoader, Marker, OverlayView } from "@react-google-maps/api"
-import styled from "styled-components"
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api"
 
 const containerStyle = {
   width: "100%",

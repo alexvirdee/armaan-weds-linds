@@ -11,13 +11,13 @@ const defaultRemainingTime = {
   days: "00",
 }
 
-const DayOfWedding = () => {
-  return (
-    <div>
-      <h3>We are married!</h3>
-    </div>
-  )
-}
+// const DayOfWedding = () => {
+//   return (
+//     <div>
+//       <h3>We are married!</h3>
+//     </div>
+//   )
+// }
 
 const WeddingCountdown = ({ countdownTimeStampMs }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)

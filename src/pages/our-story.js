@@ -75,6 +75,7 @@ const Card = styled.div`
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0.2rem;
   width: 75%;
+  height: 450px;
   margin-bottom: 25px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -86,6 +87,10 @@ const Card = styled.div`
     0% {
       opacity: 0;
     }
+  }
+
+  @media (max-width: 768px) {
+    height: 750px;
   }
 
   @media (max-width: 1200px) {
@@ -111,9 +116,7 @@ const CardLeft = styled.div`
 `
 
 const CardRight = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-y: auto;
 `
 
 const StoryText = styled.div`

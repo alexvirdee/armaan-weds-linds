@@ -63,7 +63,8 @@ const CountdownRow = styled.div`
 `
 
 const TimeContainer = styled.div`
-  padding: 8px;
+  padding: 20px 20px 20px 20px;
+  padding-right: 8px;
   background-color: #fff;
   margin-right: 25px;
   font-family: "Barlow Condensed";

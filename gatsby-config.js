@@ -15,7 +15,9 @@ if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
 }
 
 module.exports = {
-  /* Your site config here */
+  flags: {
+    PARALLEL_QUERY_RUNNING: true
+  },
   plugins: [
     {
       resolve: `gatsby-source-contentful`,

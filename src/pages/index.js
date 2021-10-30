@@ -2,6 +2,7 @@ import React from "react"
 import FlowerVector from "../components/layout/Flower-vector";
 import Navbar from "../components/layout/Navbar"
 import Hero from "../components/Hero/Hero";
+import Footer from "../components/layout/Footer";
 // import RSVPForm from "../components/RSVP/RSVPForm";
 // import BestFriends from "../components/BridesAndGrooms/BestFriends";
 import { createGlobalStyle } from "styled-components";
@@ -20,6 +21,7 @@ export default function Home() {
       <FlowerVector />
       <Navbar />
       <Hero />
+      <Footer />
       {/* <BestFriends /> */}
       {/* <RSVPForm /> */}
     </>

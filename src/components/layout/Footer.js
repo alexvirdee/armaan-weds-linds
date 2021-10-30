@@ -6,7 +6,7 @@ import styled from "styled-components"
 const Footer = () => {
   return (
     <FooterContainer>
-         <Content>Website designed and built by Alex Virdee</Content>
+         <Content>Website designed and built by Alex Virdee 👨‍💻</Content>
         <WaveContainer>
       <Wave
         fill="#fcb2a9"
@@ -37,6 +37,8 @@ const Content = styled.div`
 `
 
 const WaveContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
     position: absolute;
     width: 100%;
     margin: 0;

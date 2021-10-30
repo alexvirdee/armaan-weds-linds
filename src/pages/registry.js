@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
+import { StaticImage } from "gatsby-plugin-image"
 import "@fontsource/alex-brush"
 
 const Registry = () => {
@@ -9,6 +10,7 @@ const Registry = () => {
       <Navbar />
       <RegistryContainer>
         <Title>Registry</Title>
+        <StaticImage width={300} src="../images/leaf-divider.png" alt="leaf divider" />
         <MainText>
           Please know that your presence at our wedding is present enough.
           However, for friends and family who have been asking and are looking

@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import Navbar from "../components/layout/Navbar"
-import { StaticImage } from "gatsby-plugin-image"
+import { getSrc } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 
-
-const data = [
+const dataList = [
   {
     id: 1,
     activityType: "eat/drink",
@@ -13,7 +14,7 @@ const data = [
     infoText:
       "The Keys are known for their key lime pie - make sure to venture to this spot for the best of the best!",
     website: "https://www.blondgiraffe.com/",
-    image: require("../images/blonde-giraffe.png")
+    image: "../images/blonde-giraffe.png",
   },
   {
     id: 2,
@@ -70,7 +71,7 @@ const data = [
   },
 ]
 
-const ThingsTodo = () => {
+const ThingsTodo = ({ data }) => {
   return (
     <>
       <Navbar />
@@ -78,37 +79,59 @@ const ThingsTodo = () => {
         <Title>Things to Do</Title>
       </Heading>
       <InformationContainer>
-        {data.map(item => {
-          console.log(item.image)
+        {dataList.map(item => {
           return (
-              <Card key={item.id}>
-                <CardLeft>
-                  <h3 style={{ paddingTop: "12px", color: "#FCB2A9" }}>
-                    {item.place}
-                  </h3>
-                  {item.image !== undefined ? <StaticImage src={`${item.image}`} alt={item.place} /> : <></>}
-                </CardLeft>
-                <CardRight>
-                  <div>
-                    <p> {item.infoText} </p>
-                  </div>
-                  <div>
-                    {item.website !== undefined ? (
-                      <Button href={`${item.website}`} target="_blank">
-                        🌐 Website
-                      </Button>
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </CardRight>
-              </Card>
+            <Card key={item.id}>
+              <CardLeft>
+                <h3 style={{ paddingTop: "12px", color: "#FCB2A9" }}>
+                  {item.place}
+                </h3>
+                {
+                  data.allFile.edges.map((img, index) => {
+                    if (item.image !== undefined && item.image.includes(img.node.relativePath)) {
+                      return <div key={index}>
+                        <GatsbyImage image={img.node.childImageSharp.gatsbyImageData} alt="" />
+                      </div>
+                    }
+                  })
+                }
+              </CardLeft>
+              <CardRight>
+                <div>
+                  <p> {item.infoText} </p>
+                </div>
+                <div>
+                  {item.website !== undefined ? (
+                    <Button href={`${item.website}`} target="_blank">
+                      🌐 Website
+                    </Button>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </CardRight>
+            </Card>
           )
         })}
       </InformationContainer>
     </>
   )
 }
+
+export const query = graphql`
+  query ThingsToDoQuery {
+    allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 150)
+          }
+          relativePath
+        }
+      }
+    }
+  }
+`
 
 const Heading = styled.div`
   grid-area: Heading;
@@ -147,7 +170,7 @@ const Card = styled.div`
 `
 
 const CardTop = styled.div`
-  border: 2px solid #000
+  border: 2px solid #000;
 `
 
 const CardLeft = styled.div`

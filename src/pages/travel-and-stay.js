@@ -282,7 +282,7 @@ const LocationInfo = styled.div`
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
 
     grid-template-areas:
       "Map ."

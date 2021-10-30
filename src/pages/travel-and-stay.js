@@ -6,6 +6,24 @@ import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
+const data = [
+  {
+    id: 1,
+    hotel: "Cheeca Lodge & Spa",
+    hotelInfo: "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there."
+  },
+  {
+    id: 2,
+    hotel: "Playa Largo Resort & Spa",
+    hotelInfo: "Add information about Playa Largo"
+  },
+  {
+    id: 3,
+    hotel: "Baker's Cay Resort Key Largo",
+    hotelInfo: "Add information about Baker's Cay"
+  }
+]
+
 const TravelAndStay = () => {
   const locationRef = useRef(null)
 
@@ -46,6 +64,42 @@ const TravelAndStay = () => {
           <MapDisplay>
             <WeddingMap />
           </MapDisplay>
+
+          <AirportInfo>
+            <AirportList>
+              <Airport>
+                Miami International (64.4 miles)
+                <ul>
+                  <li>1 Hour and 55 minute drive</li>
+                  <li>
+                    Take LeJeune Road south to 836 West. Take the Florida
+                    Turnpike south toward Key West. The Turnpike ends at US 1 in
+                    Florida City. Follow U.S. 1 south to the Keys.
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Key West (EYW) (75.7 miles)
+                <ul>
+                  <li>1 Hour and 42 minute drive</li>
+                  <li>
+                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
+                <ul>
+                  <li>1 Hour and 58 minute drive</li>
+                  <li>
+                    Exit the airport and follow the signs for 595 West. Take 595
+                    to the Florida Turnpike and follow the signs for the Florida
+                    Keys.
+                  </li>
+                </ul>
+              </Airport>
+            </AirportList>
+          </AirportInfo>
           <Accomodation>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div
@@ -137,41 +191,6 @@ const TravelAndStay = () => {
               src={"../images/bakers-cay.jpg"}
             />
           </AccomodationThirdImg>
-          <AirportInfo>
-            <AirportList>
-              <Airport>
-                Miami International (64.4 miles)
-                <ul>
-                  <li>1 Hour and 55 minute drive</li>
-                  <li>
-                    Take LeJeune Road south to 836 West. Take the Florida
-                    Turnpike south toward Key West. The Turnpike ends at US 1 in
-                    Florida City. Follow U.S. 1 south to the Keys.
-                  </li>
-                </ul>
-              </Airport>
-              <Airport>
-                Key West (EYW) (75.7 miles)
-                <ul>
-                  <li>1 Hour and 42 minute drive</li>
-                  <li>
-                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
-                  </li>
-                </ul>
-              </Airport>
-              <Airport>
-                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
-                <ul>
-                  <li>1 Hour and 58 minute drive</li>
-                  <li>
-                    Exit the airport and follow the signs for 595 West. Take 595
-                    to the Florida Turnpike and follow the signs for the Florida
-                    Keys.
-                  </li>
-                </ul>
-              </Airport>
-            </AirportList>
-          </AirportInfo>
         </LocationInfo>
       </MainContainer>
     </>
@@ -196,7 +215,6 @@ const Heading = styled.div`
   justify-content: center;
   align-items: center;
   height: 80vh;
-  background-color: #fffff8;
   border-bottom: 1px solid lightgrey;
 `
 
@@ -354,13 +372,7 @@ const AirportInfo = styled.div`
 `
 
 const AirportList = styled.ul`
-  list-style-type: repeating-emoji;
-
-  @counter-style repeating-emoji {
-    system: cyclic;
-    symbols: "✈️"; // unicode code point
-    suffix: " ";
-  }
+  list-style-type: "✈️";
 `
 
 export default TravelAndStay

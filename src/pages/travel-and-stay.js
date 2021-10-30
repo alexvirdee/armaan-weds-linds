@@ -21,6 +21,7 @@ const TravelAndStay = () => {
           <StaticImage
             width={600}
             height={300}
+            placeholder="blurred"
             layout={"constrained"}
             src="../images/cheeca-lodge.jpg"
             alt="Cheeca Lodge Panorama"
@@ -74,7 +75,7 @@ const TravelAndStay = () => {
             </div>
           </Accomodation>
           <AccomodationImg>
-            <StaticImage layout={"constrained"} src={"../images/cheeca.jpg"} />
+            <StaticImage placeholder="blurred" layout={"constrained"} src={"../images/cheeca.jpg"} />
           </AccomodationImg>
           <AccomodationSecond>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -102,6 +103,7 @@ const TravelAndStay = () => {
           <AccomodationSecondImg>
             <StaticImage
               layout={"constrained"}
+              placeholder="blurred"
               src={"../images/playa-largo.jpg"}
             />
           </AccomodationSecondImg>
@@ -131,6 +133,7 @@ const TravelAndStay = () => {
           <AccomodationThirdImg>
             <StaticImage
               layout={"constrained"}
+              placeholder="blurred"
               src={"../images/bakers-cay.jpg"}
             />
           </AccomodationThirdImg>

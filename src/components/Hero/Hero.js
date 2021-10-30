@@ -12,6 +12,7 @@ const Hero = () => {
       <ImageWrapper>
         <StaticImage
           layout={"fullWidth"}
+          loading={"eager"}
           src="../../images/hero-test.jpg"
           alt="hero"
         />

@@ -116,7 +116,7 @@ const FAQ = () => {
                                 display: "block",
                                 cursor: "pointer",
                                 paddingLeft: "25px",
-                                paddingRight: "15px"
+                                paddingRight: "15px",
                               }}
                               triggerWhenOpen={<TriggerOpen text={answer.id} />}
                             >

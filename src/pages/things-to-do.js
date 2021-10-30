@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 
+
 const data = [
   {
     id: 1,
@@ -12,7 +13,7 @@ const data = [
     infoText:
       "The Keys are known for their key lime pie - make sure to venture to this spot for the best of the best!",
     website: "https://www.blondgiraffe.com/",
-    image: "../images/blonde-giraffe.png"
+    image: require("../images/blonde-giraffe.png")
   },
   {
     id: 2,
@@ -78,13 +79,14 @@ const ThingsTodo = () => {
       </Heading>
       <InformationContainer>
         {data.map(item => {
+          console.log(item.image)
           return (
               <Card key={item.id}>
                 <CardLeft>
                   <h3 style={{ paddingTop: "12px", color: "#FCB2A9" }}>
                     {item.place}
                   </h3>
-                  <div>IMG HERE</div>
+                  {item.image !== undefined ? <StaticImage src={`${item.image}`} alt={item.place} /> : <></>}
                 </CardLeft>
                 <CardRight>
                   <div>

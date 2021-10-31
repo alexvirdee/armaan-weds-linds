@@ -1,33 +1,38 @@
 import React, { useRef } from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
+import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { StaticImage } from "gatsby-plugin-image"
 import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
-const data = [
+const hotelData = [
   {
     id: 1,
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
       "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there.",
+    hotelImg: "../images/cheeca.jpg"
   },
   {
     id: 2,
     hotel: "Playa Largo Resort & Spa",
     hotelInfo:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
+      hotelImg: "../images/playa-largo.jpg"
   },
   {
     id: 3,
     hotel: "Baker's Cay Resort Key Largo",
     hotelInfo:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
+      hotelImg: "../images/bakers-cay.jpg"
   },
 ]
 
-const TravelAndStay = () => {
+const TravelAndStay = ({ data }) => {
   const locationRef = useRef(null)
 
   const handleScroll = () =>
@@ -103,7 +108,7 @@ const TravelAndStay = () => {
             <WeddingMap />
           </MapContain>
         </AirportAndMapContainer>
-        {data.map((item, index) => {
+        {hotelData.map((item, index) => {
           return (
             <AccomodationsContainer key={index}>
               <Accomodation>
@@ -130,14 +135,30 @@ const TravelAndStay = () => {
                 </div>
               </Accomodation>
               <AccomodationImg>
-                <StaticImage
+                {data.allFile.edges.map((img, index) => {
+                  if (
+                    item.hotelImg !== undefined && 
+                    item.hotelImg.includes(img.node.relativePath)
+                    ) {
+                    return (
+                      <div key={index}>
+                        <GatsbyImage image={img.node.childImageSharp.gatsbyImageData} alt={item.hotel} style={{ borderRadius: "15px" }} />
+                      </div>
+                    )
+                  } else {
+                    return (
+                      <></>
+                    )
+                  }
+                })}
+                {/* <StaticImage
                   placeholder="blurred"
                   layout={"constrained"}
                   src={"../images/cheeca.jpg"}
                   width={1000}
                   height={500}
                   alt={item.hotel}
-                />
+                /> */}
               </AccomodationImg>
             </AccomodationsContainer>
           )
@@ -146,6 +167,21 @@ const TravelAndStay = () => {
     </>
   )
 }
+
+export const query = graphql`
+  query TravelAndStay {
+    allFile(filter: { sourceInstanceName: { eq: "images" } }) {
+      edges {
+        node {
+          childImageSharp {
+            gatsbyImageData(layout: FIXED, width: 500)
+          }
+          relativePath
+        }
+      }
+    }
+  }
+`
 
 const Heading = styled.div`
   grid-area: Heading;

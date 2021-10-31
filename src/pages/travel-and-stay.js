@@ -14,21 +14,21 @@ const hotelData = [
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
       "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there.",
-    hotelImg: "../images/cheeca.jpg"
+    hotelImg: "../images/cheeca.jpg",
   },
   {
     id: 2,
     hotel: "Playa Largo Resort & Spa",
     hotelInfo:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
-      hotelImg: "../images/playa-largo.jpg"
+    hotelImg: "../images/playa-largo.jpg",
   },
   {
     id: 3,
     hotel: "Baker's Cay Resort Key Largo",
     hotelInfo:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
-      hotelImg: "../images/bakers-cay.jpg"
+    hotelImg: "../images/bakers-cay.jpg",
   },
 ]
 
@@ -137,28 +137,22 @@ const TravelAndStay = ({ data }) => {
               <AccomodationImg>
                 {data.allFile.edges.map((img, index) => {
                   if (
-                    item.hotelImg !== undefined && 
+                    item.hotelImg !== undefined &&
                     item.hotelImg.includes(img.node.relativePath)
-                    ) {
+                  ) {
                     return (
                       <div key={index}>
-                        <GatsbyImage image={img.node.childImageSharp.gatsbyImageData} alt={item.hotel} style={{ borderRadius: "15px" }} />
+                        <GatsbyImage
+                          image={img.node.childImageSharp.gatsbyImageData}
+                          alt={item.hotel}
+                          style={{ borderRadius: "15px" }}
+                        />
                       </div>
                     )
                   } else {
-                    return (
-                      <></>
-                    )
+                    return <></>
                   }
                 })}
-                {/* <StaticImage
-                  placeholder="blurred"
-                  layout={"constrained"}
-                  src={"../images/cheeca.jpg"}
-                  width={1000}
-                  height={500}
-                  alt={item.hotel}
-                /> */}
               </AccomodationImg>
             </AccomodationsContainer>
           )

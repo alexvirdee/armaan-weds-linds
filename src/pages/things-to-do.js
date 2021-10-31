@@ -184,6 +184,12 @@ const Card = styled.div`
       opacity: 0;
     }
   }
+
+  @media (max-width: 390px) {
+    width: 380px;
+    padding: 0;
+    align-items: center;
+  }
 `
 
 const CardLeft = styled.div`
@@ -196,9 +202,8 @@ const CardLeft = styled.div`
 const CardRight = styled.div`
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
-  padding-left: 12px;
+  padding-left: 10px;
 `
 
 const Button = styled.a`

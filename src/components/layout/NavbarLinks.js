@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 const NavbarLinks = () => {
   return (
     <>
+      <NavItem to="/">Home</NavItem>
       <NavItem to="/our-story">Our Story</NavItem>
       <NavItem to="/registry">Registry</NavItem>
       <NavItem to="/things-to-do">Things To Do</NavItem>
@@ -33,13 +34,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: #FCB2A9;
+    background: #fcb2a9;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: #FCB2A9;
+    color: #fcb2a9;
     ::after {
       width: 100%;
     }

@@ -168,21 +168,25 @@ const MainTriggerStyle = styled.div`
 
 const Chevron = styled.div`
   font-family: "Barlow Condensed";
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 `
 
 const Accordion = styled.div`
   width: 60vw;
   padding: 15px;
   font-family: "Barlow Condensed";
+
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
 `
 
 const CollapsibleSection = styled(Collapsible)`
   border: 1px solid lightgray;
-  padding: 8px;
+  padding: 10px;
 
   &:hover {
-    background-color: #B0D5C0;
+    background-color: #FCB2A9;
   }
 `
 

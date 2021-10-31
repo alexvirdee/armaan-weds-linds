@@ -10,9 +10,9 @@ const Photos = ({ data }) => {
       <Navbar />
       <Title>Photos</Title>
       <Gallery>
-        {data.photo.nodes.map(item => {
+        {data.photo.nodes.map((item, index) => {
           return (
-            <Link to={item.slug}>
+            <Link to={item.slug} key={index}>
               <GalleryImg src={item.image.file.url} />
             </Link>
           )

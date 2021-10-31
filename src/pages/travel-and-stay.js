@@ -37,7 +37,6 @@ const TravelAndStay = () => {
     <>
       <Navbar />
       <Title>Travel & Stay</Title>
-      {/* <MainContainer> */}
       <Heading>
         <StaticImage
           width={600}
@@ -144,21 +143,9 @@ const TravelAndStay = () => {
           )
         })}
       </LocationInfo>
-      {/* </MainContainer> */}
     </>
   )
 }
-
-// const MainContainer = styled.div`
-//   display: grid;
-//   grid-auto-rows: 1fr;
-//   grid-template-columns: 1fr;
-//   grid-template-rows: 0.5fr 2.5fr;
-//   gap: 0px 0px;
-//   grid-template-areas:
-//     "Heading"
-//     "Location-info";
-// `
 
 const Heading = styled.div`
   grid-area: Heading;
@@ -257,19 +244,18 @@ const AirportList = styled.ul`
 `
 
 const AccomodationsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 0.8fr));
+  align-items: center;
+  justify-content: center;
 `
 
 const Accomodation = styled.div`
-  // display: flex;
-  // justify-content: center;
-  // padding-top: 35px;
+  place-self: center;
 `
 
 const AccomodationImg = styled.div`
-  align-self: center;
+  place-self: center;
   margin: 25px;
 `
 

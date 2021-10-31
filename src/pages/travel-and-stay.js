@@ -37,126 +37,128 @@ const TravelAndStay = () => {
     <>
       <Navbar />
       <Title>Travel & Stay</Title>
-      <MainContainer>
-        <Heading>
-          <StaticImage
-            width={600}
-            height={300}
-            placeholder="blurred"
-            layout={"constrained"}
-            src="../images/cheeca-lodge.jpg"
-            alt="Cheeca Lodge Panorama"
-          />
-          <ImageCaption
-            style={{ paddingTop: "15px", fontFamily: "Barlow Condensed" }}
-          >
-            Cheeca Lodge Resort Panorama at Sunrise
-          </ImageCaption>
-          <HeadingText>
-            We are so excited to have you all travel from afar to join us during
-            our wedding weekend. The nearest airport is MIA, however there are
-            others if you plan on exploring South Florida or the Keys! There are
-            plenty of shuttles and car rentals to choose from. If you do decide
-            to take the shuttle, consider booking in advance.
-          </HeadingText>
-          <ScrollDownContainer onClick={handleScroll}>
-            <Chevron>❤️</Chevron>
-          </ScrollDownContainer>
-        </Heading>
-        <LocationInfo ref={locationRef}>
-          <AirportAndMapContainer>
-            <AirportInfo>
-              <AirportList>
-                <Airport>
-                  Miami International (64.4 miles)
-                  <ul>
-                    <li>1 Hour and 55 minute drive</li>
-                    <li>
-                      Take LeJeune Road south to 836 West. Take the Florida
-                      Turnpike south toward Key West. The Turnpike ends at US 1
-                      in Florida City. Follow U.S. 1 south to the Keys.
-                    </li>
-                  </ul>
-                </Airport>
-                <Airport>
-                  Key West (EYW) (75.7 miles)
-                  <ul>
-                    <li>1 Hour and 42 minute drive</li>
-                    <li>
-                      Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
-                    </li>
-                  </ul>
-                </Airport>
-                <Airport>
-                  Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
-                  <ul>
-                    <li>1 Hour and 58 minute drive</li>
-                    <li>
-                      Exit the airport and follow the signs for 595 West. Take
-                      595 to the Florida Turnpike and follow the signs for the
-                      Florida Keys.
-                    </li>
-                  </ul>
-                </Airport>
-              </AirportList>
-              <WeddingMap />
-            </AirportInfo>
-          </AirportAndMapContainer>
-          {data.map((item, index) => {
-            return (
-              <AccomodationsContainer key={index}>
-                <Accomodation>
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <div
-                      style={{
-                        fontSize: "2rem",
-                        fontFamily: "Alex Brush",
-                        paddingBottom: "35px",
-                        textAlign: "center",
-                      }}
-                    >
-                      {item.hotel}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "1.2rem",
-                        fontFamily: "Barlow Condensed",
-                        padding: "15px",
-                      }}
-                    >
-                      {item.hotelInfo}
-                    </div>
+      {/* <MainContainer> */}
+      <Heading>
+        <StaticImage
+          width={600}
+          height={300}
+          placeholder="blurred"
+          layout={"constrained"}
+          src="../images/cheeca-lodge.jpg"
+          alt="Cheeca Lodge Panorama"
+        />
+        <ImageCaption
+          style={{ paddingTop: "15px", fontFamily: "Barlow Condensed" }}
+        >
+          Cheeca Lodge Resort Panorama at Sunrise
+        </ImageCaption>
+        <HeadingText>
+          We are so excited to have you all travel from afar to join us during
+          our wedding weekend. The nearest airport is MIA, however there are
+          others if you plan on exploring South Florida or the Keys! There are
+          plenty of shuttles and car rentals to choose from. If you do decide to
+          take the shuttle, consider booking in advance.
+        </HeadingText>
+        <ScrollDownContainer onClick={handleScroll}>
+          <Chevron>❤️</Chevron>
+        </ScrollDownContainer>
+      </Heading>
+      <LocationInfo ref={locationRef}>
+        <AirportAndMapContainer>
+          <AirportInfo>
+            <AirportList>
+              <Airport>
+                Miami International (64.4 miles)
+                <ul>
+                  <li>1 Hour and 55 minute drive</li>
+                  <li>
+                    Take LeJeune Road south to 836 West. Take the Florida
+                    Turnpike south toward Key West. The Turnpike ends at US 1 in
+                    Florida City. Follow U.S. 1 south to the Keys.
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Key West (EYW) (75.7 miles)
+                <ul>
+                  <li>1 Hour and 42 minute drive</li>
+                  <li>
+                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
+                  </li>
+                </ul>
+              </Airport>
+              <Airport>
+                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
+                <ul>
+                  <li>1 Hour and 58 minute drive</li>
+                  <li>
+                    Exit the airport and follow the signs for 595 West. Take 595
+                    to the Florida Turnpike and follow the signs for the Florida
+                    Keys.
+                  </li>
+                </ul>
+              </Airport>
+            </AirportList>
+          </AirportInfo>
+          <MapContain>
+            <WeddingMap />
+          </MapContain>
+        </AirportAndMapContainer>
+        {data.map((item, index) => {
+          return (
+            <AccomodationsContainer key={index}>
+              <Accomodation>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div
+                    style={{
+                      fontSize: "2rem",
+                      fontFamily: "Alex Brush",
+                      paddingBottom: "35px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item.hotel}
                   </div>
-                </Accomodation>
-                <AccomodationImg>
-                  <StaticImage
-                    placeholder="blurred"
-                    layout={"constrained"}
-                    src={"../images/cheeca.jpg"}
-                    width={1000}
-                    height={500}
-                    alt={item.hotel}
-                  />
-                </AccomodationImg>
-              </AccomodationsContainer>
-            )
-          })}
-        </LocationInfo>
-      </MainContainer>
+                  <div
+                    style={{
+                      fontSize: "1.2rem",
+                      fontFamily: "Barlow Condensed",
+                      padding: "15px",
+                    }}
+                  >
+                    {item.hotelInfo}
+                  </div>
+                </div>
+              </Accomodation>
+              <AccomodationImg>
+                <StaticImage
+                  placeholder="blurred"
+                  layout={"constrained"}
+                  src={"../images/cheeca.jpg"}
+                  width={1000}
+                  height={500}
+                  alt={item.hotel}
+                />
+              </AccomodationImg>
+            </AccomodationsContainer>
+          )
+        })}
+      </LocationInfo>
+      {/* </MainContainer> */}
     </>
   )
 }
 
-const MainContainer = styled.div`
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 2.5fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "Heading"
-    "Location-info";
-`
+// const MainContainer = styled.div`
+//   display: grid;
+//   grid-auto-rows: 1fr;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: 0.5fr 2.5fr;
+//   gap: 0px 0px;
+//   grid-template-areas:
+//     "Heading"
+//     "Location-info";
+// `
 
 const Heading = styled.div`
   grid-area: Heading;
@@ -221,9 +223,10 @@ const LocationInfo = styled.div`
 `
 
 const AirportAndMapContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 0.8fr));
+  align-items: center;
+  justify-content: center;
 `
 
 const Airport = styled.li`
@@ -232,12 +235,21 @@ const Airport = styled.li`
 `
 
 const AirportInfo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  place-self: center;
   font-size: 1.2rem;
   padding: 35px;
   font-family: "Barlow Condensed";
+`
+
+const MapContain = styled.div`
+  place-self: center;
+  width: 500px;
+  height: 350px;
+
+  @media (max-width: 768px) {
+    width: 450px;
+    height: 250px;
+  }
 `
 
 const AirportList = styled.ul`

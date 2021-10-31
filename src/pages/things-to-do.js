@@ -102,7 +102,7 @@ const ThingsTodo = ({ data }) => {
                       <div key={index}>
                         <GatsbyImage
                           image={img.node.childImageSharp.gatsbyImageData}
-                          alt=""
+                          alt={item.place}
                         />
                       </div>
                     )

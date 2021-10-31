@@ -75,7 +75,7 @@ const Card = styled.div`
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0.2rem;
   width: 75%;
-  height: 450px;
+  height: 500px;
   margin-bottom: 25px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -112,6 +112,7 @@ const CardLeft = styled.div`
   @media (max-width: 1200px) {
     border: none;
     margin: 0;
+    height: 300px;
   }
 `
 

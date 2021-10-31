@@ -10,18 +10,21 @@ const data = [
   {
     id: 1,
     hotel: "Cheeca Lodge & Spa",
-    hotelInfo: "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there."
+    hotelInfo:
+      "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there.",
   },
   {
     id: 2,
     hotel: "Playa Largo Resort & Spa",
-    hotelInfo: "Add information about Playa Largo"
+    hotelInfo:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
   },
   {
     id: 3,
     hotel: "Baker's Cay Resort Key Largo",
-    hotelInfo: "Add information about Baker's Cay"
-  }
+    hotelInfo:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
+  },
 ]
 
 const TravelAndStay = () => {
@@ -61,136 +64,83 @@ const TravelAndStay = () => {
           </ScrollDownContainer>
         </Heading>
         <LocationInfo ref={locationRef}>
-          <MapDisplay>
-            <WeddingMap />
-          </MapDisplay>
-
-          <AirportInfo>
-            <AirportList>
-              <Airport>
-                Miami International (64.4 miles)
-                <ul>
-                  <li>1 Hour and 55 minute drive</li>
-                  <li>
-                    Take LeJeune Road south to 836 West. Take the Florida
-                    Turnpike south toward Key West. The Turnpike ends at US 1 in
-                    Florida City. Follow U.S. 1 south to the Keys.
-                  </li>
-                </ul>
-              </Airport>
-              <Airport>
-                Key West (EYW) (75.7 miles)
-                <ul>
-                  <li>1 Hour and 42 minute drive</li>
-                  <li>
-                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
-                  </li>
-                </ul>
-              </Airport>
-              <Airport>
-                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
-                <ul>
-                  <li>1 Hour and 58 minute drive</li>
-                  <li>
-                    Exit the airport and follow the signs for 595 West. Take 595
-                    to the Florida Turnpike and follow the signs for the Florida
-                    Keys.
-                  </li>
-                </ul>
-              </Airport>
-            </AirportList>
-          </AirportInfo>
-          <Accomodation>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  fontSize: "2rem",
-                  fontFamily: "Alex Brush",
-                  paddingBottom: "35px",
-                  textAlign: "center",
-                }}
-              >
-                Cheeca Lodge & Spa
-              </div>
-              <div
-                style={{
-                  fontSize: "1.2rem",
-                  fontFamily: "Barlow Condensed",
-                  padding: "15px",
-                }}
-              >
-                Our wedding will take place here at Cheeca Lodge. We would love
-                for you to stay with us so please try to book as soon as
-                possible. Cheeca Lodge & Spa is set on a beautiful 27 acre
-                private oceanfront in Islamorada. It includes traditional
-                Florida Keys architecture and we are incredibly excited to get
-                married there.
-              </div>
-            </div>
-          </Accomodation>
-          <AccomodationImg>
-            <StaticImage placeholder="blurred" layout={"constrained"} src={"../images/cheeca.jpg"} />
-          </AccomodationImg>
-          <AccomodationSecond>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  fontSize: "2rem",
-                  fontFamily: "Alex Brush",
-                  paddingBottom: "35px",
-                  textAlign: "center",
-                }}
-              >
-                Playa Largo Resort & Spa
-              </div>
-              <div
-                style={{
-                  fontSize: "1.2rem",
-                  fontFamily: "Barlow Condensed",
-                  padding: "15px",
-                }}
-              >
-                Add information about Playa Largo
-              </div>
-            </div>
-          </AccomodationSecond>
-          <AccomodationSecondImg>
-            <StaticImage
-              layout={"constrained"}
-              placeholder="blurred"
-              src={"../images/playa-largo.jpg"}
-            />
-          </AccomodationSecondImg>
-          <AccomodationThird>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div
-                style={{
-                  fontSize: "2rem",
-                  fontFamily: "Alex Brush",
-                  paddingBottom: "35px",
-                  textAlign: "center",
-                }}
-              >
-                Baker's Cay Resort Key Largo
-              </div>
-              <div
-                style={{
-                  fontSize: "1.2rem",
-                  fontFamily: "Barlow Condensed",
-                  padding: "15px",
-                }}
-              >
-                Add information about Baker's Cay
-              </div>
-            </div>
-          </AccomodationThird>
-          <AccomodationThirdImg>
-            <StaticImage
-              layout={"constrained"}
-              placeholder="blurred"
-              src={"../images/bakers-cay.jpg"}
-            />
-          </AccomodationThirdImg>
+          <AirportAndMapContainer>
+            <AirportInfo>
+              <AirportList>
+                <Airport>
+                  Miami International (64.4 miles)
+                  <ul>
+                    <li>1 Hour and 55 minute drive</li>
+                    <li>
+                      Take LeJeune Road south to 836 West. Take the Florida
+                      Turnpike south toward Key West. The Turnpike ends at US 1
+                      in Florida City. Follow U.S. 1 south to the Keys.
+                    </li>
+                  </ul>
+                </Airport>
+                <Airport>
+                  Key West (EYW) (75.7 miles)
+                  <ul>
+                    <li>1 Hour and 42 minute drive</li>
+                    <li>
+                      Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
+                    </li>
+                  </ul>
+                </Airport>
+                <Airport>
+                  Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
+                  <ul>
+                    <li>1 Hour and 58 minute drive</li>
+                    <li>
+                      Exit the airport and follow the signs for 595 West. Take
+                      595 to the Florida Turnpike and follow the signs for the
+                      Florida Keys.
+                    </li>
+                  </ul>
+                </Airport>
+              </AirportList>
+              <WeddingMap />
+            </AirportInfo>
+          </AirportAndMapContainer>
+          {data.map((item, index) => {
+            return (
+              <AccomodationsContainer key={index}>
+                <Accomodation>
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div
+                      style={{
+                        fontSize: "2rem",
+                        fontFamily: "Alex Brush",
+                        paddingBottom: "35px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.hotel}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "1.2rem",
+                        fontFamily: "Barlow Condensed",
+                        padding: "15px",
+                      }}
+                    >
+                      {item.hotelInfo}
+                    </div>
+                  </div>
+                </Accomodation>
+                <AccomodationImg>
+                  <StaticImage
+                    placeholder="blurred"
+                    layout={"constrained"}
+                    src={"../images/cheeca.jpg"}
+                    width={1000}
+                    height={500}
+                    alt={item.hotel}
+                  />
+                </AccomodationImg>
+              </AccomodationsContainer>
+            )
+          })}
         </LocationInfo>
       </MainContainer>
     </>
@@ -267,93 +217,13 @@ const Chevron = styled.div`
 `
 
 const LocationInfo = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.2fr 0.8fr 1fr 1fr;
-  gap: 0px 0px;
-  padding-top: 45px;
-  grid-template-areas:
-    "Airport-Info Map"
-    "Accomodation Accomodation-img"
-    "Accomodation-2 Accomodation-2-img"
-    "Accomodation-3 Accomodation-3-img";
   grid-area: Location-info;
-
-  @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-
-    grid-template-areas:
-      "Map ."
-      "Airport-Info ."
-      "Accomodation ."
-      "Accomodation-img ."
-      "Accomodation-2 ."
-      "Accomodation-2-img ."
-      "Accomodation-3 ."
-      "Accomodation-3-img .";
-    grid-area: Location-info;
-  }
 `
 
-const MapDisplay = styled.div`
-  grid-area: Map;
-  // border: 4px solid #000;
-`
-
-const Accomodation = styled.div`
-  grid-area: Accomodation;
+const AirportAndMapContainer = styled.div`
   display: flex;
-  justify-content: center;
-  padding-top: 35px;
-`
-
-const AccomodationImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  margin-top: 25px;
-
-  grid-area: Accomodation-img;
-`
-
-const AccomodationSecond = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-
-  grid-area: Accomodation-2;
-`
-
-const AccomodationSecondImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  margin-top: 25px;
-
-  grid-area: Accomodation-2-img;
-`
-
-const AccomodationThird = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  grid-area: Accomodation-3;
-`
-
-const AccomodationThirdImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  margin-top: 25px;
-
-  grid-area: Accomodation-3-img;
+  flex-direction: row;
+  justify-content: space-between;
 `
 
 const Airport = styled.li`
@@ -365,14 +235,30 @@ const AirportInfo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.4rem;
-  grid-area: Airport-Info;
-  padding: 25px;
+  font-size: 1.2rem;
+  padding: 35px;
   font-family: "Barlow Condensed";
 `
 
 const AirportList = styled.ul`
   list-style-type: "✈️";
+`
+
+const AccomodationsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+const Accomodation = styled.div`
+  // display: flex;
+  // justify-content: center;
+  // padding-top: 35px;
+`
+
+const AccomodationImg = styled.div`
+  align-self: center;
+  margin: 25px;
 `
 
 export default TravelAndStay

@@ -25,6 +25,7 @@ const GalleryItem = ({ data }) => {
 const ItemContainer = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
+  margin-top: 25px;
 
   @media (max-width: 1200px) {
     display: flex;
@@ -35,7 +36,7 @@ const ItemContainer = styled.div`
 `
 
 const TextDisplay = styled.div`
-  align-self: center;
+  place-self: center;
 `
 
 const Title = styled.h1`
@@ -51,21 +52,21 @@ const SubTitle = styled.p`
 
 const ImgContainer = styled.div`
   padding: 10px;
-  display: flex;
-  justify-content: center;
+  place-self: center;
 `
 
 const FramedImg = styled.img`
-  width: 50%;
+  width: 60%;
   height: auto;
   box-sizing: border-box;
+  place-self: center;
   display: block;
   padding: 2%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   @media (max-width: 768px) {
     width: 80%;
-    align-self: center;
+    margin-left: 35px;
   }
 `
 

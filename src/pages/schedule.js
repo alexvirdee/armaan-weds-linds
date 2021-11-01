@@ -18,6 +18,7 @@ const schedule = () => {
 
 const Title = styled.h1`
     font-family: "Alex Brush";
+    text-align: center;
 `
 
 export default schedule;

@@ -20,6 +20,7 @@ const Hero = () => {
       <Title>Armaan & Lindsay</Title>
       <WeddingCountdown countdownTimeStampMs={1666454400000} />
       <TopTitle>We're Getting Married</TopTitle>
+      <div>Circle Image here</div>
       <SubTitle>On October 22, 2022</SubTitle>
       <SubTitle>Cheeca Lodge 81801 Overseas Highway Islamorada, FL 33036</SubTitle>
     </HeroContainer>
@@ -52,6 +53,7 @@ const TopTitle = styled.h3`
 const Title = styled.h1`
   font-family: "Alex Brush";
   font-size: 4.5rem;
+  font-weight: 300;
   left: 0;
   position: absolute;
   text-align: center;

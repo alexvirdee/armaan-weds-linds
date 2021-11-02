@@ -26,6 +26,7 @@ const Footer = () => {
 const FooterContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 25px;
 `
 
 const Content = styled.div`

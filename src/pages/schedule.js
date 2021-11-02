@@ -22,7 +22,7 @@ const data = [
 
 const SchedulePlaceholder = () => {
   return (
-    <div>
+    <div style={{ fontFamily: "Barlow Condensed", textAlign: "center" }}>
       Wedding planning is in the works. Please continue to refer to this website
       periodically for updates!
     </div>
@@ -34,6 +34,7 @@ const Schedule = () => {
     <>
       <Navbar />
       <Title>Schedule</Title>
+      {/* <SchedulePlaceholder /> */}
       <ScheduleContainer>
         <ScheduleLeft>
             <Event>Left</Event>

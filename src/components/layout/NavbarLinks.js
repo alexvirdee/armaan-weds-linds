@@ -46,6 +46,10 @@ const NavItem = styled(Link)`
     }
   }
 
+  :last-child {
+    padding-right: 5px;
+  }
+
   @media (max-width: 768px) {
     padding: 15px 0;
     font-size: 1.2rem;

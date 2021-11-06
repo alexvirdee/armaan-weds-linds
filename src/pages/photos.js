@@ -24,6 +24,7 @@ const Photos = ({ data }) => {
 
 const Title = styled.h1`
   font-family: "Alex Brush";
+  text-align: center;
   padding-left: 15px;
 `
 
@@ -31,7 +32,7 @@ const Gallery = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 0px;
-  justify-items: center;
+  place-items: center;
 `
 
 const GalleryImg = styled.img`

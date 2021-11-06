@@ -101,6 +101,7 @@ const ThingsTodo = ({ data }) => {
                     return (
                       <div key={index}>
                         <GatsbyImage
+                          style={{ borderRadius: "15px" }}
                           image={img.node.childImageSharp.gatsbyImageData}
                           alt={item.place}
                         />

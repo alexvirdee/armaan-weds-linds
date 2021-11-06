@@ -259,6 +259,7 @@ const AirportInfo = styled.div`
 `
 
 const MapContain = styled.div`
+  margin-top: 15px;
   place-self: center;
   width: 500px;
   height: 350px;

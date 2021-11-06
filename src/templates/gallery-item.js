@@ -3,7 +3,7 @@ import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 const GalleryItem = ({ data }) => {
   return (
@@ -13,6 +13,9 @@ const GalleryItem = ({ data }) => {
         <TextDisplay>
           <Title>{data.photo.image.title}</Title>
           <SubTitle>{data.photo.description}</SubTitle>
+          <Link to="/photos">
+            <Button>All Photos</Button>
+          </Link>
         </TextDisplay>
         <ImgContainer>
           <FramedImg src={data.photo.image.file.url} />
@@ -37,6 +40,10 @@ const ItemContainer = styled.div`
 
 const TextDisplay = styled.div`
   place-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.h1`
@@ -48,6 +55,26 @@ const SubTitle = styled.p`
   font-family: "Barlow Condensed";
   font-size: 1.5rem;
   text-align: center;
+`
+
+const Button = styled.button`
+   padding: 0.3em 1.2em;
+   margin: 1em 0.3em 0.3em 0;
+   border-radius: 2em;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-weight: 300;
+   color: #ffffff;
+   background-color: #000;
+   text-align: center;
+   transition: all 0.2s;
+   align-self: center;
+   cursor: pointer;
+
+  :hover {
+    background-color: #fff;
+    color: #000;
+  }
 `
 
 const ImgContainer = styled.div`

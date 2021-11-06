@@ -5,35 +5,48 @@ import WeddingCountdown from "./WeddingCountdown"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
-
 const Hero = () => {
   return (
     <HeroContainer>
-      <ImageWrapper>
+      <HeroImgWrapper>
         <StaticImage
           layout={"fullWidth"}
           loading={"eager"}
           src="../../images/hero-test-2.jpg"
           alt="hero"
         />
-      </ImageWrapper>
+      </HeroImgWrapper>
       <Title>Armaan & Lindsay</Title>
       <WeddingCountdown countdownTimeStampMs={1666454400000} />
       <TopTitle>We're Getting Married</TopTitle>
-      <div>Circle Image here</div>
+      <CouplePortrait>
+        <StaticImage
+          style={{ borderRadius: "50%" }}
+          layout={"constrained"}
+          loading={"eager"}
+          src="../../images/couple-portrait.jpg"
+          alt={"couple portrait"}
+          width={275}
+          height={280}
+        />
+      </CouplePortrait>
       <SubTitle>On October 22, 2022</SubTitle>
-      <SubTitle>Cheeca Lodge 81801 Overseas Highway Islamorada, FL 33036</SubTitle>
+      <SubTitle>
+        Cheeca Lodge 81801 Overseas Highway Islamorada, FL 33036
+      </SubTitle>
     </HeroContainer>
   )
 }
 
 const HeroContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   margin-bottom: 10px;
-  // background-color: #FFFFF8;
 `
 
-const ImageWrapper = styled.div`
+const HeroImgWrapper = styled.div`
   position: relative;
 
   animation: fade 2s ease-in;
@@ -43,11 +56,6 @@ const ImageWrapper = styled.div`
       opacity: 0;
     }
   }
-`
-
-const TopTitle = styled.h3`
-  font-family: "Alex Brush";
-  font-size: 3.2rem;
 `
 
 const Title = styled.h1`
@@ -84,10 +92,28 @@ const Title = styled.h1`
   }
 `
 
+const TopTitle = styled.h3`
+  font-family: "Alex Brush";
+  font-size: 3.2rem;
+`
+
+const CouplePortrait = styled.div`
+  align-self: center;
+  border-radius: 50%;
+  animation: fade 2s ease-in;
+  border: 2px solid #FCB2A9;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+  }
+`
+
 const SubTitle = styled.h3`
   font-size: 24px;
   font-family: "Barlow Condensed";
-  padding: 5px 25px 5px 25px; 
+  padding: 5px 25px 5px 25px;
 `
 
 export default Hero

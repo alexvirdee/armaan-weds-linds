@@ -44,6 +44,7 @@ const TravelAndStay = ({ data }) => {
       <Title>Travel & Stay</Title>
       <Heading>
         <StaticImage
+          style={{ borderRadius: "15px" }}
           width={600}
           height={300}
           placeholder="blurred"
@@ -212,9 +213,9 @@ const ScrollDownContainer = styled.div`
 
 const Chevron = styled.div`
   font-size: 1.8rem;
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+  -moz-animation: bounce 2s 2;
+  -webkit-animation: bounce 2s 2;
+  animation: bounce 2s 2;
 
   @keyframes bounce {
     0%,

@@ -24,6 +24,7 @@
     "dotenv": "^10.0.0",
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-modal-routing-3": "^3.0.0",
     "gatsby-plugin-sharp": "^4.0.1",
     "gatsby-plugin-styled-components": "^4.14.0",
     "gatsby-source-contentful": "^6.0.0",

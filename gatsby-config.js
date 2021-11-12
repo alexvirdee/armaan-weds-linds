@@ -6,17 +6,15 @@ require("dotenv").config()
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env;
+const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env
 
 if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
-  throw new Error(
-    "Contentful spaceId and access token needs to be provided."
-  )
+  throw new Error("Contentful spaceId and access token needs to be provided.")
 }
 
 module.exports = {
   flags: {
-    PARALLEL_QUERY_RUNNING: true
+    PARALLEL_QUERY_RUNNING: true,
   },
   plugins: [
     {
@@ -38,6 +36,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-modal-routing-3`
+    `gatsby-plugin-modal-routing-3`,
   ],
 }

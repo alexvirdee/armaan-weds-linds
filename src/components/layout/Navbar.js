@@ -37,7 +37,7 @@ const Navigation = styled.nav`
   height: 8vh;
   display: flex;
   background-color: #fff;
-  position: relative;
+  // position: relative;
   justify-content: space-between;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;

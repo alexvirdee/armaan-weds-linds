@@ -1,12 +1,13 @@
-import React from "react";
-import RSVPForm from "../components/RSVP/RSVPForm";
+import React from "react"
+// import styled from "styled-components"
+import RSVPForm from "../components/RSVP/RSVPForm"
 
 const RSVP = () => {
-    return (
-        <>
-            <RSVPForm />
-        </>
-    )
+  return (
+    <>
+      <RSVPForm />
+    </>
+  )
 }
 
 export default RSVP

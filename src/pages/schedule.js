@@ -26,6 +26,34 @@ const data = [
     time: "10AM",
     eventInfo: "Ceremony information here",
   },
+  {
+    id: 3,
+    event: "Ceremony",
+    date: "October 22, 2022",
+    time: "10AM",
+    eventInfo: "Ceremony information here",
+  },
+  {
+    id: 4,
+    event: "Ceremony",
+    date: "October 22, 2022",
+    time: "10AM",
+    eventInfo: "Ceremony information here",
+  },
+  {
+    id: 5,
+    event: "Ceremony",
+    date: "October 22, 2022",
+    time: "10AM",
+    eventInfo: "Ceremony information here",
+  },
+  {
+    id: 6,
+    event: "Ceremony",
+    date: "October 22, 2022",
+    time: "10AM",
+    eventInfo: "Ceremony information here",
+  },
 ]
 
 const SchedulePlaceholder = () => {
@@ -44,14 +72,18 @@ const Schedule = () => {
       <GlobalStyle />
       <Title>Schedule</Title>
       {/* <SchedulePlaceholder /> */}
-      <ScheduleContainer>
-        <ScheduleLeft>
-          <Event>Left</Event>
-        </ScheduleLeft>
-        <ScheduleRight>
-          <EventText>Right</EventText>
-        </ScheduleRight>
-      </ScheduleContainer>
+      {data.map((item, index) => {
+        return (
+          <ScheduleContainer key={index}>
+            <ScheduleLeft>
+              <Event>{item.event}</Event>
+            </ScheduleLeft>
+            <ScheduleRight>
+              <EventText>{item.eventInfo}</EventText>
+            </ScheduleRight>
+          </ScheduleContainer>
+        )
+      })}
     </>
   )
 }
@@ -65,13 +97,13 @@ const ScheduleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  border: 4px solid indigo;
   justify-content: center;
   align-content: center;
+  // border: 4px solid indigo;
 `
 
 const ScheduleLeft = styled.div`
-  border: 2px dashed magenta;
+  // border: 2px dashed magenta;
 `
 
 const Event = styled.div`
@@ -81,7 +113,7 @@ const Event = styled.div`
 `
 
 const ScheduleRight = styled.div`
-  border: 2px dashed green;
+  // border: 2px dashed green;
 `
 
 const EventText = styled.div`

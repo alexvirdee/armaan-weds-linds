@@ -96,9 +96,10 @@ const Title = styled.h1`
 const ScheduleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 100px;
   justify-content: center;
   align-content: center;
+  margin: 25px;
   // border: 4px solid indigo;
 `
 

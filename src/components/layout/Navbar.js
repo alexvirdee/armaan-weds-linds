@@ -37,8 +37,7 @@ const Navigation = styled.nav`
   height: 8vh;
   display: flex;
   background-color: #fff;
-  // position: relative;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-transform: uppercase;
   border-bottom: 2px solid #33333320;
   margin: 0 auto;
@@ -46,6 +45,7 @@ const Navigation = styled.nav`
   align-self: center;
 
   @media (max-width: 768px) {
+    justify-content: space-between;
     position: sticky;
     height: 8vh;
     top: 0;

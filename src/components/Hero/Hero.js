@@ -10,9 +10,11 @@ const Hero = () => {
     <HeroContainer>
       <HeroImgWrapper>
         <StaticImage
-          layout={"fullWidth"}
+          width={1600}
+          height={1000}
+          // layout={"fullWidth"}
           loading={"eager"}
-          src="../../images/hero-test-2.jpg"
+          src="../../images/hero.jpg"
           alt="hero"
         />
       </HeroImgWrapper>
@@ -21,10 +23,10 @@ const Hero = () => {
       <TopTitle>We're Getting Married</TopTitle>
       <CouplePortrait>
         <StaticImage
-          style={{ borderRadius: "50%" }}
+          imgStyle={{ borderRadius: "50%" }}
           layout={"constrained"}
           loading={"eager"}
-          src="../../images/couple-portrait.jpg"
+          src="../../images/proposal.jpg"
           alt={"couple portrait"}
           width={275}
           height={280}
@@ -80,13 +82,13 @@ const Title = styled.h1`
   }
 
   @media (max-width: 768px) {
-    top: 20%;
+    top: 35%;
     font-size: 48px;
     color: #fff;
   }
 
   @media (max-width: 500px) {
-    top: 12%;
+    top: 25%;
     font-size: 48px;
     color: #fff;
   }
@@ -101,7 +103,7 @@ const CouplePortrait = styled.div`
   align-self: center;
   border-radius: 50%;
   animation: fade 2s ease-in;
-  border: 2px solid #FCB2A9;
+  border: 2px solid #fcb2a9;
 
   @keyframes fade {
     0% {

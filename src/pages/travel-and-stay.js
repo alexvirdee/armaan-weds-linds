@@ -13,22 +13,29 @@ const hotelData = [
     id: 1,
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
-      "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married there.",
+      "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! We will have a room block **it is still in the works, please stay tuned for more information**",
     hotelImg: "../images/cheeca.jpg",
   },
   {
     id: 2,
-    hotel: "Playa Largo Resort & Spa",
+    hotel: "Postcard Inn",
     hotelInfo:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
-    hotelImg: "../images/playa-largo.jpg",
+      "Just a 5 minute drive from Cheeca Lodge sits Postcard Inn. Postcard Inn has been serving Islamorada with their special cocktails since 1951. We recommend staying here if you are digging a more relaxing vibe with oceanfront rooms. ",
+    hotelImg: "../images/postcard-inn.jpeg",
   },
   {
     id: 3,
-    hotel: "Baker's Cay Resort Key Largo",
+    hotel: "Islander Resort",
     hotelInfo:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu cursus lectus, ac consequat sapien. Sed ac luctus quam, non ultricies ipsum. Nulla metus nulla, auctor quis ipsum ac, blandit mollis magna.",
-    hotelImg: "../images/bakers-cay.jpg",
+      "The Islander is another beautiful closeby resort. It is only a 4 minute drive away or 13 minute walk from our wedding venue!",
+    hotelImg: "../images/islander-resort.jpeg",
+  },
+  {
+    id: 4,
+    hotel: "Amara Cay",
+    hotelInfo:
+      "Amara Cay is a 4 minute minute drive to Cheeca Lodge. Stay here for a “refined, but not uppity” atmosphere.",
+    hotelImg: "../images/amara-cay.jpeg",
   },
 ]
 

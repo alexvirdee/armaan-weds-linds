@@ -145,7 +145,7 @@ const TravelAndStay = ({ data }) => {
               <AccomodationImg>
                 {data.allFile.edges.map((img, index) => {
                   if (
-                    item.hotelImg !== undefined &&
+                    item.hotelImg &&
                     item.hotelImg.includes(img.node.relativePath)
                   ) {
                     return (
@@ -176,7 +176,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 500)
+            gatsbyImageData(layout: CONSTRAINED, width: 425)
           }
           relativePath
         }

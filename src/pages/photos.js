@@ -2,6 +2,7 @@ import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 
 const Photos = ({ data }) => {
@@ -11,11 +12,11 @@ const Photos = ({ data }) => {
       <Title>Photos</Title>
       <Gallery>
         {data.photo.nodes.map((item, index) => {
-          return (
-            <Link to={item.slug} key={index}>
-              <GalleryImg src={item.image.file.url} />
-            </Link>
-          )
+         return (
+          <Link to={item.slug} key={index}>
+            <GalleryImg image={item.image.gatsbyImageData} alt={item.slug} />
+          </Link>
+         ) 
         })}
       </Gallery>
     </>
@@ -35,13 +36,12 @@ const Gallery = styled.div`
   place-items: center;
 `
 
-const GalleryImg = styled.img`
-  max-width: 75%;
+const GalleryImg = styled(GatsbyImage)`
+  max-width: 85%;
   height: auto;
   margin: 10px;
   padding: 2%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  animation: fade 1s ease-in;
 
   :hover {
     -webkit-filter: brightness(85%);
@@ -51,12 +51,6 @@ const GalleryImg = styled.img`
     -ms-transition: all 10ms ease;
     transition: all 10ms ease;
   }
-
-  @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-  }
 `
 
 export default Photos
@@ -65,12 +59,13 @@ export const query = graphql`
   query PhotosQuery {
     photo: allContentfulGalleryPost {
       nodes {
-        image {
-          file {
-            url
+          slug
+          image {
+            gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              )
           }
-        }
-        slug
       }
     }
   }

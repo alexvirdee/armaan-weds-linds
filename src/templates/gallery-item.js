@@ -3,6 +3,7 @@ import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
 
 const GalleryItem = ({ data }) => {
@@ -18,7 +19,7 @@ const GalleryItem = ({ data }) => {
           </Link>
         </TextDisplay>
         <ImgContainer>
-          <FramedImg src={data.photo.image.file.url} />
+          <FramedImg image={data.photo.image.gatsbyImageData} alt={data.photo.image.title} />
         </ImgContainer>
       </ItemContainer>
     </>
@@ -82,13 +83,14 @@ const ImgContainer = styled.div`
   place-self: center;
 `
 
-const FramedImg = styled.img`
+const FramedImg = styled(GatsbyImage)`
   width: 60%;
   height: auto;
   box-sizing: border-box;
   place-self: center;
   display: block;
   padding: 2%;
+  margin-left: 45px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
   @media (max-width: 768px) {
@@ -105,9 +107,10 @@ export const pageQuery = graphql`
       slug
       image {
         title
-        file {
-          url
-        }
+        gatsbyImageData(
+          layout: CONSTRAINED
+          placeholder: BLURRED 
+        ) 
       }
       description
     }

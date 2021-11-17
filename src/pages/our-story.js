@@ -19,41 +19,61 @@ const OurStory = () => {
       <GlobalStyle />
       <Navbar />
       <Container>
-        <Title>Our Story</Title>
-        {/* <StaticImage width={300} src="../images/leaf-divider.png" alt="leaf divider" /> */}
         <Card>
           <CardLeft>
             <StaticImage
-              layout={"fullWidth"}
+              height={1000}
+              placeholder="blurred"
               src="../images/plane-heart.svg"
               alt="Plane Heart"
             />
           </CardLeft>
           <CardRight>
+            <Title>Our Story</Title>
             <StoryText>
-              <p>It all began on a flight to NYC. Lindsay sat next to Brooke who
-              happened to be one of Armaan’s childhood friends. The two sparked
-              conversation discussing all sorts of things which included boysss.</p>
-              <p>During their talk Brooke thought it would be a great idea to
-              introduce Lindsay to Armaan. Lindsay thought, “why not?”. After
-              landing at Newark Airport, Brooke sent Armaan a text that pretty
-              much read “met a beautiful Indian girl, you need to take her out
-              on a date”. She then sent Lindsay’s instagram pictures to Armaan
-              like any millennial would do. Armaan was intrigued to say the
-              least.</p> <p>When Lindsay received her first few texts from Armaan she
-              had a feeling this relationship would turn into something
-              beautiful. And that it did. The two went on their first date at a
-              restaurant called Aria in Hell’s Kitchen. Armaan wined and dined
-              Lindsay. The next day he spoke to his best friend, Jay and said,
-              “I am going to make her my wife one day”. The two have been
-              inseparable since that night at Aria.</p> <p>They have survived living in
-              a 1 bedroom apartment during the Pandemic together and are now
-              parents to a beautiful Turkish Golden Retriever. They are so very
-              excited to become husband and wife and cannot wait to have their
-              nearest and dearest celebrate with them! (ROUGH DRAFT, NOT DONE)</p>
+              <p>
+                Lindsay and Armaan’s love story started on a flight from Ft
+                Lauderdale to New York City. Lindsay had the AMAZING fortune of
+                sitting next to the person that would change her life forever…
+              </p>
+              <p>
+                That person was the one and only, Brooke! What happens when you
+                put two bubbly young ladies in seats 20A and 20B? Well, the
+                lucky soul in 20C is kept awake by their unending conversation!
+                And after discussing their favorite things about David Yurman
+                and NYC brunches, that conversation turned to the most important
+                topic of all - boys. When Lindsay mentioned that she was newly
+                single, Brooke finally saw the opportunity to become the
+                matchmaker she always knew she could be. Brooke happened to know
+                a very handsome, charming, witty, and eligible bachelor named
+                Armaan.
+              </p>
+              <p>
+                With Lindsay’s permission, Brooke texted Armaan that she had a
+                girl that she wanted him to meet. Playing the perfect
+                matchmaker, Brooke sent him a few pictures from Lindsay’s
+                Instagram, it would be an understatement to say he was
+                interested. When Lindsay received her first few texts from
+                Armaan, she instantly had a feeling it would turn into something
+                beautiful. And that it did. The two went on their first date to
+                a wine bar in NYC two weeks later, and have been inseparable
+                ever since. They’ve travelled together, survived living in a
+                1-bedroom apartment all through the pandemic, and are now
+                parents to a beautiful golden retriever named Beau! Now, as they
+                take their next step into marriage, they want to share it with
+                you, the people that matter most to them. Time to celebrate!!!
+              </p>
             </StoryText>
           </CardRight>
         </Card>
+        <OurStoryImage>
+          <StaticImage
+            layout={"fullWidth"}
+            placeholder="blurred"
+            src="../images/grand-central.jpg"
+            alt="grand-central"
+          />
+        </OurStoryImage>
       </Container>
     </>
   )
@@ -68,19 +88,14 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-family: "Alex Brush";
+  text-align: center;
 `
 
 const Card = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
   grid-gap: 0.2rem;
-  width: 75%;
-  height: 500px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.35);
+  height: 80%;
   animation: fade 1s ease-in;
 
   @keyframes fade {
@@ -90,13 +105,9 @@ const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 750px;
-  }
-
-  @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    height: 100%;
   }
 `
 
@@ -104,27 +115,31 @@ const CardLeft = styled.div`
   border-right: 2px solid lightgray;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 100%;
   height: auto;
-  background-color: #a5ddf0;
 
   @media (max-width: 1200px) {
     border: none;
-    margin: 0;
-    height: 300px;
   }
 `
 
 const CardRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   overflow-y: auto;
 `
 
 const StoryText = styled.div`
   font-family: "Barlow Condensed";
   font-size: 1.2rem;
-  padding: 45px;
+  padding: 5px 25px 5px 25px;
   color: #989ca0;
+`
+
+const OurStoryImage = styled.div`
+  width: 100%;
 `
 
 export default OurStory

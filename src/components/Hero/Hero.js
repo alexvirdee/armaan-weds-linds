@@ -26,7 +26,7 @@ const Hero = () => {
           imgStyle={{ borderRadius: "50%" }}
           layout={"constrained"}
           loading={"eager"}
-          src="../../images/proposal.jpg"
+          src="../../images/beau-ny.jpeg"
           alt={"couple portrait"}
           width={275}
           height={280}

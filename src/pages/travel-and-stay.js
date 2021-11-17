@@ -176,7 +176,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, width: 425)
+            gatsbyImageData(layout: CONSTRAINED, width: 450)
           }
           relativePath
         }

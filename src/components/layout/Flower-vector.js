@@ -7,6 +7,7 @@ const FlowerVector = () => {
     <FlowerContainer>
       <StaticImage
         width={800}
+        placeholder={"blurred"}
         aspectRatio={16 / 8}
         transformOptions={"contain"}
         src="../../images/flowers-vector.svg"

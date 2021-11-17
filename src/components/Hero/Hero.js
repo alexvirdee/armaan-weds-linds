@@ -13,6 +13,7 @@ const Hero = () => {
           width={1600}
           height={1000}
           // layout={"fullWidth"}
+          placeholder={"blurred"}
           loading={"eager"}
           src="../../images/hero.jpg"
           alt="hero"

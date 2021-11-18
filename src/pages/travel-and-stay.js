@@ -7,6 +7,15 @@ import { StaticImage } from "gatsby-plugin-image"
 import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
+import { createGlobalStyle } from "styled-components";
+import { Link } from "gatsby"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const hotelData = [
   {
@@ -14,6 +23,7 @@ const hotelData = [
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
       "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! We will have a room block **it is still in the works, please stay tuned for more information**",
+      website: "https://www.cheeca.com/",
     hotelImg: "../images/cheeca.jpg",
   },
   {
@@ -21,6 +31,7 @@ const hotelData = [
     hotel: "Postcard Inn",
     hotelInfo:
       "Just a 5 minute drive from Cheeca Lodge sits Postcard Inn. Postcard Inn has been serving Islamorada with their special cocktails since 1951. We recommend staying here if you are digging a more relaxing vibe with oceanfront rooms. ",
+    website: "https://www.holidayisle.com/?utm_source=google&utm_medium=gmb&utm_campaign=listing",
     hotelImg: "../images/postcard-inn.jpeg",
   },
   {
@@ -28,6 +39,7 @@ const hotelData = [
     hotel: "Islander Resort",
     hotelInfo:
       "The Islander is another beautiful closeby resort. It is only a 4 minute drive away or 13 minute walk from our wedding venue!",
+    website: "https://www.islanderfloridakeys.com/",
     hotelImg: "../images/islander-resort.jpeg",
   },
   {
@@ -35,6 +47,7 @@ const hotelData = [
     hotel: "Amara Cay",
     hotelInfo:
       "Amara Cay is a 4 minute minute drive to Cheeca Lodge. Stay here for a “refined, but not uppity” atmosphere.",
+    website: "https://www.amaracayresort.com/",
     hotelImg: "../images/amara-cay.jpeg",
   },
 ]
@@ -47,6 +60,7 @@ const TravelAndStay = ({ data }) => {
 
   return (
     <>
+    <GlobalStyle />
       <Navbar />
       <Title>Travel & Stay</Title>
       <Heading>
@@ -118,14 +132,14 @@ const TravelAndStay = ({ data }) => {
         </AirportAndMapContainer>
         {hotelData.map((item, index) => {
           return (
-            <AccomodationsContainer key={index}>
+            <AccomodationsContainer href={item.website} target="_blank" key={index}>
               <Accomodation>
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex", flexDirection: "column", marginLeft: "5px", padding: "8px" }}>
                   <div
                     style={{
                       fontSize: "2rem",
                       fontFamily: "Alex Brush",
-                      paddingBottom: "35px",
+                      paddingBottom: "15px",
                       textAlign: "center",
                     }}
                   >
@@ -135,7 +149,7 @@ const TravelAndStay = ({ data }) => {
                     style={{
                       fontSize: "1.2rem",
                       fontFamily: "Barlow Condensed",
-                      padding: "15px",
+                      padding: "25px",
                     }}
                   >
                     {item.hotelInfo}
@@ -282,11 +296,25 @@ const AirportList = styled.ul`
   list-style-type: "✈️";
 `
 
-const AccomodationsContainer = styled.div`
+const AccomodationsContainer = styled.a`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 0.8fr));
   align-items: center;
   justify-content: center;
+  padding-top: 25px;
+  border-bottom: 2px solid lightgrey;
+  align-self: center;
+  margin: 45px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  :hover {
+    background-color: #AADAFF;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
 `
 
 const Accomodation = styled.div`

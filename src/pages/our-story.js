@@ -81,8 +81,6 @@ const OurStory = () => {
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 `
 
@@ -134,7 +132,7 @@ const CardRight = styled.div`
 const StoryText = styled.div`
   font-family: "Barlow Condensed";
   font-size: 1.2rem;
-  padding: 5px 25px 5px 25px;
+  padding: 5px 25px;
   color: #989ca0;
 `
 

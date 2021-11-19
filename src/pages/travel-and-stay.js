@@ -8,7 +8,6 @@ import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 import { createGlobalStyle } from "styled-components";
-import { Link } from "gatsby"
 
 const GlobalStyle = createGlobalStyle`
   body {

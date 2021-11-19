@@ -199,7 +199,7 @@ const CollapsibleAnswers = styled.p`
 
 const InnerAnswer = styled.p`
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 `
 
 export default FAQ

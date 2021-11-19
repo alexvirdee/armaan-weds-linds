@@ -58,7 +58,7 @@ const data = [
     question: "Can I bring a date?",
     answers: [
       {
-        id: "a. We want close family and friends on our special day, please refer to your invite….",
+        id: "a. We want close family and friends on our special day, please refer to your invite!",
       },
     ],
   },

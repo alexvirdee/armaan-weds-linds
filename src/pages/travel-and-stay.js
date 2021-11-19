@@ -79,8 +79,7 @@ const TravelAndStay = ({ data }) => {
           Cheeca Lodge Resort Panorama at Sunrise
         </ImageCaption>
         <HeadingText>
-          We are so excited to have you all travel from afar to join us during
-          our wedding weekend. The nearest airport is MIA, however there are
+          We are so grateful to those of you who can make the trip to join us during our wedding weekend. The nearest airport is MIA, however there are
           others if you plan on exploring South Florida or the Keys! There are
           plenty of shuttles and car rentals to choose from. If you do decide to
           take the shuttle, consider booking in advance.

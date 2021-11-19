@@ -22,32 +22,35 @@ const data = [
     question: "What is the dress code?",
     answers: [
       {
-        id: "a. Sangeet",
-        answer: [
-          {
-            id: 1,
-            innerAnswer: "i. Indian Formal",
-          },
-        ],
-      },
-      {
-        id: "b. Ceremony",
-        answer: [
-          {
-            id: 2,
-            innerAnswer: "i. Indian",
-          },
-        ],
-      },
-      {
-        id: "c. Reception",
-        answer: [
-          {
-            id: 3,
-            innerAnswer: "i. Beach Formal",
-          },
-        ],
-      },
+        id: "TBD"
+      }
+      // {
+      //   id: "a. Sangeet",
+      //   answer: [
+      //     {
+      //       id: 1,
+      //       innerAnswer: "i. Indian Formal",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: "b. Ceremony",
+      //   answer: [
+      //     {
+      //       id: 2,
+      //       innerAnswer: "i. Indian",
+      //     },
+      //   ],
+      // },
+      // {
+      //   id: "c. Reception",
+      //   answer: [
+      //     {
+      //       id: 3,
+      //       innerAnswer: "i. Beach Formal",
+      //     },
+      //   ],
+      // },
     ],
   },
   {
@@ -191,11 +194,12 @@ const CollapsibleSection = styled(Collapsible)`
 `
 
 const CollapsibleAnswers = styled.p`
-  padding-left: 25px;
+  padding-left: 20px;
 `
 
 const InnerAnswer = styled.p`
   padding-left: 35px;
+  margin-bottom: 12px;
 `
 
 export default FAQ

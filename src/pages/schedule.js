@@ -71,8 +71,8 @@ const Schedule = () => {
       <Navbar />
       <GlobalStyle />
       <Title>Schedule</Title>
-      {/* <SchedulePlaceholder /> */}
-      {data.map((item, index) => {
+      <SchedulePlaceholder />
+      {/* {data.map((item, index) => {
         return (
           <ScheduleContainer key={index}>
             <ScheduleLeft>
@@ -83,7 +83,7 @@ const Schedule = () => {
             </ScheduleRight>
           </ScheduleContainer>
         )
-      })}
+      })} */}
     </>
   )
 }

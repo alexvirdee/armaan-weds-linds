@@ -15,16 +15,15 @@ const RSVPForm = () => {
             <RSVPContainer>
               <Top>
                 <div></div>
-              <Title>RSVP</Title>
-              <CloseIcon to={closeTo}>&#10006;</CloseIcon>
+                <Title>RSVP</Title>
+                <CloseIcon to={closeTo}>&#10006;</CloseIcon>
               </Top>
               <Divider></Divider>
               <MainText>
                 We have decided to keep our RSVP traditional and ask that you
-                please respond and mail back your invite as soon as possible.
-                Thank you!
+                please respond and mail back your invite. Thank you!
               </MainText>
-              <StaticImage 
+              <StaticImage
                 imgStyle={{ borderRadius: "15px", marginTop: "25px" }}
                 placeholder={"blurred"}
                 src="../../images/rsvp-main.jpeg"
@@ -69,7 +68,7 @@ const CloseIcon = styled(Link)`
   color: #000;
 
   :hover {
-    color: #fcb2a9;;
+    color: #fcb2a9;
   }
 `
 
@@ -97,9 +96,9 @@ const CloseBtn = styled(Link)`
    background-color: #000;
    text-align: center;
    transition: all 0.2s;
-   align-self: center;
-   cursor: pointer;
-   width: 125px;
+  align-self: center;
+  cursor: pointer;
+  width: 125px;
 
   :hover {
     background-color: #fff;

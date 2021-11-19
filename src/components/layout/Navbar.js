@@ -32,8 +32,7 @@ const Navbar = () => {
 }
 
 const Navigation = styled.nav`
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px 4px 0px 4px;
   height: 8vh;
   display: flex;
   background-color: #fff;

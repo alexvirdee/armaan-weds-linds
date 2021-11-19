@@ -10,10 +10,9 @@ const Registry = () => {
       <Navbar />
       <RegistryContainer>
         <Title>Registry</Title>
-        <StaticImage width={300} src="../images/leaf-divider.png" alt="leaf divider" />
+        <StaticImage width={300} placeholder={"blurred"} src="../images/leaf-divider.png" alt="leaf divider" />
         <MainText>
-          Please know that your presence at our wedding is present enough.
-          However, for friends and family who have been asking and are looking
+          For friends and family who have been asking and are looking
           for gift ideas we have created our registry through Zola. Please
           follow the button below thank you!
         </MainText>
@@ -40,7 +39,7 @@ const Title = styled.h1`
 `
 
 const MainText = styled.p`
-  width: 50%;
+  width: 70%;
   padding: 25px;
   font-size: 1.2rem;
   text-align: center;
@@ -56,7 +55,7 @@ const ZolaBtn = styled.a`
   border: 1px solid lightgray;
   font-size: 2rem;
   background-color: #fcb2a9;
-  color: #fff;
+  color: #000;
   border-radius: 45px;
   padding: 10px;
   width: 10%;

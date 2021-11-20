@@ -22,7 +22,7 @@ const OurStory = () => {
         <Card>
           <CardLeft>
             <StaticImage
-              height={1000}
+              layout={"fullWidth"}
               placeholder="blurred"
               src="../images/plane-heart.svg"
               alt="Plane Heart"

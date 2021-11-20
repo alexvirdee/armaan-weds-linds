@@ -70,11 +70,19 @@ const dataList = [
   {
     id: 8,
     activity: "eat/drink",
+    place: "Florida Keys Brewing Company",
+    infoText: "A small micro brewery with an artsy island vibe.",
+    website: "https://floridakeysbrewingco.com",
+    image: "../images/fkbc-logo.png",
+  },
+  {
+    id: 9,
+    activity: "eat/drink",
     place: "Robbie’s of Islamorada ",
     infoText:
       "Have some fun and feed the tarpon. Robbie’s has a great restaurant and offers an abundance of activities which include: snorkeling, boat tours, kayaking, sunset cruises, jet skiing etc.",
     website: "https://www.robbies.com/",
-    image: "../images/robbies.jpg",
+    image: "../images/robbies-logo.png",
   },
 ]
 

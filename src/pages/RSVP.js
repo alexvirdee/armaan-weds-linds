@@ -28,7 +28,7 @@ const RSVP = () => {
               <StaticImage
                 imgStyle={{ borderRadius: "15px", marginTop: "25px" }}
                 placeholder={"blurred"}
-                src="../../images/rsvp-main.jpeg"
+                src="../images/rsvp-main.jpeg"
                 alt={"rsvp"}
                 width={600}
               />

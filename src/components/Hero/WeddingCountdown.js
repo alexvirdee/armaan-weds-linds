@@ -78,7 +78,7 @@ const TimeOutput = styled.div`
 
 const TimeDuration = styled.div`
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 `
 
 export default WeddingCountdown

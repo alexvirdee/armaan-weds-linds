@@ -98,7 +98,7 @@ const ThingsTodo = ({ data }) => {
           return (
             <Card key={item.id}>
               <CardLeft>
-                <h3 style={{ paddingRight: "4px", color: "#5AA0D6", fontFamily: "Barlow Condensed", fontSize: "1.4rem" }}>
+                <h3 style={{ paddingRight: "4px", color: "#fcb2a9", fontFamily: "Barlow Condensed", fontSize: "1.4rem" }}>
                   {item.place}
                 </h3>
                 {data.allFile.edges.map((img, index) => {

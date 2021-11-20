@@ -67,7 +67,7 @@ const TimeContainer = styled.div`
 `
 
 const TimeOutput = styled.div`
-  color: #5AA0D6;
+  color: #fcb2a9;
   font-weight: bold;
   font-size: 2.6rem;
 

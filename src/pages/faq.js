@@ -188,7 +188,7 @@ const CollapsibleSection = styled(Collapsible)`
   padding: 10px;
 
   &:hover {
-    background-color: #5AA0D6;
+    background-color: #fcb2a9;
   }
 `
 

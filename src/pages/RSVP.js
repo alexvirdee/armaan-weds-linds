@@ -87,7 +87,7 @@ const CloseIcon = styled(Link)`
   color: #000;
 
   :hover {
-    color: #5AA0D6;
+    color: #fcb2a9;
   }
 `
 

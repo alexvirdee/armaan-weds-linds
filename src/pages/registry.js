@@ -54,7 +54,7 @@ const ZolaBtn = styled.a`
   text-align: center;
   border: 1px solid lightgray;
   font-size: 2rem;
-  background-color: #5AA0D6;
+  background-color: #fcb2a9;
   color: #000;
   border-radius: 45px;
   padding: 10px;

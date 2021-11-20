@@ -4,7 +4,7 @@ import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api"
 const containerStyle = {
   width: "100%",
   height: "85%",
-  borderRadius: "15px"
+  borderRadius: "15px",
 }
 
 const center = {
@@ -12,21 +12,15 @@ const center = {
   lng: -80.6339,
 }
 
-let key = process.env.GATSBY_GOOGLE_MAPS_KEY;
+let key = process.env.GATSBY_GOOGLE_MAPS_KEY
 
 const WeddingMap = () => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: `${key}`
+    googleMapsApiKey: `${key}`,
   })
 
   const [map, setMap] = useState(null)
-
-  // const onLoad = useCallback(function callback(map) {
-  //     const bounds = new window.google.maps.LatLngBounds();
-  //     map.fitBounds(bounds);
-  //     setMap(map)
-  // }, [])
 
   const onUnmount = useCallback(function callback(map) {
     setMap(null)
@@ -37,12 +31,9 @@ const WeddingMap = () => {
       mapContainerStyle={containerStyle}
       center={center}
       zoom={15}
-      // onLoad={onLoad}
       onUnmount={onUnmount}
     >
-        <Marker
-            position={center}
-        />
+      <Marker position={center} />
     </GoogleMap>
   ) : (
     <></>

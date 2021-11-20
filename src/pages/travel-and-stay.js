@@ -79,7 +79,7 @@ const TravelAndStay = ({ data }) => {
           Cheeca Lodge Resort Panorama at Sunrise
         </ImageCaption>
         <HeadingText>
-          We are so grateful to those of you who can make the trip to join us
+          We are so grateful to those of you that can make the trip to join us
           during our wedding weekend. The nearest airport is MIA, however there
           are others if you plan on exploring South Florida or the Keys! There
           are plenty of shuttles and car rentals to choose from. If you do
@@ -91,9 +91,9 @@ const TravelAndStay = ({ data }) => {
       </Heading>
       <LocationInfo ref={locationRef}>
         <AirportAndMapContainer>
-          <AirportInfo>
+          <TravelInfo>
             <AirportList>
-              <Airport>
+              <ListItem>
                 Miami International (64.4 miles)
                 <ul>
                   <li>1 Hour and 55 minute drive</li>
@@ -103,8 +103,8 @@ const TravelAndStay = ({ data }) => {
                     Florida City. Follow U.S. 1 south to the Keys.
                   </li>
                 </ul>
-              </Airport>
-              <Airport>
+              </ListItem>
+              <ListItem>
                 Key West (EYW) (75.7 miles)
                 <ul>
                   <li>1 Hour and 42 minute drive</li>
@@ -112,8 +112,8 @@ const TravelAndStay = ({ data }) => {
                     Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
                   </li>
                 </ul>
-              </Airport>
-              <Airport>
+              </ListItem>
+              <ListItem>
                 Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
                 <ul>
                   <li>1 Hour and 58 minute drive</li>
@@ -123,9 +123,25 @@ const TravelAndStay = ({ data }) => {
                     Keys.
                   </li>
                 </ul>
-              </Airport>
+              </ListItem>
             </AirportList>
-          </AirportInfo>
+            <ShuttleList>
+              <ListItem>
+                Greyhound lines
+                <ul>
+                  <li>
+                    <ShuttleLink href="http://keysshuttle.com/" target="_blank">
+                      Keys Shuttle
+                    </ShuttleLink>{" "}
+                    provides three trips daily, with door to door shuttle
+                    service from the Florida Keys from/to Miami and Ft.
+                    Lauderdale airports, seven days a week. Call 305-289-9997 or
+                    888-765-9997.
+                  </li>
+                </ul>
+              </ListItem>
+            </ShuttleList>
+          </TravelInfo>
           <MapContain>
             <WeddingMap />
           </MapContain>
@@ -282,12 +298,12 @@ const AirportAndMapContainer = styled.div`
   justify-content: center;
 `
 
-const Airport = styled.li`
+const ListItem = styled.li`
   padding-left: 12px;
   margin-bottom: 25px;
 `
 
-const AirportInfo = styled.div`
+const TravelInfo = styled.div`
   place-self: center;
   font-size: 1.2rem;
   padding: 35px;
@@ -297,8 +313,8 @@ const AirportInfo = styled.div`
 const MapContain = styled.div`
   margin-top: 15px;
   place-self: center;
-  width: 500px;
-  height: 350px;
+  width: 550px;
+  height: 375px;
 
   @media (max-width: 768px) {
     width: 450px;
@@ -308,6 +324,15 @@ const MapContain = styled.div`
 
 const AirportList = styled.ul`
   list-style-type: "✈️";
+`
+
+const ShuttleList = styled.ul`
+  list-style-type: "🚌";
+`
+
+const ShuttleLink = styled.a`
+  text-decoration: none;
+  color: #aadaff;
 `
 
 const AccomodationsContainer = styled.a`

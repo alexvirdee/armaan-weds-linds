@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import styled, { keyframes } from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import WeddingCountdown from "./WeddingCountdown"
@@ -14,7 +14,7 @@ function blinkingEffect() {
 }
 
 const actions = [
-  "Beau is very excited!",
+  "Our Golden Beau is very excited!",
   "We can't wait to celebrate",
   "We're Getting Married!",
 ]
@@ -23,7 +23,6 @@ enum Phase {
   Typing,
   Pausing,
   Deleting,
-  End,
 }
 
 const TYPING_INTERVAL_MIN = 80
@@ -39,6 +38,11 @@ const useTypedAction = actions => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [phase, setPhase] = useState(Phase.Typing)
   const [typedAction, setTypedAction] = useState("")
+
+  const resume = useCallback(() => {
+    if (phase !== Phase.Pausing) return
+    setPhase(Phase.Deleting)
+  }, [phase])
 
   useEffect(() => {
     switch (phase) {
@@ -83,12 +87,9 @@ const useTypedAction = actions => {
         }
       }
 
-      case Phase.Pausing:
-
-      case Phase.End: {
-        if (typedAction === actions[actions.length - 1]) {
-          return
-        }
+      case Phase.Pausing: {
+        const nextIndex = selectedIndex + 1;
+        if (!actions[nextIndex]) return
       }
 
       default:
@@ -99,9 +100,9 @@ const useTypedAction = actions => {
           clearTimeout(timeout)
         }
     }
-  }, [actions, selectedIndex, typedAction, phase])
+  }, [actions, selectedIndex, typedAction, phase, resume])
 
-  return typedAction
+  return typedAction 
 }
 
 const Hero = () => {
@@ -119,7 +120,7 @@ const Hero = () => {
       </HeroImgWrapper>
       <Title>Armaan & Lindsay</Title>
       <WeddingCountdown countdownTimeStampMs={1666454400000} />
-      <TopTitle>{action}</TopTitle>
+      <WeddingTitle>{action}</WeddingTitle>
       <CouplePortrait>
         <StaticImage
           imgStyle={{ borderRadius: "50%" }}
@@ -193,7 +194,7 @@ const Title = styled.h1`
   }
 `
 
-const TopTitle = styled.h3`
+const WeddingTitle = styled.h3`
   font-family: "Alex Brush";
   font-size: 3.2rem;
 

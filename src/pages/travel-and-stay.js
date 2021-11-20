@@ -7,7 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import WeddingMap from "../components/Map/WeddingMap"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,7 +22,7 @@ const hotelData = [
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
       "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! We will have a room block **it is still in the works, please stay tuned for more information**",
-      website: "https://www.cheeca.com/",
+    website: "https://www.cheeca.com/",
     hotelImg: "../images/cheeca.jpg",
   },
   {
@@ -30,7 +30,8 @@ const hotelData = [
     hotel: "Postcard Inn",
     hotelInfo:
       "Just a 5 minute drive from Cheeca Lodge sits Postcard Inn. Postcard Inn has been serving Islamorada with their special cocktails since 1951. We recommend staying here if you are digging a more relaxing vibe with oceanfront rooms. ",
-    website: "https://www.holidayisle.com/?utm_source=google&utm_medium=gmb&utm_campaign=listing",
+    website:
+      "https://www.holidayisle.com/?utm_source=google&utm_medium=gmb&utm_campaign=listing",
     hotelImg: "../images/postcard-inn.jpeg",
   },
   {
@@ -59,12 +60,12 @@ const TravelAndStay = ({ data }) => {
 
   return (
     <>
-    <GlobalStyle />
+      <GlobalStyle />
       <Navbar />
       <Title>Travel & Stay</Title>
       <Heading>
         <StaticImage
-          style={{ borderRadius: "15px" }}
+          imgStyle={{ borderRadius: "15px" }}
           width={600}
           height={300}
           placeholder="blurred"
@@ -78,13 +79,14 @@ const TravelAndStay = ({ data }) => {
           Cheeca Lodge Resort Panorama at Sunrise
         </ImageCaption>
         <HeadingText>
-          We are so grateful to those of you who can make the trip to join us during our wedding weekend. The nearest airport is MIA, however there are
-          others if you plan on exploring South Florida or the Keys! There are
-          plenty of shuttles and car rentals to choose from. If you do decide to
-          take the shuttle, consider booking in advance.
+          We are so grateful to those of you who can make the trip to join us
+          during our wedding weekend. The nearest airport is MIA, however there
+          are others if you plan on exploring South Florida or the Keys! There
+          are plenty of shuttles and car rentals to choose from. If you do
+          decide to take the shuttle, consider booking in advance.
         </HeadingText>
         <ScrollDownContainer onClick={handleScroll}>
-          <Chevron>❤️</Chevron>
+          <Chevron></Chevron>
         </ScrollDownContainer>
       </Heading>
       <LocationInfo ref={locationRef}>
@@ -130,9 +132,20 @@ const TravelAndStay = ({ data }) => {
         </AirportAndMapContainer>
         {hotelData.map((item, index) => {
           return (
-            <AccomodationsContainer href={item.website} target="_blank" key={index}>
+            <AccomodationsContainer
+              href={item.website}
+              target="_blank"
+              key={index}
+            >
               <Accomodation>
-                <div style={{ display: "flex", flexDirection: "column", marginLeft: "5px", padding: "8px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    marginLeft: "5px",
+                    padding: "8px",
+                  }}
+                >
                   <div
                     style={{
                       fontSize: "2rem",
@@ -165,7 +178,7 @@ const TravelAndStay = ({ data }) => {
                         <GatsbyImage
                           image={img.node.childImageSharp.gatsbyImageData}
                           alt={item.hotel}
-                          style={{ borderRadius: "15px" }}
+                          imgStyle={{ borderRadius: "15px" }}
                         />
                       </div>
                     )
@@ -230,29 +243,32 @@ const ScrollDownContainer = styled.div`
   cursor: pointer;
 `
 
-const Chevron = styled.div`
-  font-size: 1.8rem;
-  -moz-animation: bounce 2s 2;
-  -webkit-animation: bounce 2s 2;
-  animation: bounce 2s 2;
-
-  @keyframes bounce {
-    0%,
-    10%,
-    15%,
-    20%,
-    50%,
-    80%,
-    100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-25px);
-    }
-    60% {
-      transform: translateY(-15px);
-    }
+const Chevron = styled.i`
+  & {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px;
   }
+  &::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    left: 4px;
+    top: 2px;
+  }
+
+  font-size: 2.4rem;
 `
 
 const LocationInfo = styled.div`
@@ -306,12 +322,12 @@ const AccomodationsContainer = styled.a`
   cursor: pointer;
   text-decoration: none;
   color: #000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   :hover {
-    background-color: #AADAFF;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    background-color: #aadaff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
 `
 

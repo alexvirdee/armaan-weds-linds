@@ -3,21 +3,12 @@ import { getRemainingTimeUntilMsTimestamp } from "../Utils/CountdownTimerUtils"
 import styled from "styled-components"
 import "@fontsource/barlow-condensed"
 
-
 const defaultRemainingTime = {
   seconds: "00",
   minutes: "00",
   hours: "00",
   days: "00",
 }
-
-// const DayOfWedding = () => {
-//   return (
-//     <div>
-//       <h3>We are married!</h3>
-//     </div>
-//   )
-// }
 
 const WeddingCountdown = ({ countdownTimeStampMs }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
@@ -36,20 +27,20 @@ const WeddingCountdown = ({ countdownTimeStampMs }) => {
   return (
     <CountdownRow>
       <TimeContainer>
-        <TimeText>{remainingTime.days}</TimeText>
-        <div>Days</div>
+        <TimeOutput>{remainingTime.days}</TimeOutput>
+        <TimeDuration>Days</TimeDuration>
       </TimeContainer>
       <TimeContainer>
-        <TimeText>{remainingTime.hours}</TimeText>
-        <div>Hours</div>
+        <TimeOutput>{remainingTime.hours}</TimeOutput>
+        <TimeDuration>Hours</TimeDuration>
       </TimeContainer>
       <TimeContainer>
-        <TimeText>{remainingTime.minutes}</TimeText>
-        <div>Minutes</div>
+        <TimeOutput>{remainingTime.minutes}</TimeOutput>
+        <TimeDuration>Minutes</TimeDuration>
       </TimeContainer>
       <TimeContainer>
-        <TimeText>{remainingTime.seconds}</TimeText>
-        <div>Seconds</div>
+        <TimeOutput>{remainingTime.seconds}</TimeOutput>
+        <TimeDuration>Seconds</TimeDuration>
       </TimeContainer>
     </CountdownRow>
   )
@@ -75,10 +66,19 @@ const TimeContainer = styled.div`
   }
 `
 
-const TimeText = styled.div`
-  color: #FCB2A9;
+const TimeOutput = styled.div`
+  color: #5AA0D6;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.6rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`
+
+const TimeDuration = styled.div`
+  font-weight: bold;
+  font-size: 1.2rem;
 `
 
 export default WeddingCountdown

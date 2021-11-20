@@ -19,7 +19,7 @@ const Navbar = () => {
         </Toggle>
         {navbarOpen ? (
           <Navbox>
-            <NavbarLinks />
+            <NavbarLinks mobileNav={navbarOpen} />
           </Navbox>
         ) : (
           <Navbox open>

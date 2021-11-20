@@ -9,7 +9,7 @@ const Footer = () => {
          <Content>Website designed and built by Alex Virdee 👨‍💻</Content>
         <WaveContainer>
       <Wave
-        fill="#fcb2a9"
+        fill="#5AA0D6"
         paused={false}
         options={{
           height: 20,

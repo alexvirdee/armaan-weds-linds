@@ -76,6 +76,10 @@ const Button = styled.button`
     background-color: #fff;
     color: #000;
   }
+
+  @media (max-width: 768px) {
+    margin-bottom: 12px;
+  }
 `
 
 const ImgContainer = styled.div`
@@ -84,7 +88,7 @@ const ImgContainer = styled.div`
 `
 
 const FramedImg = styled(GatsbyImage)`
-  width: 60%;
+  width: 65%;
   height: auto;
   box-sizing: border-box;
   place-self: center;

@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const NavbarLinks = () => {
+const NavbarLinks = (props) => {
   return (
     <>
       <NavItem to="/">Home</NavItem>
@@ -12,7 +12,7 @@ const NavbarLinks = () => {
       <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
       <NavItem to="/photos">Photos</NavItem>
       <NavItem to="/schedule">Schedule</NavItem>
-      <NavItem to="/RSVP" state={{ modal: true }}>RSVP</NavItem>
+      <NavItem to="/RSVP" state={{ modal: !props.mobileNav }}>RSVP</NavItem>
       <NavItem to="/faq">FAQ</NavItem>
     </>
   )
@@ -35,13 +35,13 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: #fcb2a9;
+    background: #5AA0D6;
     height: 1px;
     transition: all 0.4s ease-in;
   }
 
   :hover {
-    color: #fcb2a9;
+    color: #5AA0D6;
     ::after {
       width: 100%;
     }

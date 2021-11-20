@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
+import Navbar from "../layout/Navbar"
 import { StaticImage } from "gatsby-plugin-image"
 import { ModalRoutingContext } from "gatsby-plugin-modal-routing-3"
 
@@ -33,7 +34,24 @@ const RSVPForm = () => {
               <CloseBtn to={closeTo}>Close</CloseBtn>
             </RSVPContainer>
           ) : (
-            <></>
+            <>
+              <Navbar />
+              <RSVPContainer>
+                <Title>RSVP</Title>
+                <Divider></Divider>
+                <MainText>
+                  We have decided to keep our RSVP traditional and ask that you
+                  please respond and mail back your invite. Thank you!
+                </MainText>
+                <StaticImage
+                  imgStyle={{ borderRadius: "15px", marginTop: "25px" }}
+                  placeholder={"blurred"}
+                  src="../../images/rsvp-main.jpeg"
+                  alt={"rsvp"}
+                  width={600}
+                />
+              </RSVPContainer>
+            </>
           )}
         </>
       )}
@@ -68,7 +86,7 @@ const CloseIcon = styled(Link)`
   color: #000;
 
   :hover {
-    color: #fcb2a9;
+    color: #5AA0D6;
   }
 `
 

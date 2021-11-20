@@ -213,7 +213,7 @@ const CouplePortrait = styled.div`
   align-self: center;
   border-radius: 50%;
   animation: fade 2s ease-in;
-  border: 2px solid #fcb2a9;
+  border: 2px solid #5AA0D6;
 
   @keyframes fade {
     0% {

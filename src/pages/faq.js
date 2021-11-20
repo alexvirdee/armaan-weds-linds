@@ -108,7 +108,6 @@ const FAQ = () => {
                   triggerWhenOpen={<TriggerOpen text={item.question} />}
                 >
                   {item.answers.map(answer => {
-                    console.log(answer.answer)
                     return (
                       <>
                         {answer.answer !== undefined ? (
@@ -189,7 +188,7 @@ const CollapsibleSection = styled(Collapsible)`
   padding: 10px;
 
   &:hover {
-    background-color: #FCB2A9;
+    background-color: #5AA0D6;
   }
 `
 

@@ -74,7 +74,7 @@ const TravelAndStay = ({ data }) => {
           alt="Cheeca Lodge Panorama"
         />
         <ImageCaption
-          style={{ paddingTop: "15px", fontFamily: "Barlow Condensed" }}
+          style={{ paddingTop: "10px", fontFamily: "Barlow Condensed" }}
         >
           Cheeca Lodge Resort Panorama at Sunrise
         </ImageCaption>
@@ -151,7 +151,7 @@ const TravelAndStay = ({ data }) => {
             <AccomodationsContainer
               href={item.website}
               target="_blank"
-              key={index}
+              key={item.id}
             >
               <Accomodation>
                 <div
@@ -184,19 +184,20 @@ const TravelAndStay = ({ data }) => {
                 </div>
               </Accomodation>
               <AccomodationImg>
-                {data.allFile.edges.map((img, index) => {
+                {data.allFile.edges.map(img => {
                   if (
                     item.hotelImg &&
                     item.hotelImg.includes(img.node.relativePath)
                   ) {
                     return (
-                      <div key={index}>
+                      <>
                         <GatsbyImage
                           image={img.node.childImageSharp.gatsbyImageData}
                           alt={item.hotel}
                           imgStyle={{ borderRadius: "15px" }}
+                          placeholder={"blurred"}
                         />
-                      </div>
+                      </>
                     )
                   } else {
                     return <></>

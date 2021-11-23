@@ -102,7 +102,7 @@ const useTypedAction = actions => {
     }
   }, [actions, selectedIndex, typedAction, phase, resume])
 
-  return typedAction 
+  return [typedAction, resume]
 }
 
 const Hero = () => {

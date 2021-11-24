@@ -133,7 +133,7 @@ const ThingsTodo = ({ data }) => {
               </CardLeft>
               <CardRight>
                 <div>
-                  <p style={{ fontFamily: "Barlow Condensed" }}> {item.infoText} </p>
+                  <p style={{ fontFamily: "Barlow Condensed", fontSize: "1.2rem" }}> {item.infoText} </p>
                 </div>
                 <div>
                   {item.website !== undefined ? (

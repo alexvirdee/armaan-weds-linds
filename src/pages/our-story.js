@@ -2,7 +2,7 @@ import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
-import "@fontsource/barlow-condensed"
+import "@fontsource/eb-garamond"
 import { createGlobalStyle } from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -130,7 +130,7 @@ const CardRight = styled.div`
 `
 
 const StoryText = styled.div`
-  font-family: "Barlow Condensed";
+  font-family: "Eb Garamond";
   font-size: 1.2rem;
   padding: 5px 25px;
   color: #989ca0;

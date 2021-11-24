@@ -11,6 +11,7 @@ const NavbarLinks = (props) => {
       <NavItem to="/things-to-do">Things To Do</NavItem>
       <NavItem to="/travel-and-stay">Travel & Stay</NavItem>
       <NavItem to="/photos">Photos</NavItem>
+      <NavItem to="/best-friends">Best Friends</NavItem>
       <NavItem to="/schedule">Schedule</NavItem>
       <NavItem to="/RSVP" state={{ modal: !props.mobileNav }}>RSVP</NavItem>
       <NavItem to="/faq">FAQ</NavItem>
@@ -23,7 +24,7 @@ const NavItem = styled(Link)`
   color: #111;
   display: inline-block;
   white-space: nowrap;
-  margin: 0 1vw;
+  margin: 0 0.7vw;
   transition: all 200ms ease-in;
   position: relative;
 

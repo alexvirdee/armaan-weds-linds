@@ -1,6 +1,6 @@
 import React from "react"
 import Wave from "react-wavify"
-import "@fontsource/barlow-condensed"
+import "@fontsource/eb-garamond"
 import styled from "styled-components"
 
 const Footer = () => {
@@ -32,7 +32,7 @@ const FooterContainer = styled.div`
 const Content = styled.div`
     position: relative;
     top: 100px;
-    font-family: "Barlow Condensed";
+    font-family: "Eb Garamond";
     font-size: 1.2rem;
     z-index: 9999;
 `

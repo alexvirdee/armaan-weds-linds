@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import WeddingCountdown from "./WeddingCountdown"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
+import "@fontsource/eb-garamond"
 
 function blinkingEffect() {
   return keyframes`
@@ -225,7 +226,7 @@ const CouplePortrait = styled.div`
 
 const SubTitle = styled.h3`
   font-size: 24px;
-  font-family: "Barlow Condensed";
+  font-family: "Eb Garamond";
   padding: 10px 25px 5px 25px;
 `
 

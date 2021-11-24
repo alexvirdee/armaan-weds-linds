@@ -16,28 +16,27 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const BestFriends = ({ data }) => {
-  console.log(data)
   return (
     <>
       <GlobalStyle />
       <Navbar />
       <Heading>
         <ImgWrapper>
-        <StaticImage
-          layout={"constrained"}
-          placeholder={"blurred"}
-          src={"../images/elephant-heart-right.png"}
-          alt="elephant"
-        />
+          <StaticImage
+            layout={"constrained"}
+            placeholder={"blurred"}
+            src={"../images/elephant-heart-right.png"}
+            alt="elephant"
+          />
         </ImgWrapper>
         <Title>Wedding Party</Title>
         <ImgWrapper>
-        <StaticImage
-          layout={"constrained"}
-          placeholder={"blurred"}
-          src={"../images/elephant-heart.png"}
-          alt="elephant"
-        />
+          <StaticImage
+            layout={"constrained"}
+            placeholder={"blurred"}
+            src={"../images/elephant-heart.png"}
+            alt="elephant"
+          />
         </ImgWrapper>
       </Heading>
       <SubTitle>

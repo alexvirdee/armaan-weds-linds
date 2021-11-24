@@ -18,20 +18,20 @@ const data = [
     question: "Covid 19 Related Questions",
     answers: [
       {
-        id: "a. We ask all guests to be vaccinated. If there are any issues/concerns please reach out to us privately.",
+        id: "We are so excited to have all of our loved ones with us on our special day! We will be doing our best to keep everyone safe. It is very important that all guests be fully vaccinated. We will continue to stay up-to-date with guidelines! If there are any questions please reach out to Armaan or Lindsay.",
       },
       {
-        id: "b. If traveling, PCR testing 72 hrs before arrival is a plus!",
+        id: "If traveling, PCR testing 72 hrs before arrival is a plus!",
       },
     ],
   },
-  {
-    id: 2,
-    question: "What is the dress code?",
-    answers: [
-      {
-        id: "TBD",
-      },
+  // {
+  //   id: 2,
+  //   question: "What is the dress code?",
+  //   answers: [
+  //     {
+  //       id: "TBD",
+  //     },
       // {
       //   id: "a. Sangeet",
       //   answer: [
@@ -59,23 +59,23 @@ const data = [
       //     },
       //   ],
       // },
-    ],
-  },
+  //   ],
+  // },
   {
-    id: 3,
+    id: 2,
     question: "Can I bring a date?",
     answers: [
       {
-        id: "a. We want close family and friends on our special day, please refer to your invite!",
+        id: "We want close family and friends on our special day, please refer to your invite!",
       },
     ],
   },
   {
-    id: 4,
+    id: 3,
     question: "Are kids invited?",
     answers: [
       {
-        id: "a. While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us",
+        id: "While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us",
       },
     ],
   },

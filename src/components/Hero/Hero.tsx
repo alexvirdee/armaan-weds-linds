@@ -40,11 +40,6 @@ const useTypedAction = actions => {
   const [phase, setPhase] = useState(Phase.Typing)
   const [typedAction, setTypedAction] = useState("")
 
-  const resume = useCallback(() => {
-    if (phase !== Phase.Pausing) return
-    setPhase(Phase.Deleting)
-  }, [phase])
-
   useEffect(() => {
     switch (phase) {
       case Phase.Typing: {
@@ -101,9 +96,9 @@ const useTypedAction = actions => {
           clearTimeout(timeout)
         }
     }
-  }, [actions, selectedIndex, typedAction, phase, resume])
+  }, [actions, selectedIndex, typedAction, phase])
 
-  return [typedAction, resume]
+  return [typedAction]
 }
 
 const Hero = () => {

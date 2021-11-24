@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
 const SchedulePlaceholder = () => {
   return (
-    <div style={{ fontFamily: "Barlow Condensed", textAlign: "center" }}>
+    <div style={{ fontFamily: "Eb Garamond", textAlign: "center" }}>
       Wedding planning is in the works. Please continue to refer to this website
       periodically for updates!
     </div>

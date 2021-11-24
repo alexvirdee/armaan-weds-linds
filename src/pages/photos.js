@@ -2,12 +2,21 @@ import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
+import { createGlobalStyle } from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { graphql, Link } from "gatsby"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const Photos = ({ data }) => {
   return (
     <>
+      <GlobalStyle />
       <Navbar />
       <Title>Photos</Title>
       <Gallery>

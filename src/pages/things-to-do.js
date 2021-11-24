@@ -1,10 +1,18 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import { graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const dataList = [
   {
@@ -89,6 +97,7 @@ const dataList = [
 const ThingsTodo = ({ data }) => {
   return (
     <>
+     <GlobalStyle />
       <Navbar />
       <Heading>
         <Title>Things to Do</Title>

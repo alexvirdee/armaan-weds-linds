@@ -2,7 +2,15 @@ import React from "react"
 import Navbar from "../components/layout/Navbar"
 import Collapsible from "react-collapsible"
 import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import "@fontsource/barlow-condensed"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const data = [
   {
@@ -22,8 +30,8 @@ const data = [
     question: "What is the dress code?",
     answers: [
       {
-        id: "TBD"
-      }
+        id: "TBD",
+      },
       // {
       //   id: "a. Sangeet",
       //   answer: [
@@ -94,6 +102,7 @@ const TriggerOpen = props => {
 const FAQ = () => {
   return (
     <>
+      <GlobalStyle />
       <Navbar />
       <Title>FAQ</Title>
       <FAQContainer>

@@ -1,12 +1,21 @@
 import React from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import "@fontsource/alex-brush"
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 const Registry = () => {
   return (
     <>
+      <GlobalStyle />
       <Navbar />
       <RegistryContainer>
         <Title>Registry</Title>

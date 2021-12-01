@@ -1,5 +1,16 @@
-## Contentful Webhook
-**These can be generated on Netlify and copied over to contentful for when photographer starts adding to the site**
+# Production Build
+
+## Deployed on Netlify
+
+### Steps to create a new build
+
+1. Push new code to github branch 
+2. Checkout `Prod` branch
+3. `git fetch`
+4. `git rebase origin/main`
+5. `git push`
+
+Pushing to prod will create a new build on Netlify. 
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">

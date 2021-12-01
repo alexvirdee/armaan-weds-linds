@@ -130,7 +130,9 @@ const Hero = () => {
       </CouplePortrait>
       <SubTitle>October 22, 2022</SubTitle>
       <SubTitle>
-        Cheeca Lodge 81801 Overseas Highway Islamorada, FL 33036
+        Cheeca Lodge & Spa
+        <br />
+        81801 Overseas Highway Islamorada, FL 33036
       </SubTitle>
     </HeroContainer>
   )

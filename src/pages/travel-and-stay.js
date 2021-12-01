@@ -65,7 +65,6 @@ const TravelAndStay = ({ data }) => {
       <Title>Travel & Stay</Title>
       <Heading>
         <StaticImage
-          imgStyle={{ borderRadius: "15px" }}
           width={600}
           height={300}
           placeholder="blurred"
@@ -73,11 +72,6 @@ const TravelAndStay = ({ data }) => {
           src="../images/cheeca-lodge.jpg"
           alt="Cheeca Lodge Panorama"
         />
-        <ImageCaption
-          style={{ paddingTop: "10px", fontFamily: "Barlow Condensed" }}
-        >
-          Cheeca Lodge Resort Panorama at Sunrise
-        </ImageCaption>
         <HeadingText>
           We are so grateful to those of you that can make the trip to join us
           during our wedding weekend. The nearest airport is MIA, however there
@@ -146,6 +140,7 @@ const TravelAndStay = ({ data }) => {
             <WeddingMap />
           </MapContain>
         </AirportAndMapContainer>
+        <HotelContainer>
         {hotelData.map((item, index) => {
           return (
             <AccomodationsContainer
@@ -177,6 +172,7 @@ const TravelAndStay = ({ data }) => {
                       fontSize: "1.2rem",
                       fontFamily: "Barlow Condensed",
                       padding: "25px",
+                      textAlign: "center"
                     }}
                   >
                     {item.hotelInfo}
@@ -207,6 +203,7 @@ const TravelAndStay = ({ data }) => {
             </AccomodationsContainer>
           )
         })}
+        </HotelContainer>
       </LocationInfo>
     </>
   )
@@ -231,7 +228,7 @@ const Heading = styled.div`
   grid-area: Heading;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 80vh;
   border-bottom: 1px solid lightgrey;
@@ -243,7 +240,6 @@ const Title = styled.h1`
   padding-top: 8px;
 `
 
-const ImageCaption = styled.figcaption``
 
 const HeadingText = styled.div`
   font-family: "Barlow Condensed";
@@ -336,6 +332,13 @@ const ShuttleLink = styled.a`
   color: #aadaff;
 `
 
+const HotelContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
 const AccomodationsContainer = styled.a`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 0.8fr));
@@ -343,13 +346,14 @@ const AccomodationsContainer = styled.a`
   justify-content: center;
   padding-top: 25px;
   border-bottom: 2px solid lightgrey;
-  align-self: center;
   margin: 45px;
   cursor: pointer;
   text-decoration: none;
   color: #000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid lightgray;
+  width: 80%;
 
   :hover {
     background-color: #aadaff;

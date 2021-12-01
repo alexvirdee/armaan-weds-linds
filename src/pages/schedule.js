@@ -33,8 +33,8 @@ const Schedule = ({ data }) => {
       <Navbar />
       <GlobalStyle />
       <Title>Schedule</Title>
-      <SchedulePlaceholder />
-      {/* {data.event.nodes.map((item, index) => {
+      {/* <SchedulePlaceholder /> */}
+      {data.event.nodes.map((item, index) => {
         return (
           <ScheduleContainer key={index}>
             <ScheduleLeft>
@@ -60,7 +60,7 @@ const Schedule = ({ data }) => {
             </ScheduleRight>
           </ScheduleContainer>
         )
-      })} */}
+      })}
     </>
   )
 }

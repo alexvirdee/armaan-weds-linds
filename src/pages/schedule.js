@@ -33,24 +33,29 @@ const Schedule = ({ data }) => {
       <Navbar />
       <GlobalStyle />
       <Title>Schedule</Title>
-      <SchedulePlaceholder />
-      {/* {data.event.nodes.map((item, index) => {
+      {/* <SchedulePlaceholder /> */}
+      {data.event.nodes.map((item, index) => {
+        console.log(item)
         return (
           <ScheduleContainer key={index}>
             <ScheduleLeft>
-              <EventImage>
-                <GatsbyImage
-                  imgStyle={{ borderRadius: "50%", width: "225px" }}
-                  layout={"constrained"}
-                  placeholder={"blurred"}
-                  image={item.image.gatsbyImageData}
-                  alt="wedding-ceremony"
-                />
-              </EventImage>
               <EventWrapper>
-                <Event>{item.event}</Event>
-                <EventDate>{dayjs(item.date).format('MM/DD/YYYY')}</EventDate>
-                <EventTime>{dayjs(item.date).format('h:mm A')}</EventTime>
+                {item.image ? (
+                  <EventImage>
+                    <GatsbyImage
+                      layout={"fixed"}
+                      imgStyle={{ borderRadius: "50%" }}
+                      placeholder={"blurred"}
+                      image={item.image.gatsbyImageData}
+                      alt="wedding-ceremony"
+                    />
+                  </EventImage>
+                ) : null}
+                <EventInfoContainer>
+                  <Event>{item.event}</Event>
+                  <EventDate>{dayjs(item.date).format("MM/DD/YYYY")}</EventDate>
+                  <EventTime>{dayjs(item.date).format("h:mm A")}</EventTime>
+                </EventInfoContainer>
               </EventWrapper>
             </ScheduleLeft>
             <ScheduleRight>
@@ -60,7 +65,7 @@ const Schedule = ({ data }) => {
             </ScheduleRight>
           </ScheduleContainer>
         )
-      })} */}
+      })}
     </>
   )
 }
@@ -85,9 +90,7 @@ const ScheduleContainer = styled.div`
 const ScheduleLeft = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  min-height: 100px;
-  place-self: center;
+  justify-content: flex-end;
   padding: 12px;
   // border: 2px dashed magenta;
 
@@ -98,12 +101,30 @@ const ScheduleLeft = styled.div`
 
 const EventWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  padding: 25px;
+  // border: 4px solid red;
 
   @media (max-width: 768px) {
     justify-content: flex-start;
   }
+`
+const EventImage = styled.div`
+  max-width: 250px;
+  max-height: 300px;
+  align-self: center;
+  padding: 12px;
+  margin: 4px;
+  // border: 4px solid peru;
+`
+
+const EventInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  place-self: center;
 `
 
 const Event = styled.h1`
@@ -115,12 +136,6 @@ const Event = styled.h1`
 const EventDate = styled.div``
 
 const EventTime = styled.div``
-
-const EventImage = styled.div`
-  padding: 12px;
-  max-width: 250px;
-  // border: 4px solid peru;
-`
 
 const ScheduleRight = styled.div`
   padding: 12px;

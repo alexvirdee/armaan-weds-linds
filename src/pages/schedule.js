@@ -79,12 +79,15 @@ const Title = styled.h1`
 const ScheduleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-flow: dense;
   padding: 12px;
   font-family: "Eb Garamond";
   margin: 25px;
   border-bottom: 1px solid lightgray;
   // border: 4px solid indigo;
+
+  :last-child {
+    border-bottom: none;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
@@ -127,8 +130,8 @@ const EventImage = styled.div`
 const EventInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  place-self: center;
   align-items: center;
+  width: 100%;
   padding: 25px;
   // border: 2px dashed magenta;
 `

@@ -34,7 +34,7 @@ const Schedule = ({ data }) => {
       <GlobalStyle />
       <Title>Schedule</Title>
       {/* <SchedulePlaceholder /> */}
-      {data.event.nodes.map((item, index) => {
+      {data.event.nodes.reverse().map((item, index) => {
         console.log(item)
         return (
           <ScheduleContainer key={index}>
@@ -43,6 +43,7 @@ const Schedule = ({ data }) => {
                 {item.image ? (
                   <EventImage>
                     <GatsbyImage
+                      placeholder={"blurred"}
                       layout={"fixed"}
                       imgStyle={{ borderRadius: "50%" }}
                       placeholder={"blurred"}
@@ -78,8 +79,11 @@ const Title = styled.h1`
 const ScheduleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: dense;
   padding: 12px;
   font-family: "Eb Garamond";
+  margin: 25px;
+  border-bottom: 1px solid lightgray;
   // border: 4px solid indigo;
 
   @media (max-width: 768px) {
@@ -102,8 +106,7 @@ const ScheduleLeft = styled.div`
 const EventWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   padding: 25px;
   // border: 4px solid red;
@@ -118,17 +121,20 @@ const EventImage = styled.div`
   align-self: center;
   padding: 12px;
   margin: 4px;
-  // border: 4px solid peru;
+  // border: 4px solid yellow;
 `
 
 const EventInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   place-self: center;
+  align-items: center;
+  padding: 25px;
+  // border: 2px dashed magenta;
 `
 
 const Event = styled.h1`
-  align-self: flex-start;
+  text-align: center;
   border-bottom: 2px solid grey;
   font-family: "Alex Brush";
 `
@@ -138,8 +144,11 @@ const EventDate = styled.div``
 const EventTime = styled.div``
 
 const ScheduleRight = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-tems: center;
   padding: 12px;
-  place-self: center;
   // border: 2px dashed green;
 
   @media (max-width: 768px) {

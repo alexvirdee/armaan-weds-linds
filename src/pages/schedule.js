@@ -44,9 +44,7 @@ const Schedule = ({ data }) => {
                   <EventImage>
                     <GatsbyImage
                       placeholder={"blurred"}
-                      layout={"fixed"}
                       imgStyle={{ borderRadius: "50%" }}
-                      placeholder={"blurred"}
                       image={item.image.gatsbyImageData}
                       alt="wedding-ceremony"
                     />
@@ -115,7 +113,10 @@ const EventWrapper = styled.div`
   // border: 4px solid red;
 
   @media (max-width: 768px) {
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    // border: 4px solid magenta;
   }
 `
 const EventImage = styled.div`
@@ -125,6 +126,10 @@ const EventImage = styled.div`
   padding: 12px;
   margin: 4px;
   // border: 4px solid yellow;
+
+  @media (max-width: 768px) {
+    // border: 2px solid yellow;
+  }
 `
 
 const EventInfoContainer = styled.div`
@@ -155,7 +160,10 @@ const ScheduleRight = styled.div`
   // border: 2px dashed green;
 
   @media (max-width: 768px) {
-    padding: 35px;
+    padding: 4px;
+    margin-bottom: 12px;
+    text-align: center;
+    // border: 2px dashed green;
   }
 `
 
@@ -168,7 +176,7 @@ export const queery = graphql`
     event: allContentfulSchedule {
       nodes {
         image {
-          gatsbyImageData
+          gatsbyImageData(layout: CONSTRAINED, width: 400, height: 350)
         }
         date
         event

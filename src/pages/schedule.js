@@ -26,16 +26,7 @@ const SchedulePlaceholder = () => {
 }
 
 const Schedule = ({ data }) => {
-  // console.log("Schedule Data", data.event.nodes)
-
-  const sortedEvents = data.event.nodes
-    .slice()
-    .sort((a, b) => b.date - a.date)
-    .reverse()
-
-  // console.log("sorted events", sortedEvents)
-
-  // const sortedActivities = activities.slice().sort((a, b) => b.date - a.date)
+  const events = data.event.nodes
 
   return (
     <>
@@ -43,7 +34,7 @@ const Schedule = ({ data }) => {
       <GlobalStyle />
       <Title>Schedule</Title>
       {/* <SchedulePlaceholder /> */}
-      {sortedEvents.map((item, index) => {
+      {events.map((item, index) => {
         console.log(item)
         return (
           <ScheduleContainer key={index}>
@@ -182,7 +173,7 @@ export default Schedule
 
 export const queery = graphql`
   query ScheduleQuery {
-    event: allContentfulSchedule {
+    event: allContentfulSchedule(sort: { fields: date }) {
       nodes {
         image {
           gatsbyImageData(layout: CONSTRAINED, width: 400, height: 350)

@@ -135,21 +135,30 @@ const EventImage = styled.div`
 const EventInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 25px;
   // border: 2px dashed magenta;
 `
 
 const Event = styled.h1`
+  color: lightslategray;
+  font-size: 2.5rem;
   text-align: center;
   border-bottom: 2px solid grey;
   font-family: "Alex Brush";
 `
 
-const EventDate = styled.div``
+const EventDate = styled.div`
+  font-family: "Eb Garamond";
+  font-size: 24px;
+`
 
-const EventTime = styled.div``
+const EventTime = styled.div`
+  font-family: "Eb Garamond";
+  font-size: 18px;
+  margin-top: 4px;
+`
 
 const ScheduleRight = styled.div`
   display: flex;
@@ -167,7 +176,9 @@ const ScheduleRight = styled.div`
   }
 `
 
-const EventText = styled.div``
+const EventText = styled.div`
+  text-align: center;
+`
 
 export default Schedule
 

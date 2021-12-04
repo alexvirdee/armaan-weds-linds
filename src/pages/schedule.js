@@ -26,7 +26,16 @@ const SchedulePlaceholder = () => {
 }
 
 const Schedule = ({ data }) => {
-  console.log("Schedule Data", data)
+  // console.log("Schedule Data", data.event.nodes)
+
+  const sortedEvents = data.event.nodes
+    .slice()
+    .sort((a, b) => b.date - a.date)
+    .reverse()
+
+  // console.log("sorted events", sortedEvents)
+
+  // const sortedActivities = activities.slice().sort((a, b) => b.date - a.date)
 
   return (
     <>
@@ -34,7 +43,7 @@ const Schedule = ({ data }) => {
       <GlobalStyle />
       <Title>Schedule</Title>
       {/* <SchedulePlaceholder /> */}
-      {data.event.nodes.reverse().map((item, index) => {
+      {sortedEvents.map((item, index) => {
         console.log(item)
         return (
           <ScheduleContainer key={index}>

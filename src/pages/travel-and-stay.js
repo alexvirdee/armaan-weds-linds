@@ -141,70 +141,79 @@ const TravelAndStay = ({ data }) => {
           </MapContain>
         </AirportAndMapContainer>
         <HotelContainer>
-        {hotelData.map((item, index) => {
-          return (
-            <AccomodationsContainer
-              href={item.website}
-              target="_blank"
-              key={item.id}
-            >
-              <Accomodation>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    marginLeft: "5px",
-                    padding: "8px",
-                  }}
-                >
+          {hotelData.map((item, index) => {
+            return (
+              <AccomodationsContainer
+                href={item.website}
+                target="_blank"
+                key={item.id}
+              >
+                <Accomodation>
                   <div
                     style={{
-                      fontSize: "2rem",
-                      fontFamily: "Alex Brush",
-                      paddingBottom: "15px",
-                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      marginLeft: "5px",
+                      padding: "8px",
                     }}
                   >
-                    {item.hotel}
+                    <div
+                      style={{
+                        fontSize: "2rem",
+                        fontFamily: "Alex Brush",
+                        paddingBottom: "15px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.hotel}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "1.2rem",
+                        fontFamily: "Barlow Condensed",
+                        padding: "25px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.hotelInfo}
+                    </div>
                   </div>
-                  <div
-                    style={{
-                      fontSize: "1.2rem",
-                      fontFamily: "Barlow Condensed",
-                      padding: "25px",
-                      textAlign: "center"
-                    }}
-                  >
-                    {item.hotelInfo}
-                  </div>
-                </div>
-              </Accomodation>
-              <AccomodationImg>
-                {data.allFile.edges.map(img => {
-                  if (
-                    item.hotelImg &&
-                    item.hotelImg.includes(img.node.relativePath)
-                  ) {
-                    return (
-                      <>
-                        <GatsbyImage
-                          image={img.node.childImageSharp.gatsbyImageData}
-                          alt={item.hotel}
-                          imgStyle={{ borderRadius: "15px" }}
-                          placeholder={"blurred"}
-                        />
-                      </>
-                    )
-                  } else {
-                    return <></>
-                  }
-                })}
-              </AccomodationImg>
-            </AccomodationsContainer>
-          )
-        })}
+                </Accomodation>
+                <AccomodationImg>
+                  {data.allFile.edges.map(img => {
+                    if (
+                      item.hotelImg &&
+                      item.hotelImg.includes(img.node.relativePath)
+                    ) {
+                      return (
+                        <>
+                          <GatsbyImage
+                            image={img.node.childImageSharp.gatsbyImageData}
+                            alt={item.hotel}
+                            imgStyle={{ borderRadius: "15px" }}
+                            placeholder={"blurred"}
+                          />
+                        </>
+                      )
+                    } else {
+                      return <></>
+                    }
+                  })}
+                </AccomodationImg>
+              </AccomodationsContainer>
+            )
+          })}
         </HotelContainer>
       </LocationInfo>
+      <FooterContainer>
+        <StaticImage
+          placeholder="blurred"
+          layout={"fullWidth"}
+          src="../images/aerial-islamorada.jpg"
+          alt="Islamorada Drone Shot"
+          title="Islamorada Drone Shot"
+        />
+      </FooterContainer>
     </>
   )
 }
@@ -239,7 +248,6 @@ const Title = styled.h1`
   text-align: center;
   padding-top: 8px;
 `
-
 
 const HeadingText = styled.div`
   font-family: "Barlow Condensed";
@@ -368,6 +376,10 @@ const Accomodation = styled.div`
 const AccomodationImg = styled.div`
   place-self: center;
   margin: 25px;
+`
+
+const FooterContainer = styled.div`
+  margin-top: 60px;
 `
 
 export default TravelAndStay

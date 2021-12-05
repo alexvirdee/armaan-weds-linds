@@ -16,15 +16,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const SchedulePlaceholder = () => {
-  return (
-    <div style={{ fontFamily: "Eb Garamond", textAlign: "center" }}>
-      Wedding planning is in the works. Please continue to refer to this website
-      periodically for updates!
-    </div>
-  )
-}
-
 const Schedule = ({ data }) => {
   const events = data.event.nodes
 
@@ -33,7 +24,6 @@ const Schedule = ({ data }) => {
       <Navbar />
       <GlobalStyle />
       <Title>Schedule</Title>
-      {/* <SchedulePlaceholder /> */}
       {events.map((item, index) => {
         console.log(item)
         return (
@@ -77,9 +67,9 @@ const Title = styled.h1`
 const ScheduleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 12px;
   font-family: "Eb Garamond";
-  margin: 25px;
+  padding: 12px;
+  margin: 12px;
   border-bottom: 1px solid lightgray;
   // border: 4px solid indigo;
 
@@ -178,6 +168,7 @@ const ScheduleRight = styled.div`
 
 const EventText = styled.div`
   text-align: center;
+  font-family: "Eb Garamond";
 `
 
 export default Schedule

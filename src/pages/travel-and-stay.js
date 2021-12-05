@@ -322,8 +322,8 @@ const MapContain = styled.div`
   height: 375px;
 
   @media (max-width: 768px) {
-    width: 450px;
-    height: 250px;
+    width: 300px;
+    height: 375px;
   }
 `
 

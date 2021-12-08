@@ -36,10 +36,7 @@ const RSVP = () => {
               <RSVPContainer>
                 <Title>RSVP</Title>
                 <Divider></Divider>
-                <MainText>
-                  We have decided to keep our RSVP traditional and ask that you
-                  please respond and mail back your invite. Thank you!
-                </MainText>
+                <MainText>Please see invite for instructions.</MainText>
                 <StaticImage
                   imgStyle={{ borderRadius: "15px", marginTop: "25px" }}
                   placeholder={"blurred"}

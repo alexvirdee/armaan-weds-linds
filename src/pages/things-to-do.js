@@ -65,7 +65,7 @@ const dataList = [
     place: "Islamorada Sandbar",
     infoText:
       "Located off of mile marker 84 is Islamorada’s sandbar where you will see many boats join together! If you are lucky you may even catch the boat truck with delicious food. If venturing into the sea give the sandbar a pit stop!",
-    image: "../images/couple-sandbar.jpg",
+    image: "../images/sandbar-main.jpeg",
   },
   {
     id: 7,
@@ -97,7 +97,7 @@ const dataList = [
 const ThingsTodo = ({ data }) => {
   return (
     <>
-     <GlobalStyle />
+      <GlobalStyle />
       <Navbar />
       <Heading>
         <Title>Things to Do</Title>
@@ -107,7 +107,14 @@ const ThingsTodo = ({ data }) => {
           return (
             <Card key={item.id}>
               <CardLeft>
-                <h3 style={{ paddingRight: "4px", color: "#fcb2a9", fontFamily: "Barlow Condensed", fontSize: "1.4rem" }}>
+                <h3
+                  style={{
+                    paddingRight: "4px",
+                    color: "#fcb2a9",
+                    fontFamily: "Barlow Condensed",
+                    fontSize: "1.4rem",
+                  }}
+                >
                   {item.place}
                 </h3>
                 {data.allFile.edges.map((img, index) => {
@@ -125,15 +132,21 @@ const ThingsTodo = ({ data }) => {
                       </div>
                     )
                   } else {
-                    return (
-                      <></>
-                    )
+                    return <></>
                   }
                 })}
               </CardLeft>
               <CardRight>
                 <div>
-                  <p style={{ fontFamily: "Barlow Condensed", fontSize: "1.2rem" }}> {item.infoText} </p>
+                  <p
+                    style={{
+                      fontFamily: "Barlow Condensed",
+                      fontSize: "1.2rem",
+                    }}
+                  >
+                    {" "}
+                    {item.infoText}{" "}
+                  </p>
                 </div>
                 <div>
                   {item.website !== undefined ? (
@@ -159,7 +172,7 @@ export const query = graphql`
       edges {
         node {
           childImageSharp {
-            gatsbyImageData(layout: FIXED, width: 165)
+            gatsbyImageData(layout: FIXED, width: 175, placeholder: BLURRED)
           }
           relativePath
         }

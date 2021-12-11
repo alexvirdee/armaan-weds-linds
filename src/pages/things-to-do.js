@@ -47,7 +47,7 @@ const dataList = [
     activityType: "adventure",
     place: "Fishing",
     infoText:
-      "Islamorada is the sport fishing capital of the world! Lindsay grew up coming to the keys yearly and exploring the seas with the rest of the Virdee fam on the water fishing. We definitely recommend carving out sometime to explore the waters.",
+      "Islamorada is the sport fishing capital of the world! Lindsay grew up coming to the keys yearly and exploring the seas with the rest of the Virdee fam on the water fishing. We definitely recommend carving out some time to explore the waters.",
     image: "../images/dad-fishing.jpg",
   },
   {

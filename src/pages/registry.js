@@ -19,11 +19,16 @@ const Registry = () => {
       <Navbar />
       <RegistryContainer>
         <Title>Registry</Title>
-        <StaticImage width={300} placeholder={"blurred"} src="../images/leaf-divider.png" alt="leaf divider" />
+        <StaticImage
+          width={300}
+          placeholder={"blurred"}
+          src="../images/leaf-divider.png"
+          alt="leaf divider"
+        />
         <MainText>
-          For friends and family who have been asking and are looking
-          for gift ideas we have created our registry through Zola. Please
-          follow the button below thank you!
+          For friends and family who have been asking and are looking for gift
+          ideas we have created our registry through Zola. Please follow the
+          button below thank you!
         </MainText>
         <ZolaBtn
           href="https://www.zola.com/registry/lindsayandarmaan"
@@ -48,7 +53,7 @@ const Title = styled.h1`
 `
 
 const MainText = styled.p`
-  width: 70%;
+  width: 68%;
   padding: 25px;
   font-size: 1.2rem;
   text-align: center;

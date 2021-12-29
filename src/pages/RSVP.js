@@ -28,6 +28,14 @@ const RSVP = () => {
                 alt={"rsvp"}
                 width={600}
               />
+              <div>
+                <form>
+                  <label>Reservation Code</label>{" "}
+                  <input placeholder={"Enter your reservation code"} />
+                  <label>Able to come?</label>{" "}
+                  <input placeholder={"Yes or no"} />
+                </form>
+              </div>
               <CloseBtn to={closeTo}>Close</CloseBtn>
             </RSVPContainer>
           ) : (

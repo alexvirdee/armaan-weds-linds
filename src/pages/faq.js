@@ -18,51 +18,24 @@ const data = [
     question: "Covid 19 Related Questions",
     answers: [
       {
-        id: "We are so excited to have all of our loved ones with us on our special day! We will be doing our best to keep everyone safe. It is very important that all guests be fully vaccinated. We will continue to stay up-to-date with guidelines! If there are any questions please reach out to Armaan or Lindsay.",
+        id: "Your health is of the most importance to us! We want to make sure we are as safe as we can be, therefore, we kindly ask all guests to be vaccinated (at least 2 weeks prior to 10/22/2002). If there are any issues/concerns please reach out to us privately.",
       },
       {
-        id: "If traveling, PCR testing 72 hrs before arrival is a plus!",
+        id: "PCR testing 72 hrs before arrival is a plus!!",
       },
     ],
   },
-  // {
-  //   id: 2,
-  //   question: "What is the dress code?",
-  //   answers: [
-  //     {
-  //       id: "TBD",
-  //     },
-      // {
-      //   id: "a. Sangeet",
-      //   answer: [
-      //     {
-      //       id: 1,
-      //       innerAnswer: "i. Indian Formal",
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: "b. Ceremony",
-      //   answer: [
-      //     {
-      //       id: 2,
-      //       innerAnswer: "i. Indian",
-      //     },
-      //   ],
-      // },
-      // {
-      //   id: "c. Reception",
-      //   answer: [
-      //     {
-      //       id: 3,
-      //       innerAnswer: "i. Beach Formal",
-      //     },
-      //   ],
-      // },
-  //   ],
-  // },
   {
     id: 2,
+    question: "What is the dress code?",
+    answers: [
+      {
+        id: "Wedding planning is still in the works - stay tuned for an update soon!",
+      },
+    ],
+  },
+  {
+    id: 3,
     question: "Can I bring a date?",
     answers: [
       {
@@ -71,7 +44,7 @@ const data = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     question: "Are kids invited?",
     answers: [
       {

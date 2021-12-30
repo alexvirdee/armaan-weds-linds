@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
-import ReactMarkdown from "react-markdown"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
@@ -97,15 +96,8 @@ const dataList = [
     id: 10,
     activity: "resort",
     place: "Cheeca Lodge",
-    infoText: `- Explore Cheeca Lodge 
-     - 9-hole, Jack Nicklaus-designed executive golf course
-     - 6 tennis courts and beginners' tennis clinic hosted by a USTA professional (classes and instruction are at an additional charge)
-     - Sports court including pickleball, basketball, shuffleboard and hopscotch
-     - Beach volleyball
-     - Kayaking 
-     - Paddleboarding
-     - Or take some time and treat yourself at Cheeca Lodge’s spa!
-     `,
+    infoText:
+      "Explore Cheeca Lodge’s amenities which include: a 9 hole golf course, 6 tennis courts, pickleball, basketball, shuffleboard, hopscotch, beach volleyball, kayaking, paddleboarding, fishing. Or relax and lounge, maybe take some time out and treat yourself at Cheeca Lodge’s Spa!",
     website: "https://www.cheeca.com/",
     image: "../images/cheeca-logo.png",
   },
@@ -155,7 +147,7 @@ const ThingsTodo = ({ data }) => {
               </CardLeft>
               <CardRight>
                 <div>
-                  <ReactMarkdown children={item.infoText}></ReactMarkdown>
+                  <p children={item.infoText}></p>
                 </div>
                 <div>
                   {item.website !== undefined ? (
@@ -222,16 +214,6 @@ const Card = styled.div`
   @keyframes fade {
     0% {
       opacity: 0;
-    }
-  }
-
-  :last-child {
-    min-width: 800px;
-  }
-
-  @media (max-width: 720px) {
-    :last-child {
-      min-width: 380px;
     }
   }
 

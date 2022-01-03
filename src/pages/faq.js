@@ -18,10 +18,7 @@ const data = [
     question: "Covid 19 Related Questions",
     answers: [
       {
-        id: "Your health is of the most importance to us! We want to make sure we are as safe as we can be, therefore, we kindly ask all guests to be vaccinated (at least 2 weeks prior to 10/22/2002). If there are any issues/concerns please reach out to us privately.",
-      },
-      {
-        id: "PCR testing 72 hrs before arrival is a plus!!",
+        id: "We are so excited to have all of our loved ones with us on our special day! We will be doing our best to keep everyone safe. It is very important that all guests be fully vaccinated. We will continue to stay up-to-date with guidelines! If there are any questions please reach out to Armaan or Lindsay.",
       },
     ],
   },

@@ -16,6 +16,29 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const airportData = [
+  {
+    id: 1,
+    airport: "Miami International (64.4 miles)",
+    driveTime: "1 Hour and 55 minute drive",
+    directions:
+      "Take LeJeune Road south to 836 West. Take the Florida Turnpike south toward Key West. The Turnpike ends at US 1 in Florida City. Follow U.S. 1 south to the Keys.",
+  },
+  {
+    id: 2,
+    airport: "Key West (EYW) (75.7 miles)",
+    driveTime: "1 Hour and 42 minute drive",
+    directions: "Take Overseas Hw (UN-1 N) all the way up to cheeca lodge",
+  },
+  {
+    id: 3,
+    airport: "Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)",
+    driveTime: "1 Hour and 58 minute drive",
+    directions:
+      "Exit the airport and follow the signs for 595 West. Take 595 to the Florida Turnpike and follow the signs for the Florida Keys.",
+  },
+]
+
 const hotelData = [
   {
     id: 1,
@@ -72,14 +95,14 @@ const hotelData = [
     hotelImg: "../images/chesapeake.jpeg",
   },
   {
-    id: 7,
+    id: 8,
     hotel: "Pelican Cove Resort & Marina",
     hotelInfo: "",
     website: "https://www.pelicancovehotel.com/",
     hotelImg: "../images/pelican-cove.jpeg",
   },
   {
-    id: 8,
+    id: 9,
     hotel: "The Sunset Inn",
     hotelInfo: "",
     website: "https://sunsetinnkeys.com/",
@@ -122,37 +145,17 @@ const TravelAndStay = ({ data }) => {
         <AirportAndMapContainer>
           <TravelInfo>
             <AirportList>
-              <ListItem>
-                Miami International (64.4 miles)
-                <ul>
-                  <li>1 Hour and 55 minute drive</li>
-                  <li>
-                    Take LeJeune Road south to 836 West. Take the Florida
-                    Turnpike south toward Key West. The Turnpike ends at US 1 in
-                    Florida City. Follow U.S. 1 south to the Keys.
-                  </li>
-                </ul>
-              </ListItem>
-              <ListItem>
-                Key West (EYW) (75.7 miles)
-                <ul>
-                  <li>1 Hour and 42 minute drive</li>
-                  <li>
-                    Take Overseas Hw (UN-1 N) all the way up to cheeca lodge{" "}
-                  </li>
-                </ul>
-              </ListItem>
-              <ListItem>
-                Fort Lauderdale Hollywood Internation (FLL) (85.3 miles)
-                <ul>
-                  <li>1 Hour and 58 minute drive</li>
-                  <li>
-                    Exit the airport and follow the signs for 595 West. Take 595
-                    to the Florida Turnpike and follow the signs for the Florida
-                    Keys.
-                  </li>
-                </ul>
-              </ListItem>
+              {airportData.map(item => {
+                return (
+                  <ListItem key={item.id}>
+                    {item.airport}
+                    <ul>
+                      <li>{item.driveTime}</li>
+                      <li>{item.directions}</li>
+                    </ul>
+                  </ListItem>
+                )
+              })}
             </AirportList>
             <ShuttleList>
               <ListItem>

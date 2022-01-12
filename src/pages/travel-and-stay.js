@@ -50,6 +50,41 @@ const hotelData = [
     website: "https://www.amaracayresort.com/",
     hotelImg: "../images/amara-cay.jpeg",
   },
+  {
+    id: 5,
+    hotel: "Lime Tree bay",
+    hotelInfo: "",
+    website: "https://limetreebayresort.com/",
+    hotelImg: "../images/lime-tree.jpeg",
+  },
+  {
+    id: 6,
+    hotel: "La Jolla Resort ",
+    hotelInfo: "",
+    website: "https://www.lajollaresort.com/",
+    hotelImg: "../images/lajolla.jpeg",
+  },
+  {
+    id: 7,
+    hotel: "Chesapeake Beach Resort",
+    hotelInfo: "",
+    website: "https://www.chesapeake-resort.com/amenities-services/",
+    hotelImg: "../images/chesapeake.jpeg",
+  },
+  {
+    id: 7,
+    hotel: "Pelican Cove Resort & Marina",
+    hotelInfo: "",
+    website: "https://www.pelicancovehotel.com/",
+    hotelImg: "../images/pelican-cove.jpeg",
+  },
+  {
+    id: 8,
+    hotel: "The Sunset Inn",
+    hotelInfo: "",
+    website: "https://sunsetinnkeys.com/",
+    hotelImg: "../images/sunset-inn.jpeg",
+  },
 ]
 
 const TravelAndStay = ({ data }) => {

@@ -44,8 +44,9 @@ const hotelData = [
     id: 1,
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
-      "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! We will have a room block **it is still in the works, please stay tuned for more information**",
-    website: "https://www.cheeca.com/",
+      "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! Our room block code is 8157 when checking for room availability please add this under group codes. If you are having difficulties booking online you can call Cheeca lodge at 305-664-4651 and let them know the code and name of the wedding block which is “Virdee-Turkhud Wedding Room Block”.",
+    website:
+      "https://gc.synxis.com/rez.aspx?Hotel=29678&Chain=13057&arrive=10/21/2022&depart=10/23/2022&adult=1&child=0&group=8157",
     hotelImg: "../images/cheeca.jpg",
   },
   {

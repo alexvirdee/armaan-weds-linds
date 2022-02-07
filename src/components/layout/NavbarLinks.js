@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const NavbarLinks = (props) => {
+const NavbarLinks = props => {
   return (
     <>
       <NavItem to="/">Home</NavItem>
@@ -13,8 +13,16 @@ const NavbarLinks = (props) => {
       <NavItem to="/photos">Photos</NavItem>
       {/* <NavItem to="/best-friends">Best Friends</NavItem> */}
       <NavItem to="/schedule">Schedule</NavItem>
-      <NavItem to="/RSVP" state={{ modal: !props.mobileNav }}>RSVP</NavItem>
+      <NavItem to="/RSVP" state={{ modal: !props.mobileNav }}>
+        RSVP
+      </NavItem>
       <NavItem to="/faq">FAQ</NavItem>
+      <NavItem
+        to="https://gc.synxis.com/rez.aspx?Hotel=29678&Chain=13057&arrive=10/21/2022&depart=10/23/2022&adult=1&child=0&group=8157"
+        target="_blank"
+      >
+        Book Hotel
+      </NavItem>
     </>
   )
 }

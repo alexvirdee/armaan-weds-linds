@@ -23,7 +23,7 @@
     "babel-plugin-styled-components": "^1.13.2",
     "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
-    "gatsby": "^4.0.0",
+    "gatsby": "^4.6.1",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-modal-routing-3": "^3.0.0",
     "gatsby-plugin-sharp": "^4.0.1",

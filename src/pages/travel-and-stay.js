@@ -70,7 +70,7 @@ const hotelData = [
     id: 4,
     hotel: "Amara Cay",
     hotelInfo:
-      "Amara Cay is a 4 minute minute drive to Cheeca Lodge. Stay here for a “refined, but not uppity” atmosphere.",
+      "Amara Cay is a 4 minute drive to Cheeca Lodge. Stay here for a “refined, but not uppity” atmosphere.",
     website: "https://www.amaracayresort.com/",
     hotelImg: "../images/amara-cay.jpeg",
   },

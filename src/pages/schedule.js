@@ -39,7 +39,9 @@ const Schedule = ({ data }) => {
                       alt="wedding-ceremony"
                     />
                   </EventImage>
-                ) : null}
+                ) : (
+                  <></>
+                )}
                 <EventInfoContainer>
                   <Event>{item.event}</Event>
                   <EventDate>{dayjs(item.date).format("MM/DD/YYYY")}</EventDate>

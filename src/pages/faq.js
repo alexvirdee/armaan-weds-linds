@@ -86,10 +86,10 @@ const faqData = [
     question: "How do I get to the Casitas?",
     answers: [
       {
-        id: "From the main entrance you can meet at the bell station, from there someone will help to transport you to the area via golf cart or bus.",
+        id: "From the main entrance at Cheeca Lodge you can meet at the bell station, from there someone will help to transport you to the area via golf cart or bus.",
       },
       {
-        id: " If you are in the mood to walk please feel free to do so, it takes about 10 minutes. The concierge will be happy to assist with directions in the lobby.",
+        id: "If you are in the mood to walk please feel free to do so, it takes about 10 minutes. The concierge will be happy to assist with directions in the lobby.",
       },
     ],
   },
@@ -131,7 +131,6 @@ const FAQ = () => {
       <FAQContainer>
         <Accordion>
           {faqData.map(item => {
-            console.log("Data ===> ", item)
             return (
               <>
                 <CollapsibleSection
@@ -141,7 +140,6 @@ const FAQ = () => {
                   triggerWhenOpen={<TriggerOpen text={item.question} />}
                 >
                   {item.answers.map((answer, index) => {
-                    console.log("Top Level Answer ===> ", answer)
                     return (
                       <>
                         {answer.answer !== undefined ? (
@@ -159,7 +157,6 @@ const FAQ = () => {
                             >
                               <CollapsibleAnswers>
                                 {answer.answer.map((target, index) => {
-                                  console.log("What is target??", target)
                                   return (
                                     <InnerAnswer key={index}>
                                       {target.innerAnswer}

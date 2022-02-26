@@ -21,7 +21,7 @@ const NavbarLinks = props => {
         to="https://gc.synxis.com/rez.aspx?Hotel=29678&Chain=13057&arrive=10/21/2022&depart=10/23/2022&adult=1&child=0&group=8157"
         target="_blank"
       >
-        Cheeca Lodge
+        Book Cheeca Lodge
       </NavItem>
     </>
   )
@@ -32,7 +32,7 @@ const NavItem = styled(Link)`
   color: #111;
   display: inline-block;
   white-space: nowrap;
-  margin: 0 0.55vw;
+  margin: 0 0.42vw;
   transition: all 200ms ease-in;
   position: relative;
 

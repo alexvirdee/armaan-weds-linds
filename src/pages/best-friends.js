@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const BestFriends = ({ data }) => {
+  console.log("This is the data response", data)
   return (
     <>
       <GlobalStyle />
@@ -58,7 +59,7 @@ const BestFriends = ({ data }) => {
                     }}
                     placeholder={"blurred"}
                     image={bridesmaid.image.gatsbyImageData}
-                    alt=""
+                    alt="Bridesmaid"
                   />
                 </Person>
                 <PersonRole>{bridesmaid.text}</PersonRole>
@@ -83,7 +84,7 @@ const BestFriends = ({ data }) => {
                     }}
                     placeholder={"blurred"}
                     image={groomsman.image.gatsbyImageData}
-                    alt=""
+                    alt="Groomsman"
                   />
                 </Person>
                 <PersonRole>{groomsman.text}</PersonRole>
@@ -114,6 +115,7 @@ const Title = styled.h1`
   text-align: center;
   padding-left: 12px;
   padding-right: 12px;
+  font-size: 3.2rem;
 `
 const SubTitle = styled.h3`
   font-family: "Eb Garamond";
@@ -162,7 +164,7 @@ const PersonContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 12px;
+  margin: 12px 0px 12px 0px;
   // border: 2px solid orange;
 `
 
@@ -197,6 +199,7 @@ export const query = graphql`
         }
         fullName
         text
+        id
       }
     }
     groomsmen: allContentfulGroomsman {

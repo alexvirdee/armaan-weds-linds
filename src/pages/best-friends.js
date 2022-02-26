@@ -51,8 +51,8 @@ const BestFriends = ({ data }) => {
                 <Person>
                   <GatsbyImage
                     imgStyle={{
-                      width: "175px",
-                      height: "145px",
+                      width: "275px",
+                      height: "250px",
                       borderRadius: "50%",
                       border: "2px solid #fcb2a9",
                     }}
@@ -76,8 +76,8 @@ const BestFriends = ({ data }) => {
                 <Person>
                   <GatsbyImage
                     imgStyle={{
-                      width: "175px",
-                      height: "145px",
+                      width: "275px",
+                      height: "250px",
                       borderRadius: "50%",
                       border: "2px solid #000",
                     }}
@@ -123,7 +123,9 @@ const SubTitle = styled.h3`
 
 const BestFriendsContainer = styled.div`
   display: flex;
+  flex-direction: flex-row;
   justify-content: space-evenly;
+  // border: 6px solid red;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -133,8 +135,11 @@ const BestFriendsContainer = styled.div`
 `
 
 const BridesMaids = styled.div`
+  // border: 4px solid magenta;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 8px 0px 8px;
 `
 
 const Divider = styled.div`
@@ -147,21 +152,24 @@ const Divider = styled.div`
 `
 
 const GroomsMen = styled.div`
+  // border: 4px solid blue;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 `
 
 const PersonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin: 12px;
+  justify-content: center;
+  margin-bottom: 12px;
+  // border: 2px solid orange;
 `
 
 const Person = styled.div`
-  width: 200px;
-  height: auto;
-  padding: 18px;
+  width: 300px;
+  height: 16rem;
+  padding: 4px 2px 4px 2px;
 `
 
 const PersonName = styled.div`

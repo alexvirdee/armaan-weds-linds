@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const data = [
+const faqData = [
   {
     id: 1,
     question: "Covid 19 Related Questions",
@@ -27,7 +27,36 @@ const data = [
     question: "What is the dress code?",
     answers: [
       {
-        id: "Wedding planning is still in the works - stay tuned for an update soon!",
+        id: "Sangeet",
+        answer: [
+          {
+            innerAnswer: "Indian festive or Cocktail attire ",
+          },
+        ],
+      },
+      {
+        id: "Ceremony",
+        answer: [
+          {
+            innerAnswer: "Indian Formal",
+          },
+        ],
+      },
+      {
+        id: "Cocktail Hour & Reception",
+        answer: [
+          {
+            innerAnswer: "Formal Attire",
+          },
+          {
+            innerAnswer:
+              "Ladies we request long dresses and either suits or tuxes for men",
+          },
+          {
+            innerAnswer:
+              "Please keep in mind that during the day is can get quite warm!",
+          },
+        ],
       },
     ],
   },
@@ -46,6 +75,30 @@ const data = [
     answers: [
       {
         id: "While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us",
+      },
+      {
+        id: "Cheeca lodge offers babysitting services. Please contact the concierge at 305-517-4411 to further assist you.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    question: "How do I get to the Casitas?",
+    answers: [
+      {
+        id: "From the main entrance you can meet at the bell station, from there someone will help to transport you to the area via golf cart or bus.",
+      },
+      {
+        id: " If you are in the mood to walk please feel free to do so, it takes about 10 minutes. The concierge will be happy to assist with directions in the lobby.",
+      },
+    ],
+  },
+  {
+    id: 6,
+    question: "What are the weather conditions?",
+    answers: [
+      {
+        id: "In October, the average high is around 85 °F and the low is around 75 °F",
       },
     ],
   },
@@ -77,7 +130,8 @@ const FAQ = () => {
       <Title>FAQ</Title>
       <FAQContainer>
         <Accordion>
-          {data.map(item => {
+          {faqData.map(item => {
+            console.log("Data ===> ", item)
             return (
               <>
                 <CollapsibleSection
@@ -86,12 +140,13 @@ const FAQ = () => {
                   triggerStyle={{ display: "block", cursor: "pointer" }}
                   triggerWhenOpen={<TriggerOpen text={item.question} />}
                 >
-                  {item.answers.map(answer => {
+                  {item.answers.map((answer, index) => {
+                    console.log("Top Level Answer ===> ", answer)
                     return (
                       <>
                         {answer.answer !== undefined ? (
                           <>
-                            <CollapsibleSection
+                            <InnerCollapsibleSection
                               trigger={<Trigger text={answer.id} />}
                               triggerStyle={{
                                 display: "block",
@@ -99,18 +154,20 @@ const FAQ = () => {
                                 paddingLeft: "25px",
                                 paddingRight: "15px",
                               }}
+                              key={index}
                               triggerWhenOpen={<TriggerOpen text={answer.id} />}
                             >
                               <CollapsibleAnswers>
-                                {answer.answer.map(target => {
+                                {answer.answer.map((target, index) => {
+                                  console.log("What is target??", target)
                                   return (
-                                    <InnerAnswer key={target.id}>
+                                    <InnerAnswer key={index}>
                                       {target.innerAnswer}
                                     </InnerAnswer>
                                   )
                                 })}
                               </CollapsibleAnswers>
-                            </CollapsibleSection>
+                            </InnerCollapsibleSection>
                           </>
                         ) : (
                           <CollapsibleAnswers>{answer.id}</CollapsibleAnswers>
@@ -144,7 +201,8 @@ const MainTriggerStyle = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 8px;
+  align-items: center;
+  padding: 4px 2px 4px 2px;
 `
 
 const Chevron = styled.div`
@@ -171,13 +229,26 @@ const CollapsibleSection = styled(Collapsible)`
   }
 `
 
+const InnerCollapsibleSection = styled(Collapsible)`
+  border: 1px solid lightgray;
+  padding: 10px;
+
+  :last-child {
+    margin-bottom: 18px;
+  }
+
+  &:hover {
+    background-color: #fcb2a9;
+  }
+`
+
 const CollapsibleAnswers = styled.p`
   padding-left: 20px;
 `
 
-const InnerAnswer = styled.p`
-  padding-left: 35px;
-  margin-bottom: 10px;
+const InnerAnswer = styled.div`
+  padding: 4px 8px 4px 8px;
+  margin: 12px 2px 12px 2px;
 `
 
 export default FAQ

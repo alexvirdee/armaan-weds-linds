@@ -3,7 +3,6 @@ import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 import styled from "styled-components"
 
-
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 

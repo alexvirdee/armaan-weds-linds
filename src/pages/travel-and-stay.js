@@ -45,6 +45,8 @@ const hotelData = [
     hotel: "Cheeca Lodge & Spa",
     hotelInfo:
       "Our wedding will take place here at Cheeca Lodge. We would love for you to stay with us, so please try to book as soon as possible. Cheeca Lodge & Spa is set on a beautiful 27 acre private oceanfront in Islamorada. It includes traditional Florida Keys architecture and we are incredibly excited to get married here! Our room block code is 8157 when checking for room availability please add this under group codes. If you are having difficulties booking online you can call Cheeca lodge at 305-664-4651 and let them know the code and name of the wedding block which is “Virdee-Turkhud Wedding Room Block”.",
+    subText:
+      "If you are staying at Cheeca lodge a private car service can be arranged by their concierge to and from the airport. Please call 305-517-4505 if this interests you!",
     website:
       "https://gc.synxis.com/rez.aspx?Hotel=29678&Chain=13057&arrive=10/21/2022&depart=10/23/2022&adult=1&child=0&group=8157",
     hotelImg: "../images/cheeca.jpg",
@@ -121,8 +123,16 @@ const TravelAndStay = ({ data }) => {
     <>
       <GlobalStyle />
       <Navbar />
-      <Title>Travel & Stay</Title>
       <Heading>
+        <Title>Travel & Stay</Title>
+        <HeadingText>
+          ** Peak season in Islamorada starts mid October. We do recommend
+          making hotel and travel bookings as soon as possible! **
+        </HeadingText>
+        <HeadingText>
+          At time of placing reservation at Cheeca Lodge, they require a one
+          night plus tax fee. The rest will be charged at checkout.
+        </HeadingText>
         <StaticImage
           width={600}
           height={300}
@@ -185,7 +195,7 @@ const TravelAndStay = ({ data }) => {
               <AccomodationsContainer
                 href={item.website}
                 target="_blank"
-                key={item.id}
+                key={index}
               >
                 <Accomodation>
                   <div
@@ -198,7 +208,7 @@ const TravelAndStay = ({ data }) => {
                   >
                     <div
                       style={{
-                        fontSize: "2rem",
+                        fontSize: "2.2rem",
                         fontFamily: "Alex Brush",
                         paddingBottom: "15px",
                         textAlign: "center",
@@ -215,6 +225,18 @@ const TravelAndStay = ({ data }) => {
                       }}
                     >
                       {item.hotelInfo}
+                      {item.subText ? (
+                        <div
+                          style={{
+                            marginTop: "12px",
+                            textAlign: "center",
+                          }}
+                        >
+                          {item.subText}
+                        </div>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </Accomodation>
@@ -278,20 +300,22 @@ const Heading = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   border-bottom: 1px solid lightgrey;
 `
 
 const Title = styled.h1`
   font-family: "Alex Brush";
   text-align: center;
-  padding-top: 8px;
+  padding: 6px;
+  // border: 2px solid blue;
 `
 
 const HeadingText = styled.div`
   font-family: "Barlow Condensed";
   width: 45%;
-  padding-top: 10px;
+  padding: 8px 0px 8px 0px;
+  text-align: center;
 
   @media (max-width: 768px) {
     width: 80%;

@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const BestFriends = ({ data }) => {
-  console.log("This is the data response", data)
   return (
     <>
       <GlobalStyle />

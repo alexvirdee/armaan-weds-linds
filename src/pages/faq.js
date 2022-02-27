@@ -54,7 +54,7 @@ const faqData = [
           },
           {
             innerAnswer:
-              "Please keep in mind that during the day is can get quite warm!",
+              "Please keep in mind that during the day it can get quite warm!",
           },
         ],
       },

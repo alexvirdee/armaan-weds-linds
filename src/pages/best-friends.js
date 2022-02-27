@@ -42,25 +42,27 @@ const BestFriends = ({ data }) => {
       <SubTitle>
         We couldn't say I do without our best friends by our side
       </SubTitle>
-      <BestFriendsContainer>
+      <MainContainer>
         <BridesMaids>
           <Title>Bridesmaids</Title>
           {data.bridesmaids.nodes.map((bridesmaid, index) => {
             return (
               <PersonContainer key={index}>
-                <Person>
-                  <GatsbyImage
-                    imgStyle={{
-                      width: "275px",
-                      height: "250px",
-                      borderRadius: "50%",
-                      border: "2px solid #fcb2a9",
-                    }}
-                    placeholder={"blurred"}
-                    image={bridesmaid.image.gatsbyImageData}
-                    alt="Bridesmaid"
-                  />
-                </Person>
+                <PersonWrap>
+                  <Person>
+                    <GatsbyImage
+                      imgStyle={{
+                        width: "225px",
+                        height: "200px",
+                        borderRadius: "50%",
+                        border: "2px solid #fcb2a9",
+                      }}
+                      placeholder={"blurred"}
+                      image={bridesmaid.image.gatsbyImageData}
+                      alt="Bridesmaid"
+                    />
+                  </Person>
+                </PersonWrap>
                 <PersonRole>{bridesmaid.text}</PersonRole>
                 <PersonName>{bridesmaid.fullName}</PersonName>
               </PersonContainer>
@@ -73,26 +75,28 @@ const BestFriends = ({ data }) => {
           {data.groomsmen.nodes.map((groomsman, index) => {
             return (
               <PersonContainer key={index}>
-                <Person>
-                  <GatsbyImage
-                    imgStyle={{
-                      width: "275px",
-                      height: "250px",
-                      borderRadius: "50%",
-                      border: "2px solid #000",
-                    }}
-                    placeholder={"blurred"}
-                    image={groomsman.image.gatsbyImageData}
-                    alt="Groomsman"
-                  />
-                </Person>
+                <PersonWrap>
+                  <Person>
+                    <GatsbyImage
+                      imgStyle={{
+                        width: "225px",
+                        height: "200px",
+                        borderRadius: "50%",
+                        border: "2px solid #000",
+                      }}
+                      placeholder={"blurred"}
+                      image={groomsman.image.gatsbyImageData}
+                      alt="Groomsman"
+                    />
+                  </Person>
+                </PersonWrap>
                 <PersonRole>{groomsman.text}</PersonRole>
                 <PersonName>{groomsman.fullName}</PersonName>
               </PersonContainer>
             )
           })}
         </GroomsMen>
-      </BestFriendsContainer>
+      </MainContainer>
     </>
   )
 }
@@ -122,7 +126,7 @@ const SubTitle = styled.h3`
   padding-bottom: 12px;
 `
 
-const BestFriendsContainer = styled.div`
+const MainContainer = styled.div`
   display: flex;
   flex-direction: flex-row;
   justify-content: space-evenly;
@@ -139,8 +143,7 @@ const BridesMaids = styled.div`
   // border: 4px solid magenta;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 0px 8px 0px 8px;
+  // justify-content: space-between;
 `
 
 const Divider = styled.div`
@@ -156,21 +159,28 @@ const GroomsMen = styled.div`
   // border: 4px solid blue;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+
+  // justify-content: space-between;
 `
 
 const PersonContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 12px 0px 12px 0px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  padding: 12px;
   // border: 2px solid orange;
 `
 
+const PersonWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+`
+
 const Person = styled.div`
-  width: 300px;
-  height: 16rem;
-  padding: 4px 2px 4px 2px;
+  width: 315px;
+  height: 14rem;
+  // border: 8px solid green;
 `
 
 const PersonName = styled.div`

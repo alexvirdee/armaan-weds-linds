@@ -123,16 +123,18 @@ const TravelAndStay = ({ data }) => {
     <>
       <GlobalStyle />
       <Navbar />
+      <Banner>
+        <BannerText>
+          ❗ Peak season in Islamorada starts mid October. We recommend making
+          hotel and travel bookings as soon as possible ❗
+        </BannerText>
+        <BannerText>
+          At time of placing reservation at Cheeca Lodge, they require a one
+          night plus tax fee. The remainder will be charged at checkout.
+        </BannerText>
+      </Banner>
       <Heading>
         <Title>Travel & Stay</Title>
-        <HeadingText>
-          ❗ Peak season in Islamorada starts mid October. We do recommend
-          making hotel and travel bookings as soon as possible ❗
-        </HeadingText>
-        <HeadingText>
-          At time of placing reservation at Cheeca Lodge, they require a one
-          night plus tax fee. The rest will be charged at checkout.
-        </HeadingText>
         <StaticImage
           width={600}
           height={300}
@@ -291,6 +293,29 @@ export const query = graphql`
         }
       }
     }
+  }
+`
+
+const Banner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid lightgrey;
+  padding: 12px 0px 12px 0px;
+  background-color: #004992;
+`
+
+const BannerText = styled.div`
+  font-family: "Barlow Condensed";
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: 14px;
   }
 `
 

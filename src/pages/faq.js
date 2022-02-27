@@ -86,10 +86,7 @@ const faqData = [
     question: "How do I get to the Casitas?",
     answers: [
       {
-        id: "From the main entrance at Cheeca Lodge you can meet at the bell station, from there someone will help to transport you to the area via golf cart or bus.",
-      },
-      {
-        id: "If you are in the mood to walk please feel free to do so, it takes about 10 minutes. The concierge will be happy to assist with directions in the lobby.",
+        id: "From the main entrance at Cheeca Lodge you can meet at the bell station. From there someone will help transport you to the area via golf cart or bus. If you are in the mood to walk please feel free to do so it takes a total of 10 minutes. The concierge will be happy to assist with directions in the lobby.",
       },
     ],
   },

@@ -16,6 +16,14 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const BestFriends = ({ data }) => {
+  let sortedBridesmaids = data.bridesmaids.nodes.sort((a, b) => {
+    return a.contentfulid - b.contentfulid
+  })
+
+  let sortedGroomsmen = data.groomsmen.nodes.sort((a, b) => {
+    return a.contentfulid - b.contentfulid
+  })
+
   return (
     <>
       <GlobalStyle />
@@ -45,7 +53,7 @@ const BestFriends = ({ data }) => {
       <MainContainer>
         <BridesMaids>
           <Title>Bridesmaids</Title>
-          {data.bridesmaids.nodes.map((bridesmaid, index) => {
+          {sortedBridesmaids.map((bridesmaid, index) => {
             return (
               <PersonContainer key={index}>
                 <PersonWrap>
@@ -73,7 +81,7 @@ const BestFriends = ({ data }) => {
         <Divider />
         <GroomsMen>
           <Title>Groomsmen</Title>
-          {data.groomsmen.nodes.map((groomsman, index) => {
+          {sortedGroomsmen.map((groomsman, index) => {
             return (
               <PersonContainer key={index}>
                 <PersonWrap>
@@ -210,7 +218,7 @@ export const query = graphql`
         }
         fullName
         text
-        id
+        contentfulid
       }
     }
     groomsmen: allContentfulGroomsman {
@@ -220,6 +228,7 @@ export const query = graphql`
         }
         fullName
         text
+        contentfulid
       }
     }
   }

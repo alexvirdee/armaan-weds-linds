@@ -52,7 +52,8 @@ const BestFriends = ({ data }) => {
                   <Person>
                     <GatsbyImage
                       imgStyle={{
-                        width: "225px",
+                        objectFit: "fill",
+                        width: "215px",
                         height: "200px",
                         borderRadius: "50%",
                         border: "2px solid #fcb2a9",
@@ -79,7 +80,8 @@ const BestFriends = ({ data }) => {
                   <Person>
                     <GatsbyImage
                       imgStyle={{
-                        width: "225px",
+                        objectFit: "fill",
+                        width: "215px",
                         height: "200px",
                         borderRadius: "50%",
                         border: "2px solid #000",
@@ -180,7 +182,7 @@ const PersonWrap = styled.div`
 const Person = styled.div`
   width: 315px;
   height: 14rem;
-  // border: 8px solid green;
+  // border: 8px solid magenta;
 `
 
 const PersonName = styled.div`
@@ -204,7 +206,7 @@ export const query = graphql`
     bridesmaids: allContentfulBridesmaid {
       nodes {
         image {
-          gatsbyImageData(layout: CONSTRAINED)
+          gatsbyImageData(layout: FULL_WIDTH)
         }
         fullName
         text
@@ -214,7 +216,7 @@ export const query = graphql`
     groomsmen: allContentfulGroomsman {
       nodes {
         image {
-          gatsbyImageData(layout: CONSTRAINED)
+          gatsbyImageData(layout: FULL_WIDTH)
         }
         fullName
         text

@@ -25,7 +25,6 @@ const Schedule = ({ data }) => {
       <GlobalStyle />
       <Title>Schedule</Title>
       {events.map((item, index) => {
-        console.log(item)
         return (
           <ScheduleContainer key={index}>
             <ScheduleLeft>
@@ -34,7 +33,9 @@ const Schedule = ({ data }) => {
                   <EventImage>
                     <GatsbyImage
                       placeholder={"blurred"}
-                      imgStyle={{ borderRadius: "50%" }}
+                      imgStyle={{
+                        borderRadius: "50%",
+                      }}
                       image={item.image.gatsbyImageData}
                       alt="wedding-ceremony"
                     />
@@ -73,6 +74,7 @@ const ScheduleContainer = styled.div`
   padding: 12px;
   margin: 12px;
   border-bottom: 1px solid lightgray;
+
   // border: 4px solid indigo;
 
   :last-child {
@@ -117,6 +119,7 @@ const EventImage = styled.div`
   align-self: center;
   padding: 12px;
   margin: 4px;
+
   // border: 4px solid yellow;
 
   @media (max-width: 768px) {

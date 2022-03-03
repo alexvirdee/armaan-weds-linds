@@ -125,8 +125,9 @@ const TravelAndStay = ({ data }) => {
       <Navbar />
       <Banner>
         <BannerText>
-          ❗ Peak season in Islamorada starts mid October. We recommend making
-          hotel and travel bookings as soon as possible ❗
+          <Exclamation>❗</Exclamation> Peak season in Islamorada starts mid
+          October. We recommend making hotel and travel bookings as soon as
+          possible <Exclamation>❗</Exclamation>
         </BannerText>
         <BannerText>
           At time of placing reservation at Cheeca Lodge, they require a one
@@ -317,6 +318,10 @@ const BannerText = styled.div`
     width: 80%;
     font-size: 14px;
   }
+`
+
+const Exclamation = styled.span`
+  font-size: 24px;
 `
 
 const Heading = styled.div`

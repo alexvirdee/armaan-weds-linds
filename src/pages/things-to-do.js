@@ -123,7 +123,7 @@ const dataList = [
     activity: "spa",
     place: "Blu Bamboo Salon and Spa",
     infoText:
-      "Blu bamboo offers full service salon and day spa. They specialize in hair, makeup, and nails”",
+      "Blu bamboo offers full service salon and day spa. They specialize in hair, makeup, and nails",
     website: "http://www.blubamboo.com/",
     image: "../images/blu-bamboo.jpeg",
   },
@@ -283,8 +283,12 @@ const FilterButtons = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding: 12px;
+  padding: 8px;
   margin-bottom: 12px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 const FilterBtn = styled.button`
@@ -297,7 +301,7 @@ const FilterBtn = styled.button`
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   height: 40px;
   line-height: 20px;

@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Navbar from "../components/layout/Navbar"
 import { graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faList,
+  faBurger,
+  faFish,
+  faHotel,
+  faSpa,
+} from "@fortawesome/free-solid-svg-icons"
 import "@fontsource/alex-brush"
 import "@fontsource/barlow-condensed"
 
@@ -17,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 const dataList = [
   {
     id: 1,
-    activityType: "eat/drink",
+    activity: "eat/drink",
     place: "Blond Giraffe Key Lime Pie Factory",
     infoText:
       "The Keys are known for their key lime pie - make sure to venture to this spot for the best of the best!",
@@ -26,7 +34,7 @@ const dataList = [
   },
   {
     id: 2,
-    activityType: "eat/drink",
+    activity: "eat/drink",
     place: "Lazy days restaurant",
     infoText:
       "Soak in the sun and dine here for lunch/dinner. Make sure to get your sandwich extra lazy for a fun surprise. ",
@@ -35,7 +43,7 @@ const dataList = [
   },
   {
     id: 3,
-    activityType: "eat/drink",
+    activity: "eat/drink",
     place: "Key Largo Fisheries",
     infoText:
       "Now if you want the best stone crab you have to check this place out. Sanita sends Lindsay a batch of crabs from here every year because she loves them so much!",
@@ -44,7 +52,7 @@ const dataList = [
   },
   {
     id: 4,
-    activityType: "adventure",
+    activity: "adventure",
     place: "Fishing",
     infoText:
       "Islamorada is the sport fishing capital of the world! Lindsay grew up coming to the keys yearly and exploring the seas with the rest of the Virdee fam on the water fishing. We definitely recommend carving out some time to explore the waters.",
@@ -52,7 +60,7 @@ const dataList = [
   },
   {
     id: 5,
-    activityType: "adventure",
+    activity: "adventure",
     place: "Alligator Reef Lighthouse",
     infoText:
       "Sitting offshore is a beautiful lighthouse with a diverse array of marine life. Armaan and Lindsay love taking the boat out and snorkeling near alligator reef lighthouse, it’s a must do!",
@@ -101,9 +109,71 @@ const dataList = [
     website: "https://www.cheeca.com/",
     image: "../images/cheeca-logo.png",
   },
+  {
+    id: 11,
+    activity: "spa",
+    place: "Ciao Bella Salon & Day Spa",
+    infoText:
+      "If you would like to get your hair or makeup done for any of the wedding events consider ciao Bella! ",
+    website: "http://theislamoradaspa.com",
+    image: "../images/ciao-spa-logo.jpeg",
+  },
+  {
+    id: 12,
+    activity: "spa",
+    place: "Blu Bamboo Salon and Spa",
+    infoText:
+      "Blu bamboo offers full service salon and day spa. They specialize in hair, makeup, and nails”",
+    website: "http://www.blubamboo.com/",
+    image: "../images/blu-bamboo.jpeg",
+  },
 ]
 
 const ThingsTodo = ({ data }) => {
+  const [activities, setActivities] = useState(null)
+  const [filteredActivities, setFilteredActivities] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  async function fetchData() {
+    setActivities(dataList)
+    setFilteredActivities(dataList.filter(e => e.activity))
+    setLoading(true)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  if (!loading) {
+    return "Loading..."
+  }
+
+  let all = activities.filter(e => e.activity)
+  let restaurants = activities.filter(e => e.activity === "eat/drink")
+  let adventure = activities.filter(e => e.activity === "adventure")
+  let resort = activities.filter(e => e.activity === "resort")
+  let spa = activities.filter(e => e.activity === "spa")
+
+  function showAll() {
+    setFilteredActivities(all)
+  }
+
+  function showRestaurants() {
+    setFilteredActivities(restaurants)
+  }
+
+  function showAdventures() {
+    setFilteredActivities(adventure)
+  }
+
+  function showResorts() {
+    setFilteredActivities(resort)
+  }
+
+  function showSpas() {
+    setFilteredActivities(spa)
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -111,57 +181,75 @@ const ThingsTodo = ({ data }) => {
       <Heading>
         <Title>Things to Do</Title>
       </Heading>
+      <FilterButtons>
+        <FilterBtn onClick={() => showAll()}>
+          <FontAwesomeIcon icon={faList} /> All
+        </FilterBtn>
+        <FilterBtn onClick={() => showRestaurants()}>
+          <FontAwesomeIcon icon={faBurger} /> Eat/drink
+        </FilterBtn>
+        <FilterBtn onClick={() => showAdventures()}>
+          <FontAwesomeIcon icon={faFish} /> Adventure
+        </FilterBtn>
+        <FilterBtn onClick={() => showResorts()}>
+          <FontAwesomeIcon icon={faHotel} /> Resort
+        </FilterBtn>
+        <FilterBtn onClick={() => showSpas()}>
+          <FontAwesomeIcon icon={faSpa} /> Spa
+        </FilterBtn>
+      </FilterButtons>
       <InformationContainer>
-        {dataList.map(item => {
-          return (
-            <Card key={item.id}>
-              <CardLeft>
-                <h3
-                  style={{
-                    paddingRight: "4px",
-                    color: "#fcb2a9",
-                    fontFamily: "Barlow Condensed",
-                    fontSize: "1.4rem",
-                  }}
-                >
-                  {item.place}
-                </h3>
-                {data.allFile.edges.map((img, index) => {
-                  if (
-                    item.image !== undefined &&
-                    item.image.includes(img.node.relativePath)
-                  ) {
-                    return (
-                      <div key={index}>
-                        <GatsbyImage
-                          style={{ borderRadius: "15px" }}
-                          image={img.node.childImageSharp.gatsbyImageData}
-                          alt={item.place}
-                        />
-                      </div>
-                    )
-                  } else {
-                    return <></>
-                  }
-                })}
-              </CardLeft>
-              <CardRight>
-                <div>
-                  <p children={item.infoText}></p>
-                </div>
-                <div>
-                  {item.website !== undefined ? (
-                    <Button href={`${item.website}`} target="_blank">
-                      🌐 Website
-                    </Button>
-                  ) : (
-                    <></>
-                  )}
-                </div>
-              </CardRight>
-            </Card>
-          )
-        })}
+        {filteredActivities &&
+          filteredActivities.map(item => {
+            return (
+              <Card key={item.id}>
+                <CardLeft>
+                  <h3
+                    style={{
+                      paddingRight: "4px",
+                      color: "#fcb2a9",
+                      fontFamily: "Barlow Condensed",
+                      fontSize: "1.4rem",
+                    }}
+                  >
+                    {item.place}
+                  </h3>
+                  {data.allFile.edges.map((img, index) => {
+                    if (
+                      item.image !== undefined &&
+                      item.image.includes(img.node.relativePath)
+                    ) {
+                      return (
+                        <div key={index}>
+                          <GatsbyImage
+                            style={{ borderRadius: "15px" }}
+                            image={img.node.childImageSharp.gatsbyImageData}
+                            alt={item.place}
+                          />
+                        </div>
+                      )
+                    } else {
+                      return <></>
+                    }
+                  })}
+                </CardLeft>
+                <CardRight>
+                  <div>
+                    <p children={item.infoText}></p>
+                  </div>
+                  <div>
+                    {item.website !== undefined ? (
+                      <Button href={`${item.website}`} target="_blank">
+                        🌐 Website
+                      </Button>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+                </CardRight>
+              </Card>
+            )
+          })}
       </InformationContainer>
     </>
   )
@@ -189,6 +277,47 @@ const Heading = styled.div`
 const Title = styled.h1`
   font-family: "Alex Brush";
   text-align: center;
+`
+
+const FilterButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 12px;
+  margin-bottom: 12px;
+`
+
+const FilterBtn = styled.button`
+  background-color: #3b81f6;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin-right: 8px;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  :hover,
+  :focus {
+    background-color: #f082ac;
+  }
 `
 
 const InformationContainer = styled.div`

@@ -38,10 +38,8 @@ const faqData = [
         id: "Ceremony",
         answer: [
           {
-            innerAnswer: "Indian casual & comfortable",
-          },
-          {
-            innerAnswer: "We do ask that all guests have legs covered",
+            innerAnswer:
+              "Indian preferred, please dress comfortably. We do ask that all guests have legs covered",
           },
         ],
       },

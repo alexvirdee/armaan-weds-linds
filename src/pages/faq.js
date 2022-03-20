@@ -41,6 +41,10 @@ const faqData = [
             innerAnswer:
               "Indian preferred, please dress comfortably. We do ask that all guests have legs covered",
           },
+          {
+            innerAnswer:
+              "Please keep in mind that during the day it can get quite warm!",
+          },
         ],
       },
       {
@@ -52,10 +56,6 @@ const faqData = [
           {
             innerAnswer:
               "Ladies we request long dresses and either suits or tuxes for men",
-          },
-          {
-            innerAnswer:
-              "Please keep in mind that during the day it can get quite warm!",
           },
         ],
       },

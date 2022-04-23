@@ -100,6 +100,29 @@ const faqData = [
       },
     ],
   },
+  {
+    id: 7,
+    question: "What to expect during the wedding ceremony",
+    answers: [
+      {
+        id: "Sikh ceremony",
+        answer: [
+          {
+            innerAnswer:
+              "Anand Karaj meaning “blissful union” involves the Guru Granth Sahib, it is the holiest book in the Sikh faith. The Guru Granth Sahib must sit above all participants. As such, during the ceremony, unless unable, guests will be asked to sit on the ground and to remove their shoes. Cushions will be provided, as well as chairs for those who are unable to sit on the ground. Additionally, we will be asking all guests to cover their heads as a sign of respect to the Guru Granth Sahib. Head coverings will be provided.",
+          },
+          {
+            innerAnswer:
+              "To mark the end of the Sikh ceremony Karah prashad will be served to our guests. Please accept this sweet offering with both hands.",
+          },
+          {
+            innerAnswer:
+              "Immediately following will commence the Hindu ceremony.",
+          },
+        ],
+      },
+    ],
+  },
 ]
 
 const Trigger = props => {

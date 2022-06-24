@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import Navbar from "../components/layout/Navbar"
 import Collapsible from "react-collapsible"
 import styled from "styled-components"
@@ -65,6 +65,23 @@ const faqData = [
         answer: [
           {
             innerAnswer: "https://shopkynah.com/",
+          },
+          {
+            innerAnswer: "https://www.perniaspopupshop.com/",
+          },
+          {
+            innerAnswer: "https://www.kalkifashion.com/",
+          },
+          {
+            innerAnswer: "https://www.kalkifashion.com/",
+          },
+          {
+            innerAnswer:
+              "Libaas Xclusif: 249-08 Hillside Avenue, Queens, NY 11426",
+          },
+          {
+            innerAnswer:
+              "Regards Wholesale: 312 Main St, Spotswood, NJ 08884 http://www.regardswholesale.com/",
           },
         ],
       },
@@ -153,47 +170,6 @@ const TriggerOpen = props => {
 }
 
 const FAQ = () => {
-  useEffect(() => {
-    // Check answers for any links and convert them to an anchor tag
-    let links = []
-
-    const allInnerAnswers = Array.from(
-      document.getElementsByClassName("innerAnswer")
-    )
-
-    allInnerAnswers.forEach(answer => {
-      if (answer.innerText.includes("http")) {
-        links.push(answer)
-        console.log("links", links)
-      }
-    })
-
-    const convertToAnchorTag = arr => {
-      arr.map(item => {
-        // let convert = (item = (
-        //   <a href={`${item}`} target="_blank">
-        //     `${item}`
-        //   </a>
-        // ))
-
-        // return convert
-
-        // let converted = (item.textContent = (
-        //   <a href={`${item}`} target="_blank">
-        //     `${item}`
-        //   </a>
-        // ))
-
-        let converted = <Linkify>`${item}`</Linkify>
-
-        return converted
-      })
-    }
-
-    convertToAnchorTag(links)
-    console.log("converted", convertToAnchorTag(links))
-  }, [])
-
   return (
     <>
       <GlobalStyle />
@@ -233,7 +209,7 @@ const FAQ = () => {
                                       key={`${index}-innerAnswer`}
                                       className={"innerAnswer"}
                                     >
-                                      {target.innerAnswer}
+                                      <Linkify>{target.innerAnswer}</Linkify>
                                     </InnerAnswer>
                                   )
                                 })}

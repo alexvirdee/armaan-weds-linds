@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import Navbar from "../components/layout/Navbar"
 import Collapsible from "react-collapsible"
 import styled from "styled-components"
+import Linkify from "react-linkify"
 import { createGlobalStyle } from "styled-components"
 import "@fontsource/barlow-condensed"
 
@@ -56,6 +57,14 @@ const faqData = [
           {
             innerAnswer:
               "Ladies we request long dresses and either suits or tuxes for men",
+          },
+        ],
+      },
+      {
+        id: "For those looking for Indian outfits here are a few websites and stores to check out",
+        answer: [
+          {
+            innerAnswer: "https://shopkynah.com/",
           },
         ],
       },
@@ -144,6 +153,47 @@ const TriggerOpen = props => {
 }
 
 const FAQ = () => {
+  useEffect(() => {
+    // Check answers for any links and convert them to an anchor tag
+    let links = []
+
+    const allInnerAnswers = Array.from(
+      document.getElementsByClassName("innerAnswer")
+    )
+
+    allInnerAnswers.forEach(answer => {
+      if (answer.innerText.includes("http")) {
+        links.push(answer)
+        console.log("links", links)
+      }
+    })
+
+    const convertToAnchorTag = arr => {
+      arr.map(item => {
+        // let convert = (item = (
+        //   <a href={`${item}`} target="_blank">
+        //     `${item}`
+        //   </a>
+        // ))
+
+        // return convert
+
+        // let converted = (item.textContent = (
+        //   <a href={`${item}`} target="_blank">
+        //     `${item}`
+        //   </a>
+        // ))
+
+        let converted = <Linkify>`${item}`</Linkify>
+
+        return converted
+      })
+    }
+
+    convertToAnchorTag(links)
+    console.log("converted", convertToAnchorTag(links))
+  }, [])
+
   return (
     <>
       <GlobalStyle />
@@ -155,7 +205,7 @@ const FAQ = () => {
             return (
               <>
                 <CollapsibleSection
-                  key={item.id}
+                  key={`${item.id}-section`}
                   trigger={<Trigger text={item.question} />}
                   triggerStyle={{ display: "block", cursor: "pointer" }}
                   triggerWhenOpen={<TriggerOpen text={item.question} />}
@@ -173,13 +223,16 @@ const FAQ = () => {
                                 paddingLeft: "25px",
                                 paddingRight: "15px",
                               }}
-                              key={index}
+                              key={`${index}-answer`}
                               triggerWhenOpen={<TriggerOpen text={answer.id} />}
                             >
                               <CollapsibleAnswers>
                                 {answer.answer.map((target, index) => {
                                   return (
-                                    <InnerAnswer key={index}>
+                                    <InnerAnswer
+                                      key={`${index}-innerAnswer`}
+                                      className={"innerAnswer"}
+                                    >
                                       {target.innerAnswer}
                                     </InnerAnswer>
                                   )
@@ -260,12 +313,12 @@ const InnerCollapsibleSection = styled(Collapsible)`
   }
 `
 
-const CollapsibleAnswers = styled.p`
-  padding-left: 20px;
+const CollapsibleAnswers = styled.div`
+  padding: 10px 2px 10px 20px;
 `
 
 const InnerAnswer = styled.div`
-  padding: 4px 8px 4px 8px;
+  padding: 10px 8px 4px 8px;
   margin: 12px 2px 12px 2px;
 `
 

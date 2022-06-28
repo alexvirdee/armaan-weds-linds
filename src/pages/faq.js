@@ -73,9 +73,6 @@ const faqData = [
             innerAnswer: "https://www.kalkifashion.com/",
           },
           {
-            innerAnswer: "https://www.kalkifashion.com/",
-          },
-          {
             innerAnswer:
               "Libaas Xclusif: 249-08 Hillside Avenue, Queens, NY 11426",
           },

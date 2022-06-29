@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import Navbar from "../components/layout/Navbar"
 import styled from "styled-components"
 import { graphql } from "gatsby"
@@ -114,6 +114,12 @@ const hotelData = [
 ]
 
 const TravelAndStay = ({ data }) => {
+  useEffect(() => {
+    alert(
+      "Key West Fantasy Schedule 10/22 through 10/30. Please plan for extra time to for travel down to Islamorada"
+    )
+  }, [])
+
   const locationRef = useRef(null)
 
   const handleScroll = () =>
@@ -161,7 +167,7 @@ const TravelAndStay = ({ data }) => {
             <AirportList>
               {airportData.map(item => {
                 return (
-                  <ListItem key={item.id}>
+                  <ListItem key={`${item.id}-airport`}>
                     {item.airport}
                     <ul>
                       <li>{item.driveTime}</li>
@@ -198,7 +204,7 @@ const TravelAndStay = ({ data }) => {
               <AccomodationsContainer
                 href={item.website}
                 target="_blank"
-                key={index}
+                key={`${index}-hotel`}
               >
                 <Accomodation>
                   <div
@@ -244,20 +250,20 @@ const TravelAndStay = ({ data }) => {
                   </div>
                 </Accomodation>
                 <AccomodationImg>
-                  {data.allFile.edges.map(img => {
+                  {data.allFile.edges.map((img, index) => {
                     if (
                       item.hotelImg &&
                       item.hotelImg.includes(img.node.relativePath)
                     ) {
                       return (
-                        <>
+                        <div key={`${index}-hotel`}>
                           <GatsbyImage
                             image={img.node.childImageSharp.gatsbyImageData}
                             alt={item.hotel}
                             imgStyle={{ borderRadius: "15px" }}
                             placeholder={"blurred"}
                           />
-                        </>
+                        </div>
                       )
                     } else {
                       return <></>

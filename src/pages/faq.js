@@ -14,15 +14,15 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const faqData = [
-  {
-    id: 1,
-    question: "Covid 19 Related Questions",
-    answers: [
-      {
-        id: "We are so excited to have all of our loved ones with us on our special day! We will be doing our best to keep everyone safe. It is very important that all guests be fully vaccinated. We will continue to stay up-to-date with guidelines! If there are any questions please reach out to Armaan or Lindsay.",
-      },
-    ],
-  },
+  // {
+  //   id: 1,
+  //   question: "Covid 19 Related Questions",
+  //   answers: [
+  //     {
+  //       id: "We are so excited to have all of our loved ones with us on our special day! We will be doing our best to keep everyone safe. It is very important that all guests be fully vaccinated. We will continue to stay up-to-date with guidelines! If there are any questions please reach out to Armaan or Lindsay.",
+  //     },
+  //   ],
+  // },
   {
     id: 2,
     question: "What is the dress code?",

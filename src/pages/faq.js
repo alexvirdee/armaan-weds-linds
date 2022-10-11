@@ -146,6 +146,15 @@ const faqData = [
       },
     ],
   },
+  {
+    id: 8,
+    question: "I need more information who can I contact?",
+    answers: [
+      {
+        id: "If there are any questions during our wedding weekend please reach out to Elizabeth Seligman our wedding planner via this email info@islandlifeevents.com",
+      },
+    ],
+  },
 ]
 
 const Trigger = props => {
